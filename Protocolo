@@ -1,5 +1,4 @@
 COMANDOS PARA CREAR ALGO NUEVO (SERVER A CLIENTE):
-
 c(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)||team(int)
 
 Edificios:
@@ -82,7 +81,10 @@ Botones de Movibles nuevos:
 
 
     
-    
+ 
+ 
+ 
+ 
 COMANDOS QUE MANDA EL SERVIDOR
 
 

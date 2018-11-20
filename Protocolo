@@ -1,0 +1,127 @@
+COMANDOS PARA CREAR ALGO NUEVO (SERVER A CLIENTE):
+
+c(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)||team(int)
+
+Edificios:
+    • Centro de Construccion: 0
+    • Trampas de Aire:1
+    • Refinería: 2
+    • Silo: 3
+    • Fabrica Ligera: 4
+    • Fabrica Pesada: 5
+    • CuartelAtreides: 6
+    • CuartelHarkonnen:7
+    • CuartelOrdos:8
+    • Palacio: 9
+
+Movibles:
+    • Infantería Ligera: 10
+    • Infantería Pesada: 11
+    • Fremen: 12
+    • Sardaukar: 13
+    • Trike: 14
+    • Raider: 15
+    • Tanque: 16
+    • Tanque Sonico: 17
+    • Desviador: 18
+    • Devastador: 19
+    • Cosechadora: 20
+
+t(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)
+
+Terreno:
+    • Roca: 30
+    • Duna: 31
+    • Especia Fuerte: 32
+    • Especia Debil: 33
+    • Cima: 34
+    • Precipicio: 35
+
+No implementamos nada de balas todavía
+
+Bala:
+    • Rifle de asalto: 40
+    • Cañon: 41
+    • Lanzamisiles: 42
+    • Onda de sonido: 43
+    • Cañon 22mm: 44
+    • Cañon de plasma: 45
+
+g(char)||type(int)||size_x(int)||size_y(int)||x(int)||y(int)
+Gusano: 50
+Explocion fuerte: 51
+Explocion tanque: 52
+Explocion pesonaje: 53
+
+
+AL SERVIDOR NO LE IMPORTA
+Botones de edificios nuevos:
+    • Centro De construcción:60
+    • Cuartel Atreides: 61
+    • Cuartel Harkonnen:62
+    • Cuartel Ordos: 63
+    • Fabrica Ligera:64
+    • Fabrica Pesada: 65
+    • Palacio: 66
+    • Refineria: 67
+    • Silo: 68
+    • Trampa de Aire: 69
+
+Botones de Movibles nuevos:
+    • Cosechadora: 70
+    • Desviador: 71
+    • Devastador: 72
+    • Raider:73
+    • SonicTank: 74
+    • Tanque: 75
+    • Trike:76
+    • Fremen: 77
+    • Infanteria Ligera: 78
+    • Infanteria Pesada: 79
+    • Sardukar: 80
+
+
+    
+    
+COMANDOS QUE MANDA EL SERVIDOR
+
+
+SERVER INDICA QUE SE RECHAZÓ UNA CONSTRUCCIÓN
+r(char)||type(int)
+
+SERVER INDICA QUE UNA UNIDAD MURIÓ
+d(char)||id(int)
+
+SERVER INDICA QUE SE TERMINO EL JUEGO
+e(char)||winner_team(int)
+
+SERVER ENVÍA ATACA
+a(char)||id_propio(int)||id_atacado(int)
+
+SERVER ENVÍA MOVER
+m(char)||id_propio(int)||x(int)||y(int)
+
+
+
+
+
+
+
+
+
+COMANDOS QUE MANDA EL CLIENTE
+
+
+CLIENTE ENVÍA SOLICITUD PARA MOVERSE:
+m(char)||id_propio(int)||x(int)||y(int)
+
+CLIENTE ENVÍA SOLICITUD PARA ATACAR:
+a(char)||id_propio(int)||id_rival(int)
+
+CLIENTE INDICA QUE LE APRETARON UN BOTÓN DE EDIFICIO:
+e(char)||my_id(int)||type(int)||x(int)||y(int)
+
+CLIENTE INDICA QUE LE APRETARON UN BOTÓN DE CREAR UNIDAD:
+u(char)||type(int)||static_type(int)||my_id(int)
+
+ 

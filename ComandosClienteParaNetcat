@@ -1,0 +1,31 @@
+ 
+Ejecucion para el cliente
+
+    • Espera un int con su numero de equipo
+    • Entra en un ciclo donde crea edificios, movibles y terrenos:
+“c”(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)||team(int)
+“t”(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)
+    • Sale del ciclo con una letra “X”
+
+Empieza a mandar y recibir con server, los comando que recibe son:
+
+Nuevo movible/edificio:
+“c”(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)||team(int)
+
+Nuevo Terreno:
+“t”(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)
+
+Gusano:
+“g”(char)||type(int)||size_x(int)||size_y(int)||x(int)||y(int)
+
+Destruye unidad/edificio/terreno
+d(char)||id(int)
+
+Indica que hubo un ganador
+e(char)||winner_team(int)
+
+Mueve (un paso)
+m(char)||id_propio(int)||x(int)||y(int)
+
+Empieza a atacar
+a(char)||id_propio(int)||id_atacado(int)

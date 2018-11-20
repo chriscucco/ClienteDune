@@ -1,0 +1,66 @@
+#ifndef TERRAIN_CPP_
+#define TERRAIN_CPP_
+
+#include "Terrain.h"
+
+
+Terrain::Terrain(){}
+
+
+int Terrain::get_id(){
+	return this->id;
+}
+
+
+SDL_Rect* Terrain::getpos(){
+	return (&(this->botton_pos));
+}
+
+
+SDL_Surface* Terrain::getsurf(){
+	return this->botton_surface->get_surface();
+}
+
+
+bool Terrain::is_in_click(int x, int y){
+	bool result=false;
+	int min_x=this->botton_pos.x;
+	int min_y=this->botton_pos.y;
+	int max_x=this->botton_pos.x+this->botton_pos.w;
+	int max_y=this->botton_pos.y+this->botton_pos.h;
+	if((min_x<=x)&&(min_y<=y)&&(max_x>=x)&&(max_y>=y)){
+		result=true;
+	}
+	return result;
+}
+
+
+int Terrain::h_size(){
+	return this->botton_pos.w;
+}
+
+
+int Terrain::v_size(){
+	return this->botton_pos.h;
+}
+
+
+int Terrain::y_pos(){
+	return this->botton_pos.y;
+}
+
+
+int Terrain::x_pos(){
+	return this->botton_pos.x;
+}
+
+
+bool Terrain::is_especia(){
+	return this->especia;
+}
+
+
+Terrain::~Terrain(){}
+
+
+#endif 

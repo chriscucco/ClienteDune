@@ -1,27 +1,58 @@
 #include "Game.h"
+#define CENTRODECONSTRUCCION 0
+#define TRAMPADEAIRE 1
+#define REFINERIA 2
+#define SILO 3
+#define FABRICALIGERA 4
+#define FABRICAPESADA 5
+#define CUARTELATREIDES 6
+#define CUARTELHARKONNEN 7
+#define CUARTELORDOS 8
+#define PALACIO 9
+#define INFANTERIALIGERA 10
+#define INFANTERIAPESADA  11
+#define FREMEN 12
+#define SARDAUKAR 13
+#define TRIKE 14
+#define RAIDER 15
+#define TANQUE 16
+#define SONICTANK 17
+#define DESVIADOR 18
+#define DEVASTADOR 19
+#define COSECHADORA 20
+#define ROCA 30
+#define DUNA  31
+#define ESPECIAFUERTE 32
+#define ESPECIASUAVE 33
+#define CIMA  34
+#define PRECIPICIO 35
+#define GUSANO 50
+#define EXPLOSIONFUERTE 51
+#define EXPLOSIONTANQUE 52
+#define EXPLOSIONPERSONAJE 53
 
 void Game::init_buttons(){
-	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(60,this->button_size_x,this->button_size_y,500,0));
-	std::shared_ptr<Button> b2(new Button_CuartelAtreides(61,this->button_size_x,this->button_size_y,550,0));
-	std::shared_ptr<Button> b3(new Button_CuartelHarkonnen(62,this->button_size_x,this->button_size_y,600,0));
-	std::shared_ptr<Button> b4(new Button_CuartelOrdos(63,this->button_size_x,this->button_size_y,650,0));
-	std::shared_ptr<Button> b5(new Button_FabricaLigera(64,this->button_size_x,this->button_size_y,700,0));
-	std::shared_ptr<Button> b6(new Button_FabricaPesada(65,this->button_size_x,this->button_size_y,750,0));
-	std::shared_ptr<Button> b7(new Button_Palacio(66,this->button_size_x,this->button_size_y,800,0));
-	std::shared_ptr<Button> b8(new Button_Refineria(67,this->button_size_x,this->button_size_y,850,0));
-	std::shared_ptr<Button> b9(new Button_Silo(68,this->button_size_x,this->button_size_y,900,0));
-	std::shared_ptr<Button> b10(new Button_TrampaDeAire(69,this->button_size_x,this->button_size_y,950,0));
-	std::shared_ptr<Button> b11(new Button_Cosechadora(70,this->button_size_x,this->button_size_y,1315,100));
-	std::shared_ptr<Button> b12(new Button_Desviador(71,this->button_size_x,this->button_size_y,1315,150));
-	std::shared_ptr<Button> b13(new Button_Devastador(72,this->button_size_x,this->button_size_y,1315,200));
-	std::shared_ptr<Button> b14(new Button_Raider(73,this->button_size_x,this->button_size_y,1315,250));
-	std::shared_ptr<Button> b15(new Button_SonicTank(74,this->button_size_x,this->button_size_y,1315,300));
-	std::shared_ptr<Button> b16(new Button_Tanque(75,this->button_size_x,this->button_size_y,1315,350));
-	std::shared_ptr<Button> b17(new Button_Trike(76,this->button_size_x,this->button_size_y,1315,400));
-	std::shared_ptr<Button> b18(new Button_Fremen(77,this->button_size_x,this->button_size_y,1315,450));
-	std::shared_ptr<Button> b19(new Button_InfanteriaLigera(78,this->button_size_x,this->button_size_y,1315,500));
-	std::shared_ptr<Button> b20(new Button_InfanteriaPesada(79,this->button_size_x,this->button_size_y,1315,550));
-	std::shared_ptr<Button> b21(new Button_Sardaukar(80,this->button_size_x,this->button_size_y,1315,600));
+	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,this->button_size_x,this->button_size_y,500,0));
+	std::shared_ptr<Button> b2(new Button_CuartelAtreides(CUARTELATREIDES,this->button_size_x,this->button_size_y,550,0));
+	std::shared_ptr<Button> b3(new Button_CuartelHarkonnen(CUARTELHARKONNEN,this->button_size_x,this->button_size_y,600,0));
+	std::shared_ptr<Button> b4(new Button_CuartelOrdos(CUARTELORDOS,this->button_size_x,this->button_size_y,650,0));
+	std::shared_ptr<Button> b5(new Button_FabricaLigera(FABRICALIGERA,this->button_size_x,this->button_size_y,700,0));
+	std::shared_ptr<Button> b6(new Button_FabricaPesada(FABRICAPESADA,this->button_size_x,this->button_size_y,750,0));
+	std::shared_ptr<Button> b7(new Button_Palacio(PALACIO,this->button_size_x,this->button_size_y,800,0));
+	std::shared_ptr<Button> b8(new Button_Refineria(REFINERIA,this->button_size_x,this->button_size_y,850,0));
+	std::shared_ptr<Button> b9(new Button_Silo(SILO,this->button_size_x,this->button_size_y,900,0));
+	std::shared_ptr<Button> b10(new Button_TrampaDeAire(TRAMPADEAIRE,this->button_size_x,this->button_size_y,950,0));
+	std::shared_ptr<Button> b11(new Button_Cosechadora(COSECHADORA,this->button_size_x,this->button_size_y,1315,100));
+	std::shared_ptr<Button> b12(new Button_Desviador(DESVIADOR,this->button_size_x,this->button_size_y,1315,150));
+	std::shared_ptr<Button> b13(new Button_Devastador(DEVASTADOR,this->button_size_x,this->button_size_y,1315,200));
+	std::shared_ptr<Button> b14(new Button_Raider(RAIDER,this->button_size_x,this->button_size_y,1315,250));
+	std::shared_ptr<Button> b15(new Button_SonicTank(SONICTANK,this->button_size_x,this->button_size_y,1315,300));
+	std::shared_ptr<Button> b16(new Button_Tanque(TANQUE,this->button_size_x,this->button_size_y,1315,350));
+	std::shared_ptr<Button> b17(new Button_Trike(TRIKE,this->button_size_x,this->button_size_y,1315,400));
+	std::shared_ptr<Button> b18(new Button_Fremen(FREMEN,this->button_size_x,this->button_size_y,1315,450));
+	std::shared_ptr<Button> b19(new Button_InfanteriaLigera(INFANTERIALIGERA,this->button_size_x,this->button_size_y,1315,500));
+	std::shared_ptr<Button> b20(new Button_InfanteriaPesada(INFANTERIAPESADA,this->button_size_x,this->button_size_y,1315,550));
+	std::shared_ptr<Button> b21(new Button_Sardaukar(SARDAUKAR,this->button_size_x,this->button_size_y,1315,600));
 	this->buttons.push_back(b1);
 	this->buttons.push_back(b2);
 	this->buttons.push_back(b3);
@@ -284,34 +315,34 @@ void Game::add(int type,int id,int size_x, int size_y, int x, int y, int team){
 
 void Game::add_static(int type,int id,int size_x, int size_y, int x, int y, int team){
 	switch (type){
-		case 0: 	//CICLO DE RECIBIR LOS DATOS POR SOCKET Y GUARDAR
+		case CENTRODECONSTRUCCION: 	//CICLO DE RECIBIR LOS DATOS POR SOCKET Y GUARDAR
 			this->add_centrodeconstruccion(id,size_x,size_y,x,y,team);
 			break;
-		case 1:
+		case TRAMPADEAIRE:
 			this->add_tomadeaire(id,size_x,size_y,x,y,team);
 			break;
-		case 2:
+		case REFINERIA:
 			this->add_refineria(id,size_x,size_y,x,y,team);
 			break;
-		case 3:
+		case SILO:
 			this->add_silo(id,size_x,size_y,x,y,team);
 			break;
-		case 4:
+		case FABRICALIGERA:
 			this->add_fabricaligera(id,size_x,size_y,x,y,team);
 			break;
-		case 5:
+		case FABRICAPESADA:
 			this->add_febricapesada(id,size_x,size_y,x,y,team);
 			break;
-		case 6:
+		case CUARTELATREIDES:
 			this->add_cuartelatreides(id,size_x,size_y,x,y,team);
 			break;
-		case 7:
+		case CUARTELHARKONNEN:
 			this->add_cuartelharkonnen(id,size_x,size_y,x,y,team);
 			break;
-		case 8:
+		case CUARTELORDOS:
 			this->add_cuartelordos(id,size_x,size_y,x,y,team);
 			break;
-		case 9:
+		case PALACIO:
 			this->add_palacio(id,size_x,size_y,x,y,team);
 			break;
 	}	
@@ -319,22 +350,22 @@ void Game::add_static(int type,int id,int size_x, int size_y, int x, int y, int 
 
 void Game::add_terrain(int type,int id, int size_x, int size_y, int x, int y){
 	switch(type){
-		case 30:
+		case ROCA:
 			this->add_roca(id,size_x,size_y,x,y);
 			break;
-		case 31:
+		case DUNA:
 			this->add_duna(id,size_x,size_y,x,y);
 			break;
-		case 32:
+		case ESPECIAFUERTE:
 			this->add_especiafuerte(id,size_x,size_y,x,y);
 			break;
-		case 33:
+		case ESPECIASUAVE:
 			this->add_especiasuave(id,size_x,size_y,x,y);
 			break;
-		case 34:
+		case CIMA:
 			this->add_cima(id,size_x,size_y,x,y);
 			break;
-		case 35:
+		case PRECIPICIO:
 			this->add_precipicio(id,size_x,size_y,x,y);
 			break;
 	}
@@ -365,16 +396,16 @@ void Game::add_moveable_explosion(int size_x, int size_y,int x,int y){
 
 void Game::add_animation(int type,int size_x, int size_y,int x,int y){
 	switch(type){
-		case 50:
+		case GUSANO:
 			this->add_gusano(size_x,size_y,x,y);
 			break;
-		case 51:
+		case EXPLOSIONFUERTE:
 			this->add_big_explosion(size_x,size_y,x,y);
 			break;
-		case 52:
+		case EXPLOSIONTANQUE:
 			this->add_tank_explosion(size_x,size_y,x,y);
 			break;
-		case 53:
+		case EXPLOSIONPERSONAJE:
 			this->add_moveable_explosion(size_x,size_y,x,y);
 			break;
 	}
@@ -383,37 +414,37 @@ void Game::add_animation(int type,int size_x, int size_y,int x,int y){
 
 void Game::add_moveable(int type,int id,int size_x, int size_y, int x, int y,int team){
 	switch (type){
-		case 10:
+		case INFANTERIALIGERA:
 			this->add_infanterialigera(id,size_x,size_y,x,y,team);
 			break;
-		case 11:
+		case INFANTERIAPESADA:
 			this->add_infanteriapesada(id,size_x,size_y,x,y,team);
 			break;
-		case 12:
+		case FREMEN:
 			this->add_fremen(id,size_x,size_y,x,y,team);
 			break;
-		case 13:
+		case SARDAUKAR:
 			this->add_sardaukar(id,size_x,size_y,x,y,team);
 			break;
-		case 14:
+		case TRIKE:
 			this->add_trike(id,size_x,size_y,x,y,team);
 			break;
-		case 15:
+		case RAIDER:
 			this->add_raider(id,size_x,size_y,x,y,team);
 			break;
-		case 16:
+		case TANQUE:
 			this->add_tanque(id,size_x,size_y,x,y,team);
 			break;
-		case 17:
+		case SONICTANK:
 			this->add_sonictank(id,size_x,size_y,x,y,team);
 			break;
-		case 18:
+		case DESVIADOR:
 			this->add_desviador(id,size_x,size_y,x,y,team);
 			break;
-		case 19:
+		case DEVASTADOR:
 			this->add_devastador(id,size_x,size_y,x,y,team);
 			break;
-		case 20:
+		case COSECHADORA:
 			this->add_cosechadora(id,size_x,size_y,x,y,team);
 			break;
 	}
@@ -757,7 +788,7 @@ std::shared_ptr<Button> Game::is_selected_unit_button(){
 	std::shared_ptr<Button> b=NULL;
 	for (unsigned int i=0; i<this->button_selected.size(); ++i){
 		int id=this->button_selected.at(i)->get_id();
-		if((id>=70)&&(id<=80)){
+		if((id>=10)&&(id<=20)){
 			b=this->button_selected.at(i);
 			break;
 		}
@@ -770,7 +801,7 @@ std::shared_ptr<Button> Game::is_selected_building_button(){
 	std::shared_ptr<Button> b=NULL;
 	for (unsigned int i=0; i<this->button_selected.size(); ++i){
 		int id=this->button_selected.at(i)->get_id();
-		if((id>=60)&&(id<=69)){
+		if((id>=0)&&(id<=9)){
 			b=this->button_selected.at(i);
 			break;
 		}
@@ -797,7 +828,7 @@ void Game::selected_nothing(int x, int y){
 		unsigned char c='e';
 		this->s->send_msj(&c,1);
 		this->s->send_int(this->my_id);
-		this->s->send_int(b->get_id()-60);
+		this->s->send_int(b->get_id());
 		this->s->send_int(x);
 		this->s->send_int(y);
 	}

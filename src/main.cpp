@@ -79,7 +79,6 @@ try{
 			y=skt.recv_int();
 			team=skt.recv_int();
 			s.add(recv_type,recv_id,size_x,size_y,x,y,team);
-			std::cout<<recv_type<<"||"<<recv_id<<"||"<<size_x<<"||"<<size_y<<"||"<<x<<"||"<<y<<"||"<<team<<std::endl;
 		} else if(c=='t'){
         	int recv_type=skt.recv_int();
         	int recv_id=skt.recv_int();

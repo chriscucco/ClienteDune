@@ -1,4 +1,14 @@
- 
+Forma de usar el cliente:
+
+-Seleccionar un botón de edificio: Hay que hacer clic izquierdo en el botón y despues clic izquierdo en un lugar vacio
+-Seleccionar un botón de movible: clic izquierdo en el botón y clic izquierdo en un cuartel propio
+-Seleccionar un movible y mover: clic izquierdo en el movible y clic derecho en un punto vacio
+-Seleccionar un movible y atacar: clic izquierdo en el movible y clic derecho sobre el objeto del contrario
+
+
+
+
+
 Ejecucion para el cliente
 
     • Espera un int con su numero de equipo

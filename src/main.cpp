@@ -4,6 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <chrono>
+#include <thread>
 #include <unistd.h>
 #include "Surface.cpp"
 #include "Window.cpp"
@@ -146,10 +148,9 @@ try{
 					}
 				}
 			} 
-			if(timer.has_to_actualize()){
-				Lock l(m);
-				s.refreshscreen();
-			}
+			Lock l(m);
+			s.refreshscreen();
+			std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
 		}
 		skt.send_msj(&exit,1);
 		skt.close_recv_channel();

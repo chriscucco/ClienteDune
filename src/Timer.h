@@ -14,11 +14,10 @@ class Timer{
 private:
 	duration<double> dur;
 	high_resolution_clock::time_point time;
-	int lenght_of_frame;
 public:
 	Timer(int frames);
 	void reset();
-	bool has_to_actualize();
+	int remain_time();
 	~Timer();
 };
 

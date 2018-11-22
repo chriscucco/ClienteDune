@@ -939,6 +939,10 @@ thread
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/TPFINAL/ClienteDune/src/Timer.cpp
 Timer.h
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/TPFINAL/ClienteDune/src/Timer.h
+chrono
+-
+thread
+-
 
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/TPFINAL/ClienteDune/src/Timer.h
 iostream
@@ -1024,6 +1028,10 @@ iostream
 fstream
 -
 string
+-
+chrono
+-
+thread
 -
 unistd.h
 -

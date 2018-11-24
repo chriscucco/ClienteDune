@@ -305,8 +305,6 @@ void Game::finish_game(bool win){
 		modify_texture(this->loose_background);
 	}
 }
-	
-
 
 void Game::add(int type,int id,int size_x, int size_y, int x, int y, int team){
 	if((type>=0)&&(type<=9)){

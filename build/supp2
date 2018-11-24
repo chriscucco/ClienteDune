@@ -6968,8 +6968,8 @@
    fun:SDL_UpdateTexture_REAL
    fun:SDL_CreateTextureFromSurface_REAL
    fun:_ZN7TextureC1EP12SDL_RendererP11SDL_Surface
-   fun:_ZN6Screen11copystaticsEv
-   fun:_ZN6Screen13refreshscreenEv
+   fun:_ZN4Game11copystaticsEv
+   fun:_ZN4Game13refreshscreenEv
 }
 {
    <insert_a_suppression_name_here>
@@ -6985,68 +6985,12 @@
    obj:/usr/lib/x86_64-linux-gnu/dri/i965_dri.so
    obj:/usr/lib/x86_64-linux-gnu/dri/i965_dri.so
    fun:GL_RenderClear
-   fun:_ZN6Screen13refreshscreenEv
+   fun:_ZN4Game13refreshscreenEv
 }
 {
    <insert_a_suppression_name_here>
    Memcheck:Addr4
    fun:SDL_FreeSurface_REAL
-   fun:_ZN7SurfaceD1Ev
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Addr4
-   fun:SDL_FreeSurface_REAL
-   fun:_ZN7SurfaceD1Ev
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Addr4
-   fun:SDL_FreeSurface_REAL
-   fun:_ZN7SurfaceD1Ev
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Addr4
-   fun:SDL_FreeSurface_REAL
-   fun:_ZN7SurfaceD1Ev
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Addr8
-   fun:SDL_FreeSurface_REAL
-   fun:_ZN7SurfaceD1Ev
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Addr8
-   fun:SDL_FreeSurface_REAL
-   fun:_ZN7SurfaceD1Ev
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Addr1
-   fun:SDL_FreeSurface_REAL
-   fun:_ZN7SurfaceD1Ev
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Addr8
-   fun:SDL_FreeSurface_REAL
-   fun:_ZN7SurfaceD1Ev
-   fun:main
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Free
-   fun:free
    fun:_ZN7SurfaceD1Ev
    fun:main
 }
@@ -8388,6 +8332,38 @@
 {
    <insert_a_suppression_name_here>
    Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc
+   fun:SDL_AllocRW_REAL
+   fun:SDL_RWFromFP_REAL
+   fun:SDL_RWFromFile_REAL
+   fun:TTF_OpenFontIndex
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc
+   fun:SDL_AllocRW_REAL
+   fun:SDL_RWFromFP_REAL
+   fun:SDL_RWFromFile_REAL
+   fun:TTF_OpenFontIndex
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
    match-leak-kinds: definite
    fun:calloc
    fun:XkbGetMap
@@ -8397,6 +8373,23 @@
    fun:SDL_InitSubSystem_REAL
    fun:SDL_Init_REAL
    fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:_dl_load_cache_lookup
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
 }
 {
    <insert_a_suppression_name_here>
@@ -8415,6 +8408,32 @@
    fun:SDL_VideoInit_REAL
    fun:SDL_InitSubSystem_REAL
    fun:SDL_Init_REAL
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc
+   fun:TTF_OpenFontIndexRW
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc
+   fun:TTF_OpenFontIndexRW
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
 }
 {
    <insert_a_suppression_name_here>
@@ -8488,6 +8507,23 @@
    Memcheck:Leak
    match-leak-kinds: reachable
    fun:malloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
    obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
    obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
    obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
@@ -8499,23 +8535,6 @@
    fun:_XOpenLC
    fun:_XlcCurrentLC
    fun:XSetLocaleModifiers
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   match-leak-kinds: reachable
-   fun:malloc
-   fun:strdup
-   fun:_dl_load_cache_lookup
-   fun:_dl_map_object
-   fun:dl_open_worker
-   fun:_dl_catch_exception
-   fun:_dl_open
-   fun:dlopen_doit
-   fun:_dl_catch_exception
-   fun:_dl_catch_error
-   fun:_dlerror_run
-   fun:dlopen@@GLIBC_2.2.5
 }
 {
    <insert_a_suppression_name_here>
@@ -8590,23 +8609,6 @@
 {
    <insert_a_suppression_name_here>
    Memcheck:Leak
-   match-leak-kinds: reachable
-   fun:malloc
-   fun:_dl_new_object
-   fun:_dl_map_object_from_fd
-   fun:_dl_map_object
-   fun:dl_open_worker
-   fun:_dl_catch_exception
-   fun:_dl_open
-   fun:dlopen_doit
-   fun:_dl_catch_exception
-   fun:_dl_catch_error
-   fun:_dlerror_run
-   fun:dlopen@@GLIBC_2.2.5
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
    match-leak-kinds: definite
    fun:realloc
    obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
@@ -8626,23 +8628,6 @@
    <insert_a_suppression_name_here>
    Memcheck:Leak
    match-leak-kinds: reachable
-   fun:calloc
-   fun:_dl_check_map_versions
-   fun:dl_open_worker
-   fun:_dl_catch_exception
-   fun:_dl_open
-   fun:dlopen_doit
-   fun:_dl_catch_exception
-   fun:_dl_catch_error
-   fun:_dlerror_run
-   fun:dlopen@@GLIBC_2.2.5
-   fun:SDL_LoadObject_REAL
-   fun:IMG_InitJPG
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   match-leak-kinds: reachable
    fun:malloc
    fun:strdup
    obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
@@ -8655,23 +8640,6 @@
    fun:_XOpenLC
    fun:_XlcCurrentLC
    fun:XSetLocaleModifiers
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   match-leak-kinds: reachable
-   fun:calloc
-   fun:_dl_check_map_versions
-   fun:dl_open_worker
-   fun:_dl_catch_exception
-   fun:_dl_open
-   fun:dlopen_doit
-   fun:_dl_catch_exception
-   fun:_dl_catch_error
-   fun:_dlerror_run
-   fun:dlopen@@GLIBC_2.2.5
-   fun:SDL_LoadObject_REAL
-   fun:IMG_InitPNG
 }
 {
    <insert_a_suppression_name_here>
@@ -8781,6 +8749,55 @@
    <insert_a_suppression_name_here>
    Memcheck:Leak
    match-leak-kinds: reachable
+   fun:malloc
+   fun:__fopen_internal
+   fun:fopen@@GLIBC_2.2.5
+   fun:SDL_RWFromFile_REAL
+   fun:TTF_OpenFontIndex
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:__fopen_internal
+   fun:fopen@@GLIBC_2.2.5
+   fun:SDL_RWFromFile_REAL
+   fun:TTF_OpenFontIndex
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_dl_check_map_versions
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+   obj:/usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0
+   obj:/usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
    fun:calloc
    fun:_dl_check_map_versions
    fun:dl_open_worker
@@ -8794,6 +8811,25 @@
    fun:X11_GL_LoadLibrary
    fun:SDL_GL_LoadLibrary_REAL
    fun:SDL_CreateWindow_REAL
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_dl_close_worker.part.0
+   fun:_dl_close_worker
+   fun:_dl_close
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:dlerror_run
+   fun:__libc_dlclose
+   fun:free_mem
+   fun:__libc_freeres
+   fun:_vgnU_freeres
+   fun:__run_exit_handlers
+   fun:exit
+   fun:(below main)
 }
 {
    <insert_a_suppression_name_here>
@@ -8828,25 +8864,6 @@
    fun:dlopen@@GLIBC_2.2.5
    fun:SDL_LoadObject_REAL
    fun:SDL_X11_LoadSymbols
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   match-leak-kinds: reachable
-   fun:malloc
-   fun:_dl_close_worker.part.0
-   fun:_dl_close_worker
-   fun:_dl_close
-   fun:_dl_catch_exception
-   fun:_dl_catch_error
-   fun:dlerror_run
-   fun:__libc_dlclose
-   fun:free_mem
-   fun:__libc_freeres
-   fun:_vgnU_freeres
-   fun:__run_exit_handlers
-   fun:exit
-   fun:(below main)
 }
 {
    <insert_a_suppression_name_here>
@@ -8914,23 +8931,6 @@
    <insert_a_suppression_name_here>
    Memcheck:Leak
    match-leak-kinds: reachable
-   fun:calloc
-   fun:_dl_check_map_versions
-   fun:dl_open_worker
-   fun:_dl_catch_exception
-   fun:_dl_open
-   fun:dlopen_doit
-   fun:_dl_catch_exception
-   fun:_dl_catch_error
-   fun:_dlerror_run
-   fun:dlopen@@GLIBC_2.2.5
-   obj:/usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0
-   obj:/usr/lib/x86_64-linux-gnu/libGLX.so.0.0.0
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   match-leak-kinds: reachable
    fun:malloc
    fun:_XlcCreateDefaultCharSet
    fun:_XlcAddCT
@@ -9037,6 +9037,23 @@
    Memcheck:Leak
    match-leak-kinds: reachable
    fun:calloc
+   fun:_dl_new_object
+   fun:_dl_map_object_from_fd
+   fun:_dl_map_object
+   fun:dl_open_worker
+   fun:_dl_catch_exception
+   fun:_dl_open
+   fun:dlopen_doit
+   fun:_dl_catch_exception
+   fun:_dl_catch_error
+   fun:_dlerror_run
+   fun:dlopen@@GLIBC_2.2.5
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
    fun:_XlcCreateDefaultCharSet
    fun:_XlcAddCT
    fun:_XlcInitCTInfo
@@ -9089,23 +9106,6 @@
    <insert_a_suppression_name_here>
    Memcheck:Leak
    match-leak-kinds: reachable
-   fun:calloc
-   fun:_dl_new_object
-   fun:_dl_map_object_from_fd
-   fun:_dl_map_object
-   fun:dl_open_worker
-   fun:_dl_catch_exception
-   fun:_dl_open
-   fun:dlopen_doit
-   fun:_dl_catch_exception
-   fun:_dl_catch_error
-   fun:_dlerror_run
-   fun:dlopen@@GLIBC_2.2.5
-}
-{
-   <insert_a_suppression_name_here>
-   Memcheck:Leak
-   match-leak-kinds: reachable
    fun:malloc
    obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
    fun:_XrmInternalStringToQuark
@@ -9139,6 +9139,36 @@
 {
    <insert_a_suppression_name_here>
    Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.14.0
+   fun:TTF_RenderUTF8_Solid
+   fun:TTF_RenderText_Solid
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: indirect
+   fun:malloc
+   obj:/usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.14.0
+   fun:TTF_RenderUTF8_Solid
+   fun:TTF_RenderText_Solid
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
    match-leak-kinds: reachable
    fun:calloc
    fun:_dl_new_object
@@ -9152,4 +9182,30 @@
    fun:_dl_open
    fun:dlopen_doit
    fun:_dl_catch_exception
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:TTF_OpenFontIndexRW
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:TTF_OpenFontIndexRW
+   fun:_ZN7SurfaceC1EcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+   fun:_ZN4Text14modify_textureEv
+   fun:_ZN4Text11get_surfaceEv
+   fun:_ZN4Game8copytextEv
+   fun:_ZN4Game13refreshscreenEv
+   fun:main
 }

@@ -79,11 +79,7 @@ Botones de Movibles nuevos:
     • Infanteria Pesada: 79
     • Sardukar: 80
 
-
     
- 
- 
- 
  
 COMANDOS QUE MANDA EL SERVIDOR
 
@@ -102,6 +98,12 @@ a(char)||id_propio(int)||id_atacado(int)
 
 SERVER ENVÍA MOVER
 m(char)||id_propio(int)||x(int)||y(int)
+
+SERVER ENVIA CAMBIAR DINERO
+p(char)||nuevo_dinero(int)
+
+SERVER ENVIA CAMBIAR ENERGIA
+o(char)||nueva_energia(int)
 
 
 

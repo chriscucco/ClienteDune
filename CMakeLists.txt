@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(sdl)
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Werror -Wall -pedantic -pthread -O0 -ggdb")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Werror -Wall -pedantic -pthread -lSDL2_ttf -lSDL2_image -lSDL2 -O0 -ggdb")
 
 add_library(sdldemo
     src/Renderer.cpp
@@ -98,5 +98,5 @@ add_executable (main
 )
 
 
-target_link_libraries(main SDL2 SDL2_image)
+target_link_libraries(main SDL2 SDL2_image SDL2_ttf)
 

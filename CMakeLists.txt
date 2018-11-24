@@ -80,6 +80,7 @@ add_library(sdldemo
     src/Button_TrampaDeAire.cpp
     src/Button_Trike.cpp
     src/Timer.cpp
+    src/AmaticBold.ttf
 )
 
 INCLUDE(FindPkgConfig)

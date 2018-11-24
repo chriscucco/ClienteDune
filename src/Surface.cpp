@@ -36,7 +36,7 @@ Surface::Surface(SDL_Surface* background, SDL_Surface* screenSurface){
 
 
 Surface::Surface(char t,std::string text){
-	TTF_Font* font = TTF_OpenFont("/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/TPFINAL/ClienteDune/build/imgs/AmaticBold.ttf", 50);
+	TTF_Font* font = TTF_OpenFont("AmaticBold.ttf", 50);
 	if(font==0){
 		printf("TTF_OpenFont: %s\n", TTF_GetError());
 		throw SDLerror();

@@ -93,6 +93,10 @@ Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* 
 	this->size_x=x;
 	this->size_y=y;
 	this->init_buttons();
+	std::shared_ptr<Text> energy_pointer(new Text(this->renderer,"Energia: ",100,50,100,0,0));
+	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",100,50,1130,0,0));
+	this->energy=energy_pointer;
+	this->money=money_pointer;
 }
 
 
@@ -315,7 +319,7 @@ void Game::add(int type,int id,int size_x, int size_y, int x, int y, int team){
 
 void Game::add_static(int type,int id,int size_x, int size_y, int x, int y, int team){
 	switch (type){
-		case CENTRODECONSTRUCCION: 	//CICLO DE RECIBIR LOS DATOS POR SOCKET Y GUARDAR
+		case CENTRODECONSTRUCCION:
 			this->add_centrodeconstruccion(id,size_x,size_y,x,y,team);
 			break;
 		case TRAMPADEAIRE:
@@ -493,6 +497,17 @@ void Game::copyterrain(){
 	}	
 }
 
+
+void Game::copytext(){
+	Texture t(this->renderer,this->energy->get_surface());
+	SDL_RenderCopy(this->renderer, t.get_texture(),NULL,this->energy->getpos());
+	Texture t2(this->renderer,this->money->get_surface());
+	SDL_RenderCopy(this->renderer, t2.get_texture(),NULL,this->money->getpos());
+
+}
+
+
+
 void Game::copybuttons(){
 	unsigned int i=0;
 	while(i<this->buttons.size()){
@@ -500,6 +515,16 @@ void Game::copybuttons(){
 		SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->buttons.at(i)->getpos());
 		i++;
 	}	
+}
+
+
+
+void Game::modify_money(int i){
+	this->money->modify_value(i);
+}
+
+void Game::modify_energy(int i){
+	this->energy->modify_value(i);
 }
 
 	
@@ -511,6 +536,7 @@ void Game::refreshscreen(){
 	copystatics();
 	copymoveables();
 	copyanimated();
+	copytext();
 	SDL_RenderPresent(this->renderer);
 }
 

@@ -2,6 +2,9 @@
 #define SURFACE_CPP_
 
 #include "Surface.h"
+#include <SDL2/SDL_ttf.h>
+
+
 
 
 Surface::Surface(SDL_Window* window){
@@ -30,6 +33,23 @@ Surface::Surface(SDL_Surface* background, SDL_Surface* screenSurface){
         throw SDLerror();
     } 
 }
+
+
+Surface::Surface(char t,std::string text){
+	TTF_Font* font = TTF_OpenFont("/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/TPFINAL/ClienteDune/build/imgs/AmaticBold.ttf", 50);
+	if(font==0){
+		printf("TTF_OpenFont: %s\n", TTF_GetError());
+		throw SDLerror();
+	}
+	SDL_Color Black = {0, 0, 0}; 
+	this->surface=TTF_RenderText_Solid(font, text.c_str(), Black);
+	if (this->surface==nullptr){
+   		std::cerr << "Error al cargar la imagen " << std::endl;
+   	throw SDLerror();
+   	} 
+}
+
+
 
 
 void Surface::scale(SDL_Surface* screenSurface, SDL_Rect* rect){

@@ -55,6 +55,7 @@
 #include "InfanteriaLigera.cpp"
 #include "InfanteriaPesada.cpp"
 #include "Socket.cpp"
+#include "Text.cpp"
 #include "Texture.cpp"
 #include "Surface.cpp"
 #include <fstream>
@@ -82,6 +83,8 @@ private:
 	int button_size_y;
 	int size_x;
 	int size_y;
+	std::shared_ptr<Text> energy;
+	std::shared_ptr<Text> money;
 public:
 	void init_buttons();
 	int give_id();
@@ -89,6 +92,8 @@ public:
 	void add_centrodeconstruccion(int id,int size_x, int size_y, int x, int y, int team);
 	void add_tomadeaire(int id,int size_x, int size_y, int x, int y, int team);
 	void add_refineria(int id,int size_x, int size_y, int x, int y, int team);
+	void modify_energy(int i);
+	void modify_money(int i);
 	void add_silo(int id,int size_x, int size_y, int x, int y, int team);
 	void add_fabricaligera(int id,int size_x, int size_y, int x, int y, int team);
 	void add_sardaukar(int id,int size_x, int size_y, int x, int y, int team);
@@ -132,6 +137,7 @@ public:
 	void copymoveables();
 	void copyterrain();
 	void copybuttons();
+	void copytext();
 	void refreshscreen();
 	std::shared_ptr<Moveable> search_moveable_by_id(int id);
 	std::shared_ptr<Static> search_static_by_id(int id);

@@ -25,15 +25,18 @@ try{
 	if ( SDL_Init(SDL_INIT_VIDEO) < 0){
 		std::cerr << "ERROR AL INICIAR EL SDL" << std::endl;
 		throw SDLerror();
-	} else {
-		if (! (IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
-			std::cerr << "ERROR AL INICIALIZAR EL MODULO DE IMAGENES PNG" << std::endl;
-			throw SDLerror();
-		} else if(!SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" )){
-			std::cerr << "ERROR AL INICIALIZAR EL MODULO DE IMAGENES PNG" << std::endl;
-			throw SDLerror();
-		}
+	}
+	if (! (IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
+		std::cerr << "ERROR AL INICIALIZAR EL MODULO DE IMAGENES PNG" << std::endl;
+		throw SDLerror();
+	} 
+	if(!SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" )){
+		std::cerr << "ERROR AL INICIALIZAR EL MODULO DE IMAGENES PNG" << std::endl;
+		throw SDLerror();
 	}	
+	if(TTF_Init()==-1){
+		throw SDLerror();
+	}
     Window w("Dune",SCREEN_WIDTH,SCREEN_HEIGHT);
 	Surface screenSurface(w.get_window());
     Surface init_background("terrain/Portada.png");
@@ -153,17 +156,24 @@ try{
 			std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
 		}
 		skt.send_msj(&exit,1);
+		skt.send_int(id);
 		skt.close_recv_channel();
 		t.join();
 	} catch (SocketParameterError& perror){
 		std::cout<<perror.what()<<std::endl;
+		TTF_Quit();
+		IMG_Quit();
 		SDL_Quit();
 		return 1;
 	} catch (SDLerror& error){
         std::cout<<error.what()<<std::endl;
+        TTF_Quit();
+		IMG_Quit();
         SDL_Quit();
         return 2;
     }
+    TTF_Quit();
+	IMG_Quit();
 	SDL_Quit();
 	return 0;
 }

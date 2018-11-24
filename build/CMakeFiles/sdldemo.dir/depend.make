@@ -389,6 +389,8 @@ CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Tanque.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Tanque.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Terrain.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Terrain.h
+CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Text.cpp
+CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Text.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Texture.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Texture.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Thread.cpp
@@ -633,6 +635,8 @@ CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Tanque.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Tanque.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Terrain.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Terrain.h
+CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Text.cpp
+CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Text.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Texture.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Texture.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/TrampaDeAire.cpp
@@ -997,6 +1001,8 @@ CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Tanque.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Tanque.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Terrain.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Terrain.h
+CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Text.cpp
+CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Text.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Texture.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Texture.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Thread.cpp

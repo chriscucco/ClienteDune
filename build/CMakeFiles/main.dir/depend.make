@@ -127,6 +127,8 @@ CMakeFiles/main.dir/src/main.cpp.o: ../src/Tanque.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Tanque.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Terrain.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Terrain.h
+CMakeFiles/main.dir/src/main.cpp.o: ../src/Text.cpp
+CMakeFiles/main.dir/src/main.cpp.o: ../src/Text.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Texture.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Texture.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Thread.cpp

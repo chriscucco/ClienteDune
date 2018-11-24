@@ -21,6 +21,7 @@ public:
 	SDL_Rect* getpos();
 	void modify_value(int i);
 	void modify_texture();
+	void printed();
 	int get_remains();
 	SDL_Surface* get_surface();
 	~Text();	

@@ -93,10 +93,84 @@ Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* 
 	this->size_x=x;
 	this->size_y=y;
 	this->init_buttons();
-	std::shared_ptr<Text> energy_pointer(new Text(this->renderer,"Energia: ",100,50,100,0,0));
-	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",100,50,1130,0,0));
+	std::shared_ptr<Text> energy_pointer(new Text(this->renderer,"Energia: ",150,50,100,0,0));
+	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",150,50,1130,0,0));
 	this->energy=energy_pointer;
 	this->money=money_pointer;
+}
+
+
+void Game::add_notice(int i){
+	std::string t;
+	switch (i){
+		case CENTRODECONSTRUCCION:
+			t="Centro De Construccion";
+			break;
+		case TRAMPADEAIRE:
+			t="Toma de aire";
+			break;
+		case REFINERIA:
+			t="Refineria";
+			break;
+		case SILO:
+			t="Silo";
+			break;
+		case FABRICALIGERA:
+			t="Fabrica Ligera";
+			break;
+		case FABRICAPESADA:
+			t="Fabrica Pesada";
+			break;
+		case CUARTELATREIDES:
+			t="Cuartel Atreides";
+			break;
+		case CUARTELHARKONNEN:
+			t="Cuartel Harkonnen";
+			break;
+		case CUARTELORDOS:
+			t="Cuartel Ordos";
+			break;
+		case PALACIO:
+			t="Palacio";
+			break;
+		case INFANTERIALIGERA:
+			t="Infanteria Ligera";
+			break;
+		case INFANTERIAPESADA:
+			t="Infanteria Pesada";
+			break;
+		case FREMEN:
+			t="Fremen";
+			break;
+		case SARDAUKAR:
+			t="Sardaukar";
+			break;
+		case TRIKE:
+			t="Trike";
+			break;
+		case RAIDER:
+			t="Raider";
+			break;
+		case TANQUE:
+			t="Tanque";
+			break;
+		case SONICTANK:
+			t="SonicTank";
+			break;
+		case DESVIADOR:
+			t="Desviador";
+			break;
+		case DEVASTADOR:
+			t="Devastador";
+			break;
+		case COSECHADORA:
+			t="Cosechadora";
+			break;
+	}
+	std::string messaje="No se pudo crear el objeto:     ";
+	messaje+=t;
+	std::shared_ptr<Text> msj(new Text(this->renderer,messaje,500,50,450,650,120));
+	this->notice=msj;
 }
 
 
@@ -501,6 +575,15 @@ void Game::copytext(){
 	SDL_RenderCopy(this->renderer, t.get_texture(),NULL,this->energy->getpos());
 	Texture t2(this->renderer,this->money->get_surface());
 	SDL_RenderCopy(this->renderer, t2.get_texture(),NULL,this->money->getpos());
+	if(this->notice!=nullptr){
+		if(this->notice->get_remains()>0){
+			this->notice->printed();
+			Texture t3(this->renderer, this->notice->get_surface());
+			SDL_RenderCopy(this->renderer,t3.get_texture(),NULL,this->notice->getpos());
+		} else {
+			this->notice=nullptr;
+		}
+	}
 
 }
 

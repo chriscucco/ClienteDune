@@ -85,6 +85,7 @@ private:
 	int size_y;
 	std::shared_ptr<Text> energy;
 	std::shared_ptr<Text> money;
+	std::shared_ptr<Text> notice{nullptr};
 public:
 	void init_buttons();
 	int give_id();
@@ -106,6 +107,7 @@ public:
 	void add_cuartelordos(int id,int size_x, int size_y, int x, int y, int team);
 	void add_palacio(int id,int size_x, int size_y, int x, int y, int team);
 	void add_desviador(int id,int size_x, int size_y, int x, int y, int team);
+	void add_notice(int i);
 	void add_devastador(int id,int size_x, int size_y, int x, int y, int team);
 	void add_raider(int id,int size_x, int size_y, int x, int y, int team);
 	void add_sonictank(int id,int size_x, int size_y, int x, int y, int team);

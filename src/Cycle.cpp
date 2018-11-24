@@ -65,14 +65,18 @@ void Cycle::run(){
         int id=this->game->get_socket()->recv_int();
         Lock l(*(this->m));
         this->game->destroy_unit(id);
-      } else if(c=='o'){
+      }else if(c=='o'){
         int new_energy=this->game->get_socket()->recv_int();
         Lock l(*(this->m));
         this->game->modify_energy(new_energy);
-      } else if(c=='p'){
+      }else if(c=='p'){
         int new_money=this->game->get_socket()->recv_int();
         Lock l(*(this->m));
         this->game->modify_money(new_money);
+      }else if(c=='r'){
+        int type=this->game->get_socket()->recv_int();
+        Lock l(*(this->m));
+        this->game->add_notice(type);
       }
 	}
 }

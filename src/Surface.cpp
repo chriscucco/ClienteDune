@@ -41,8 +41,13 @@ Surface::Surface(char t,std::string text){
 		printf("TTF_OpenFont: %s\n", TTF_GetError());
 		throw SDLerror();
 	}
-	SDL_Color Black = {0, 0, 0}; 
-	this->surface=TTF_RenderText_Solid(font, text.c_str(), Black);
+	SDL_Color color;  
+	if(t=='f'){
+		color={0, 0, 0};
+	} else {
+		color={255,0,0};
+	}
+	this->surface=TTF_RenderText_Solid(font, text.c_str(), color);
 	if (this->surface==nullptr){
    		std::cerr << "Error al cargar la imagen " << std::endl;
    	throw SDLerror();

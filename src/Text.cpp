@@ -17,10 +17,12 @@ SDL_Rect* Text::getpos(){
 	return (&(this->botton_pos));
 }
 
+
 void Text::modify_value(int i){
 	this->value=i;
 	this->has_to_actualize=true;
 }
+
 
 int Text::get_remains(){
 	return this->repeats;
@@ -34,10 +36,16 @@ void Text::modify_texture(){
 	} else {
 		std::string num=std::to_string(this->value);
 		std::string t=this->text+num;
-		std::shared_ptr<Surface> s(new Surface('t',t));
+		std::shared_ptr<Surface> s(new Surface('f',t));
 		this->surf=s;
 	}
 }
+
+
+void Text::printed(){
+	this->repeats=this->repeats-1;
+}
+
 
 SDL_Surface* Text::get_surface(){
 	if(has_to_actualize){

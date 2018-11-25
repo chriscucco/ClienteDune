@@ -58,6 +58,7 @@
 #include "Text.cpp"
 #include "Texture.cpp"
 #include "Surface.cpp"
+#include "MasterSurface.cpp"
 #include <fstream>
 #include <memory>
 #include <string>
@@ -66,6 +67,7 @@
 
 class Game{
 private:
+	std::shared_ptr<MasterSurface> master{new MasterSurface()};
 	int my_id;
 	SDL_Texture *background;
 	SDL_Texture *win_background;

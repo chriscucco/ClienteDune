@@ -93,6 +93,8 @@ CMakeFiles/main.dir/src/main.cpp.o: ../src/InfanteriaPesada.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/InfanteriaPesada.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Lock.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Lock.h
+CMakeFiles/main.dir/src/main.cpp.o: ../src/MasterSurface.cpp
+CMakeFiles/main.dir/src/main.cpp.o: ../src/MasterSurface.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Moveable.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Moveable.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Palacio.cpp

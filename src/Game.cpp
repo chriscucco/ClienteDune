@@ -299,7 +299,7 @@ void Game::add_tanque(int id,int size_x, int size_y, int x, int y, int team){
 }
 
 void Game::add_trike(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new Trike(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new Trike(id,size_x,size_y,x,y,team,this->master->get_trike_surface()));
 	this->moveables.push_back(m);
 }
 

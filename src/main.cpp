@@ -94,7 +94,13 @@ try{
         	int x=skt.recv_int();
         	int y=skt.recv_int();
         	s.add_terrain(recv_type,recv_id,size_x,size_y,x,y);
-    	}
+    	} else if(c=='o'){
+        	int new_energy=skt.recv_int();
+        	s.modify_energy(new_energy);
+    	}else if(c=='p'){
+        	int new_money=skt.recv_int();
+        	s.modify_money(new_money);
+      }
 	}
 	s.modify_texture(texture2.get_texture());
 	std::mutex m;

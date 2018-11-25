@@ -357,6 +357,8 @@ CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/InfanteriaPesada.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/InfanteriaPesada.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Lock.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Lock.h
+CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/MasterSurface.cpp
+CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/MasterSurface.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Moveable.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Moveable.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Palacio.cpp
@@ -603,6 +605,8 @@ CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/InfanteriaLigera.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/InfanteriaLigera.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/InfanteriaPesada.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/InfanteriaPesada.h
+CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/MasterSurface.cpp
+CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/MasterSurface.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Moveable.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Moveable.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Palacio.cpp
@@ -967,6 +971,8 @@ CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/InfanteriaPesada.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/InfanteriaPesada.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Lock.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Lock.h
+CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/MasterSurface.cpp
+CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/MasterSurface.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Moveable.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Moveable.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Palacio.cpp

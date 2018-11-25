@@ -32,27 +32,31 @@
 #define EXPLOSIONPERSONAJE 53
 
 void Game::init_buttons(){
-	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,this->button_size_x,this->button_size_y,500,0));
-	std::shared_ptr<Button> b2(new Button_CuartelAtreides(CUARTELATREIDES,this->button_size_x,this->button_size_y,550,0));
-	std::shared_ptr<Button> b3(new Button_CuartelHarkonnen(CUARTELHARKONNEN,this->button_size_x,this->button_size_y,600,0));
-	std::shared_ptr<Button> b4(new Button_CuartelOrdos(CUARTELORDOS,this->button_size_x,this->button_size_y,650,0));
-	std::shared_ptr<Button> b5(new Button_FabricaLigera(FABRICALIGERA,this->button_size_x,this->button_size_y,700,0));
-	std::shared_ptr<Button> b6(new Button_FabricaPesada(FABRICAPESADA,this->button_size_x,this->button_size_y,750,0));
-	std::shared_ptr<Button> b7(new Button_Palacio(PALACIO,this->button_size_x,this->button_size_y,800,0));
-	std::shared_ptr<Button> b8(new Button_Refineria(REFINERIA,this->button_size_x,this->button_size_y,850,0));
-	std::shared_ptr<Button> b9(new Button_Silo(SILO,this->button_size_x,this->button_size_y,900,0));
-	std::shared_ptr<Button> b10(new Button_TrampaDeAire(TRAMPADEAIRE,this->button_size_x,this->button_size_y,950,0));
-	std::shared_ptr<Button> b11(new Button_Cosechadora(COSECHADORA,this->button_size_x,this->button_size_y,1315,100));
-	std::shared_ptr<Button> b12(new Button_Desviador(DESVIADOR,this->button_size_x,this->button_size_y,1315,150));
-	std::shared_ptr<Button> b13(new Button_Devastador(DEVASTADOR,this->button_size_x,this->button_size_y,1315,200));
-	std::shared_ptr<Button> b14(new Button_Raider(RAIDER,this->button_size_x,this->button_size_y,1315,250));
-	std::shared_ptr<Button> b15(new Button_SonicTank(SONICTANK,this->button_size_x,this->button_size_y,1315,300));
-	std::shared_ptr<Button> b16(new Button_Tanque(TANQUE,this->button_size_x,this->button_size_y,1315,350));
-	std::shared_ptr<Button> b17(new Button_Trike(TRIKE,this->button_size_x,this->button_size_y,1315,400));
-	std::shared_ptr<Button> b18(new Button_Fremen(FREMEN,this->button_size_x,this->button_size_y,1315,450));
-	std::shared_ptr<Button> b19(new Button_InfanteriaLigera(INFANTERIALIGERA,this->button_size_x,this->button_size_y,1315,500));
-	std::shared_ptr<Button> b20(new Button_InfanteriaPesada(INFANTERIAPESADA,this->button_size_x,this->button_size_y,1315,550));
-	std::shared_ptr<Button> b21(new Button_Sardaukar(SARDAUKAR,this->button_size_x,this->button_size_y,1315,600));
+	SDL_DisplayMode DM;
+	SDL_GetCurrentDisplayMode(0, &DM);
+	int Width = DM.w;
+	int Height = DM.h;
+	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*5),0));
+	std::shared_ptr<Button> b2(new Button_CuartelAtreides(CUARTELATREIDES,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*4),0));
+	std::shared_ptr<Button> b3(new Button_CuartelHarkonnen(CUARTELHARKONNEN,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*3),0));
+	std::shared_ptr<Button> b4(new Button_CuartelOrdos(CUARTELORDOS,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*2),0));
+	std::shared_ptr<Button> b5(new Button_FabricaLigera(FABRICALIGERA,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x),0));
+	std::shared_ptr<Button> b6(new Button_FabricaPesada(FABRICAPESADA,this->button_size_x,this->button_size_y,(Width/2),0));
+	std::shared_ptr<Button> b7(new Button_Palacio(PALACIO,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x),0));
+	std::shared_ptr<Button> b8(new Button_Refineria(REFINERIA,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*2),0));
+	std::shared_ptr<Button> b9(new Button_Silo(SILO,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*3),0));
+	std::shared_ptr<Button> b10(new Button_TrampaDeAire(TRAMPADEAIRE,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*4),0));
+	std::shared_ptr<Button> b11(new Button_Cosechadora(COSECHADORA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*6)));
+	std::shared_ptr<Button> b12(new Button_Desviador(DESVIADOR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*5)));
+	std::shared_ptr<Button> b13(new Button_Devastador(DEVASTADOR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*4)));
+	std::shared_ptr<Button> b14(new Button_Raider(RAIDER,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*3)));
+	std::shared_ptr<Button> b15(new Button_SonicTank(SONICTANK,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*2)));
+	std::shared_ptr<Button> b16(new Button_Tanque(TANQUE,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y)));
+	std::shared_ptr<Button> b17(new Button_Trike(TRIKE,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2)));
+	std::shared_ptr<Button> b18(new Button_Fremen(FREMEN,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y)));
+	std::shared_ptr<Button> b19(new Button_InfanteriaLigera(INFANTERIALIGERA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*2)));
+	std::shared_ptr<Button> b20(new Button_InfanteriaPesada(INFANTERIAPESADA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*3)));
+	std::shared_ptr<Button> b21(new Button_Sardaukar(SARDAUKAR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*4)));
 	this->buttons.push_back(b1);
 	this->buttons.push_back(b2);
 	this->buttons.push_back(b3);
@@ -82,6 +86,9 @@ int Game::give_id(){
 
 
 Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int button_x, int button_y, int x, int y){
+	SDL_DisplayMode DM;
+	SDL_GetCurrentDisplayMode(0, &DM);
+	int Width = DM.w;
 	this->my_id=id;
 	this->renderer=r;
 	this->background=t;
@@ -93,14 +100,18 @@ Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* 
 	this->size_x=x;
 	this->size_y=y;
 	this->init_buttons();
-	std::shared_ptr<Text> energy_pointer(new Text(this->renderer,"Energia: ",150,50,100,0,0));
-	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",150,50,1130,0,0));
+	std::shared_ptr<Text> energy_pointer(new Text(this->renderer,"Energia: ",150,50,(Width/5)-150,0,0));
+	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",150,50,((Width/5)*4),0,0));
 	this->energy=energy_pointer;
 	this->money=money_pointer;
 }
 
 
 void Game::add_notice(int i){
+	SDL_DisplayMode DM;
+	SDL_GetCurrentDisplayMode(0, &DM);
+	int w = DM.w;
+	int h = DM.h;
 	std::string t;
 	switch (i){
 		case CENTRODECONSTRUCCION:
@@ -169,7 +180,7 @@ void Game::add_notice(int i){
 	}
 	std::string messaje="No se pudo crear el objeto:     ";
 	messaje+=t;
-	std::shared_ptr<Text> msj(new Text(this->renderer,messaje,500,50,450,650,120));
+	std::shared_ptr<Text> msj(new Text(this->renderer,messaje,500,50,(w/2)-250,(h-120),120));
 	this->notice=msj;
 }
 

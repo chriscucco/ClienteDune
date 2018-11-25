@@ -14,8 +14,6 @@
 #include "Cycle.cpp"
 #include "Timer.cpp"
 
-#define SCREEN_WIDTH 1365
-#define SCREEN_HEIGHT 708
 #define FPS 30
 
 int main(int argc, char **argv){
@@ -37,7 +35,11 @@ try{
 	if(TTF_Init()==-1){
 		throw SDLerror();
 	}
-    Window w("Dune",SCREEN_WIDTH,SCREEN_HEIGHT);
+	SDL_DisplayMode DM;
+	SDL_GetCurrentDisplayMode(0, &DM);
+	auto Width = DM.w;
+	auto Height = DM.h;
+    Window w("Dune",Width,Height);
 	Surface screenSurface(w.get_window());
     Surface init_background("terrain/Portada.png");
     Surface optimized_background(init_background.get_surface(),screenSurface.get_surface());
@@ -51,8 +53,8 @@ try{
 	SDL_Rect stretchRect; 
 	stretchRect.x = 0; 
 	stretchRect.y = 0; 
-	stretchRect.w = SCREEN_WIDTH; 
-	stretchRect.h = SCREEN_HEIGHT; 
+	stretchRect.w = Width; 
+	stretchRect.h = Height; 
 
 	optimized_background.scale(screenSurface.get_surface(), &stretchRect);
     optimized_background2.scale(screenSurface.get_surface(), &stretchRect);
@@ -68,7 +70,7 @@ try{
     r.present();
  
 
-	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,50,50,SCREEN_WIDTH,SCREEN_HEIGHT);
+	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,50,50,Width,Height);
 	unsigned int recv_type,recv_id,size_x,size_y,x,y,team;
 	unsigned char c;
 	while(1){

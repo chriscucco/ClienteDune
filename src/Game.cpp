@@ -36,27 +36,27 @@ void Game::init_buttons(){
 	SDL_GetCurrentDisplayMode(0, &DM);
 	int Width = DM.w;
 	int Height = DM.h;
-	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*5),0));
-	std::shared_ptr<Button> b2(new Button_CuartelAtreides(CUARTELATREIDES,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*4),0));
-	std::shared_ptr<Button> b3(new Button_CuartelHarkonnen(CUARTELHARKONNEN,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*3),0));
-	std::shared_ptr<Button> b4(new Button_CuartelOrdos(CUARTELORDOS,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*2),0));
-	std::shared_ptr<Button> b5(new Button_FabricaLigera(FABRICALIGERA,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x),0));
-	std::shared_ptr<Button> b6(new Button_FabricaPesada(FABRICAPESADA,this->button_size_x,this->button_size_y,(Width/2),0));
-	std::shared_ptr<Button> b7(new Button_Palacio(PALACIO,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x),0));
-	std::shared_ptr<Button> b8(new Button_Refineria(REFINERIA,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*2),0));
-	std::shared_ptr<Button> b9(new Button_Silo(SILO,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*3),0));
-	std::shared_ptr<Button> b10(new Button_TrampaDeAire(TRAMPADEAIRE,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*4),0));
-	std::shared_ptr<Button> b11(new Button_Cosechadora(COSECHADORA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*6)));
-	std::shared_ptr<Button> b12(new Button_Desviador(DESVIADOR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*5)));
-	std::shared_ptr<Button> b13(new Button_Devastador(DEVASTADOR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*4)));
-	std::shared_ptr<Button> b14(new Button_Raider(RAIDER,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*3)));
-	std::shared_ptr<Button> b15(new Button_SonicTank(SONICTANK,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*2)));
-	std::shared_ptr<Button> b16(new Button_Tanque(TANQUE,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y)));
-	std::shared_ptr<Button> b17(new Button_Trike(TRIKE,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2)));
-	std::shared_ptr<Button> b18(new Button_Fremen(FREMEN,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y)));
-	std::shared_ptr<Button> b19(new Button_InfanteriaLigera(INFANTERIALIGERA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*2)));
-	std::shared_ptr<Button> b20(new Button_InfanteriaPesada(INFANTERIAPESADA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*3)));
-	std::shared_ptr<Button> b21(new Button_Sardaukar(SARDAUKAR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*4)));
+	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*5),0,this->master->get_button_centrodeconstruccion_surface()));
+	std::shared_ptr<Button> b2(new Button_CuartelAtreides(CUARTELATREIDES,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*4),0,this->master->get_button_cuartelatreides_surface()));
+	std::shared_ptr<Button> b3(new Button_CuartelHarkonnen(CUARTELHARKONNEN,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*3),0,this->master->get_button_cuartelharkonnen_surface()));
+	std::shared_ptr<Button> b4(new Button_CuartelOrdos(CUARTELORDOS,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x*2),0,this->master->get_button_cuartelordos_surface()));
+	std::shared_ptr<Button> b5(new Button_FabricaLigera(FABRICALIGERA,this->button_size_x,this->button_size_y,(Width/2)-(this->button_size_x),0,this->master->get_button_fabricaligera_surface()));
+	std::shared_ptr<Button> b6(new Button_FabricaPesada(FABRICAPESADA,this->button_size_x,this->button_size_y,(Width/2),0,this->master->get_button_fabricapesada_surface()));
+	std::shared_ptr<Button> b7(new Button_Palacio(PALACIO,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x),0,this->master->get_button_palacio_surface()));
+	std::shared_ptr<Button> b8(new Button_Refineria(REFINERIA,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*2),0,this->master->get_button_refineria_surface()));
+	std::shared_ptr<Button> b9(new Button_Silo(SILO,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*3),0,this->master->get_button_silo_surface()));
+	std::shared_ptr<Button> b10(new Button_TrampaDeAire(TRAMPADEAIRE,this->button_size_x,this->button_size_y,(Width/2)+(this->button_size_x*4),0,this->master->get_button_trampadeaire_surface()));
+	std::shared_ptr<Button> b11(new Button_Cosechadora(COSECHADORA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*6),this->master->get_button_cosechadora_surface()));
+	std::shared_ptr<Button> b12(new Button_Desviador(DESVIADOR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*5),this->master->get_button_desviador_surface()));
+	std::shared_ptr<Button> b13(new Button_Devastador(DEVASTADOR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*4),this->master->get_button_devastador_surface()));
+	std::shared_ptr<Button> b14(new Button_Raider(RAIDER,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*3),this->master->get_button_raider_surface()));
+	std::shared_ptr<Button> b15(new Button_SonicTank(SONICTANK,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y*2),this->master->get_button_sonictank_surface()));
+	std::shared_ptr<Button> b16(new Button_Tanque(TANQUE,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2-this->button_size_y),this->master->get_button_tanque_surface()));
+	std::shared_ptr<Button> b17(new Button_Trike(TRIKE,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2),this->master->get_button_trike_surface()));
+	std::shared_ptr<Button> b18(new Button_Fremen(FREMEN,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y),this->master->get_button_fremen_surface()));
+	std::shared_ptr<Button> b19(new Button_InfanteriaLigera(INFANTERIALIGERA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*2),this->master->get_button_infanterialigera_surface()));
+	std::shared_ptr<Button> b20(new Button_InfanteriaPesada(INFANTERIAPESADA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*3),this->master->get_button_infanteriapesada_surface()));
+	std::shared_ptr<Button> b21(new Button_Sardaukar(SARDAUKAR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*4),this->master->get_button_sardaukar_surface()));
 	this->buttons.push_back(b1);
 	this->buttons.push_back(b2);
 	this->buttons.push_back(b3);
@@ -186,7 +186,7 @@ void Game::add_notice(int i){
 
 
 void Game::add_centrodeconstruccion(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new CentroDeConstruccion(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new CentroDeConstruccion(id,size_x,size_y,x,y,team,this->master->get_centrodeconstruccion_surface()));
 	this->statics.push_back(d);
 }
 
@@ -309,7 +309,7 @@ void Game::add_duna(int id,int size_x, int size_y, int x, int y){
 }
 
 void Game::add_cima(int id,int size_x, int size_y, int x, int y){
-	std::shared_ptr<Terrain> m(new Cima(id,size_x,size_y,x,y));
+	std::shared_ptr<Terrain> m(new Cima(id,size_x,size_y,x,y,this->master->get_cima_surface()));
 	this->terrains.push_back(m);
 }
 
@@ -628,6 +628,7 @@ void Game::refreshscreen(){
 	copystatics();
 	copymoveables();
 	copyanimated();
+	copybuttons();
 	copytext();
 	SDL_RenderPresent(this->renderer);
 }

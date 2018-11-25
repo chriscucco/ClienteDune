@@ -5,6 +5,6 @@
 
 class CentroDeConstruccion : public Static{
 public:
-	CentroDeConstruccion(int id,int size_x, int size_y, int x, int y, int team);
+	CentroDeConstruccion(int id,int size_x, int size_y, int x, int y, int team, std::shared_ptr<Surface> s);
 	~CentroDeConstruccion();
 };

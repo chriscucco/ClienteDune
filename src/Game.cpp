@@ -250,13 +250,13 @@ void Game::add_cuartelatreides(int id,int size_x, int size_y, int x, int y, int 
 
 	
 void Game::add_cuartelharkonnen(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new CuartelHarkonnen(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new CuartelHarkonnen(id,size_x,size_y,x,y,team, this->master->get_cuartelharkonnen_surface()));
 	this->statics.push_back(d);
 }
 
 	
 void Game::add_cuartelordos(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new CuartelOrdos(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new CuartelOrdos(id,size_x,size_y,x,y,team, this->master->get_cuartelordos_surface()));
 	this->statics.push_back(d);
 }
 
@@ -267,12 +267,12 @@ void Game::add_palacio(int id,int size_x, int size_y, int x, int y, int team){
 }
 
 void Game::add_desviador(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new Desviador(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new Desviador(id,size_x,size_y,x,y,team,this->master->get_desviador_surface()));
 	this->moveables.push_back(m);
 }
 
 void Game::add_devastador(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new Devastador(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new Devastador(id,size_x,size_y,x,y,team,this->master->get_devastador_surface()));
 	this->moveables.push_back(m);
 }
 
@@ -288,7 +288,7 @@ void Game::add_sonictank(int id,int size_x, int size_y, int x, int y, int team){
 
 
 void Game::add_cosechadora(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new Cosechadora(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new Cosechadora(id,size_x,size_y,x,y,team,this->master->get_cosechadora_surface()));
 	this->moveables.push_back(m);
 }
 
@@ -304,7 +304,7 @@ void Game::add_trike(int id,int size_x, int size_y, int x, int y, int team){
 }
 
 void Game::add_duna(int id,int size_x, int size_y, int x, int y){
-	std::shared_ptr<Terrain> m(new Duna(id,size_x,size_y,x,y));
+	std::shared_ptr<Terrain> m(new Duna(id,size_x,size_y,x,y,this->master->get_duna_surface()));
 	this->terrains.push_back(m);
 }
 
@@ -314,25 +314,25 @@ void Game::add_cima(int id,int size_x, int size_y, int x, int y){
 }
 
 void Game::add_especiafuerte(int id,int size_x, int size_y, int x, int y){
-	std::shared_ptr<Terrain> m(new EspeciaFuerte(id,size_x,size_y,x,y));
+	std::shared_ptr<Terrain> m(new EspeciaFuerte(id,size_x,size_y,x,y,this->master->get_especiafuerte_surface()));
 	this->terrains.push_back(m);
 }
 
 
 void Game::add_especiasuave(int id,int size_x, int size_y, int x, int y){
-	std::shared_ptr<Terrain> m(new EspeciaSuave(id,size_x,size_y,x,y));
+	std::shared_ptr<Terrain> m(new EspeciaSuave(id,size_x,size_y,x,y,this->master->get_especiasuave_surface()));
 	this->terrains.push_back(m);
 }
 
 
 void Game::add_precipicio(int id,int size_x, int size_y, int x, int y){
-	std::shared_ptr<Terrain> m(new Precipicio(id,size_x,size_y,x,y));
+	std::shared_ptr<Terrain> m(new Precipicio(id,size_x,size_y,x,y,this->master->get_precipicio_surface()));
 	this->terrains.push_back(m);
 }
 
 
 void Game::add_roca(int id,int size_x, int size_y, int x, int y){
-	std::shared_ptr<Terrain> m(new Roca(id,size_x,size_y,x,y));
+	std::shared_ptr<Terrain> m(new Roca(id,size_x,size_y,x,y,this->master->get_roca_surface()));
 	this->terrains.push_back(m);
 }
 
@@ -465,18 +465,18 @@ void Game::add_gusano(int size_x, int size_y,int x,int y){
 
 
 void Game::add_big_explosion(int size_x, int size_y,int x,int y){
-	std::shared_ptr<Animation> a(new ExplosionFuerte(size_x,size_x,x,y));
+	std::shared_ptr<Animation> a(new ExplosionFuerte(size_x,size_x,x,y,this->master->get_explosionfuerte_surface()));
 	this->animated.push_back(a);
 }
 
 
 void Game::add_tank_explosion(int size_x, int size_y,int x,int y){
-	std::shared_ptr<Animation> a(new ExplosionTanque(size_x,size_x,x,y));
+	std::shared_ptr<Animation> a(new ExplosionTanque(size_x,size_x,x,y,this->master->get_explosiontanque_surface()));
 	this->animated.push_back(a);
 }
 
 void Game::add_moveable_explosion(int size_x, int size_y,int x,int y){
-	std::shared_ptr<Animation> a(new ExplosionPersonaje(size_x,size_x,x,y));
+	std::shared_ptr<Animation> a(new ExplosionPersonaje(size_x,size_x,x,y,this->master->get_explosionpersonaje_surface()));
 	this->animated.push_back(a);
 }
 

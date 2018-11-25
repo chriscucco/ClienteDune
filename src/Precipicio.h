@@ -10,7 +10,7 @@
 
 class Precipicio : public Terrain{
 public:
-	Precipicio(int id,int size_x, int size_y, int x, int y);
+	Precipicio(int id,int size_x, int size_y, int x, int y,std::shared_ptr<Surface> s);
 	~Precipicio();
 	
 };

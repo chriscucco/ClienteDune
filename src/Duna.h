@@ -10,6 +10,6 @@
 
 class Duna : public Terrain{
 public:
-	Duna(int id,int size_x, int size_y, int x, int y);
+	Duna(int id,int size_x, int size_y, int x, int y, std::shared_ptr<Surface> s);
 	~Duna();	
 };

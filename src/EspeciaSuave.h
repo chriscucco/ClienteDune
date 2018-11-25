@@ -10,6 +10,6 @@
 
 class EspeciaSuave : public Terrain{
 public:
-	EspeciaSuave(int id,int size_x, int size_y, int x, int y);
+	EspeciaSuave(int id,int size_x, int size_y, int x, int y,std::shared_ptr<Surface> s);
 	~EspeciaSuave();
 };

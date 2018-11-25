@@ -1,25 +1,12 @@
 #include "ExplosionPersonaje.h"
 
 
-ExplosionPersonaje::ExplosionPersonaje(int size_x, int size_y, int x, int y){
+ExplosionPersonaje::ExplosionPersonaje(int size_x, int size_y, int x, int y,std::vector<std::shared_ptr<Surface>> v){
 	this->botton_pos.w=size_x;
 	this->botton_pos.h=size_y;
 	this->botton_pos.x=x;
 	this->botton_pos.y=y;
-	std::shared_ptr<Surface> s1(new Surface("imgs/Explosion/ExplotaPersonaje/1.png"));
-	std::shared_ptr<Surface> s2(new Surface("imgs/Explosion/ExplotaPersonaje/2.png"));
-	std::shared_ptr<Surface> s3(new Surface("imgs/Explosion/ExplotaPersonaje/3.png"));
-	std::shared_ptr<Surface> s4(new Surface("imgs/Explosion/ExplotaPersonaje/4.png"));
-	std::shared_ptr<Surface> s5(new Surface("imgs/Explosion/ExplotaPersonaje/5.png"));
-	std::shared_ptr<Surface> s6(new Surface("imgs/Explosion/ExplotaPersonaje/6.png"));
-	std::shared_ptr<Surface> s7(new Surface("imgs/Explosion/ExplotaPersonaje/7.png"));
-	this->botton_surface.push_back(s1);
-	this->botton_surface.push_back(s2);
-	this->botton_surface.push_back(s3);
-	this->botton_surface.push_back(s4);
-	this->botton_surface.push_back(s5);
-	this->botton_surface.push_back(s6);
-	this->botton_surface.push_back(s7);
+	this->botton_surface=v;
 	this->current_path=0;
 	this->iterative=0;
 	this->let_pass=2;

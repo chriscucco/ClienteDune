@@ -10,7 +10,7 @@
 
 class Roca : public Terrain{
 public:
-	Roca(int id,int size_x, int size_y, int x, int y);
+	Roca(int id,int size_x, int size_y, int x, int y,std::shared_ptr<Surface> s);
 	~Roca();
 };
 

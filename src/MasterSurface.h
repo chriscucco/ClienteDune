@@ -11,7 +11,13 @@
 
 class MasterSurface{
 private:
+	std::vector<std::shared_ptr<Surface>> explosionfuerte;
+	std::vector<std::shared_ptr<Surface>> explosionpersonaje;
+	std::vector<std::shared_ptr<Surface>> explosiontanque;
 	std::vector<std::shared_ptr<Surface>> trike;
+	std::vector<std::shared_ptr<Surface>> cosechadora;
+	std::vector<std::shared_ptr<Surface>> desviador;
+	std::vector<std::shared_ptr<Surface>> devastador;
 	std::shared_ptr<Surface> button_centrodeconstruccion;
 	std::shared_ptr<Surface> button_cosechadora;
 	std::shared_ptr<Surface> button_cuartelatreides;
@@ -36,10 +42,24 @@ private:
 	std::shared_ptr<Surface> centrodeconstruccion;
 	std::shared_ptr<Surface> cima;
 	std::shared_ptr<Surface> cuartelatreides;
+	std::shared_ptr<Surface> cuartelharkonnen;
+	std::shared_ptr<Surface> cuartelordos;
+	std::shared_ptr<Surface> duna;
+	std::shared_ptr<Surface> especiafuerte;
+	std::shared_ptr<Surface> especiasuave;
+	std::shared_ptr<Surface> precipicio;
+	std::shared_ptr<Surface> roca;
+
 public:
 	MasterSurface();
 	void init_trike();
 	std::vector<std::shared_ptr<Surface>> get_trike_surface();
+	void init_cosechadora();
+	std::vector<std::shared_ptr<Surface>> get_cosechadora_surface();
+	void init_desviador();
+	std::vector<std::shared_ptr<Surface>> get_desviador_surface();
+	void init_devastador();
+	std::vector<std::shared_ptr<Surface>> get_devastador_surface();
 	void init_button_centrodeconstruccion();
 	std::shared_ptr<Surface> get_button_centrodeconstruccion_surface();
 	void init_button_cosechadora();
@@ -86,7 +106,27 @@ public:
 	std::shared_ptr<Surface> get_centrodeconstruccion_surface();
 	void init_cima();
 	std::shared_ptr<Surface> get_cima_surface();
+	void init_duna();
+	std::shared_ptr<Surface> get_duna_surface();
+	void init_especiafuerte();
+	std::shared_ptr<Surface> get_especiafuerte_surface();
+	void init_especiasuave();
+	std::shared_ptr<Surface> get_especiasuave_surface();
+	void init_precipicio();
+	std::shared_ptr<Surface> get_precipicio_surface();
+	void init_roca();
+	std::shared_ptr<Surface> get_roca_surface();
 	void init_cuartelatreides();
 	std::shared_ptr<Surface> get_cuartelatreides_surface();
+	void init_cuartelharkonnen();
+	std::shared_ptr<Surface> get_cuartelharkonnen_surface();
+	void init_cuartelordos();
+	std::shared_ptr<Surface> get_cuartelordos_surface();
+	void init_explosionpersonaje();
+	std::vector<std::shared_ptr<Surface>> get_explosionpersonaje_surface();
+	void init_explosionfuerte();
+	std::vector<std::shared_ptr<Surface>> get_explosionfuerte_surface();
+	void init_explosiontanque();
+	std::vector<std::shared_ptr<Surface>> get_explosiontanque_surface();
 	~MasterSurface();
 };

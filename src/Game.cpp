@@ -118,7 +118,7 @@ void Game::add_notice(int i){
 			t="Centro De Construccion";
 			break;
 		case TRAMPADEAIRE:
-			t="Toma de aire";
+			t="Trampa de aire";
 			break;
 		case REFINERIA:
 			t="Refineria";
@@ -244,7 +244,7 @@ void Game::add_febricapesada(int id,int size_x, int size_y, int x, int y, int te
 
 	
 void Game::add_cuartelatreides(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new CuartelAtreides(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new CuartelAtreides(id,size_x,size_y,x,y,team, this->master->get_cuartelatreides_surface()));
 	this->statics.push_back(d);
 }
 

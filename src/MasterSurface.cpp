@@ -29,6 +29,7 @@ MasterSurface::MasterSurface(){
 	this->init_button_trike();
 	this->init_centrodeconstruccion();
 	this->init_cima();
+	this->init_cuartelatreides();
 }
 
 
@@ -286,6 +287,18 @@ void MasterSurface::init_centrodeconstruccion(){
 std::shared_ptr<Surface> MasterSurface::get_centrodeconstruccion_surface(){
 	return this->centrodeconstruccion;
 }
+
+
+void MasterSurface::init_cuartelatreides(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/CuartelAtreides.png"));
+	this->cuartelatreides=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_cuartelatreides_surface(){
+	return this->cuartelatreides;
+}
+
 
 void MasterSurface::init_cima(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Terreno/Cima.png"));

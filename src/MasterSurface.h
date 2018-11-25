@@ -35,6 +35,7 @@ private:
 	std::shared_ptr<Surface> button_trike;
 	std::shared_ptr<Surface> centrodeconstruccion;
 	std::shared_ptr<Surface> cima;
+	std::shared_ptr<Surface> cuartelatreides;
 public:
 	MasterSurface();
 	void init_trike();
@@ -85,5 +86,7 @@ public:
 	std::shared_ptr<Surface> get_centrodeconstruccion_surface();
 	void init_cima();
 	std::shared_ptr<Surface> get_cima_surface();
+	void init_cuartelatreides();
+	std::shared_ptr<Surface> get_cuartelatreides_surface();
 	~MasterSurface();
 };

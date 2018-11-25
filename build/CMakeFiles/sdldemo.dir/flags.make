@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -Werror -Wall -pedantic -pthread -lSDL2_ttf -lSDL2_image
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include/SDL2 -I/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/TPFINAL/ClienteDune/build 
+CXX_INCLUDES = -I/usr/local/include/SDL2 -I/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build 
 

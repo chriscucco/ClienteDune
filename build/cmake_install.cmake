@@ -1,4 +1,4 @@
-# Install script for directory: /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/TPFINAL/ClienteDune
+# Install script for directory: /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/TPFINAL/ClienteDune/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

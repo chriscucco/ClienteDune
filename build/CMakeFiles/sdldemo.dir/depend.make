@@ -8,6 +8,13 @@ CMakeFiles/sdldemo.dir/src/Animation.cpp.o: ../src/SDLerror.h
 CMakeFiles/sdldemo.dir/src/Animation.cpp.o: ../src/Surface.cpp
 CMakeFiles/sdldemo.dir/src/Animation.cpp.o: ../src/Surface.h
 
+CMakeFiles/sdldemo.dir/src/Button.cpp.o: ../src/Button.cpp
+CMakeFiles/sdldemo.dir/src/Button.cpp.o: ../src/Button.h
+CMakeFiles/sdldemo.dir/src/Button.cpp.o: ../src/SDLerror.cpp
+CMakeFiles/sdldemo.dir/src/Button.cpp.o: ../src/SDLerror.h
+CMakeFiles/sdldemo.dir/src/Button.cpp.o: ../src/Surface.cpp
+CMakeFiles/sdldemo.dir/src/Button.cpp.o: ../src/Surface.h
+
 CMakeFiles/sdldemo.dir/src/Button_CentroDeConstruccion.cpp.o: ../src/Button.cpp
 CMakeFiles/sdldemo.dir/src/Button_CentroDeConstruccion.cpp.o: ../src/Button.h
 CMakeFiles/sdldemo.dir/src/Button_CentroDeConstruccion.cpp.o: ../src/Button_CentroDeConstruccion.cpp
@@ -686,6 +693,13 @@ CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o: ../src/Warrior.h
 CMakeFiles/sdldemo.dir/src/Lock.cpp.o: ../src/Lock.cpp
 CMakeFiles/sdldemo.dir/src/Lock.cpp.o: ../src/Lock.h
 
+CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o: ../src/MasterSurface.cpp
+CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o: ../src/MasterSurface.h
+CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o: ../src/SDLerror.cpp
+CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o: ../src/SDLerror.h
+CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o: ../src/Surface.cpp
+CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o: ../src/Surface.h
+
 CMakeFiles/sdldemo.dir/src/Moveable.cpp.o: ../src/Moveable.cpp
 CMakeFiles/sdldemo.dir/src/Moveable.cpp.o: ../src/Moveable.h
 CMakeFiles/sdldemo.dir/src/Moveable.cpp.o: ../src/SDLerror.cpp
@@ -821,6 +835,20 @@ CMakeFiles/sdldemo.dir/src/Tanque.cpp.o: ../src/Tanque.cpp
 CMakeFiles/sdldemo.dir/src/Tanque.cpp.o: ../src/Tanque.h
 CMakeFiles/sdldemo.dir/src/Tanque.cpp.o: ../src/Vehicle.cpp
 CMakeFiles/sdldemo.dir/src/Tanque.cpp.o: ../src/Vehicle.h
+
+CMakeFiles/sdldemo.dir/src/Terrain.cpp.o: ../src/SDLerror.cpp
+CMakeFiles/sdldemo.dir/src/Terrain.cpp.o: ../src/SDLerror.h
+CMakeFiles/sdldemo.dir/src/Terrain.cpp.o: ../src/Surface.cpp
+CMakeFiles/sdldemo.dir/src/Terrain.cpp.o: ../src/Surface.h
+CMakeFiles/sdldemo.dir/src/Terrain.cpp.o: ../src/Terrain.cpp
+CMakeFiles/sdldemo.dir/src/Terrain.cpp.o: ../src/Terrain.h
+
+CMakeFiles/sdldemo.dir/src/Text.cpp.o: ../src/SDLerror.cpp
+CMakeFiles/sdldemo.dir/src/Text.cpp.o: ../src/SDLerror.h
+CMakeFiles/sdldemo.dir/src/Text.cpp.o: ../src/Surface.cpp
+CMakeFiles/sdldemo.dir/src/Text.cpp.o: ../src/Surface.h
+CMakeFiles/sdldemo.dir/src/Text.cpp.o: ../src/Text.cpp
+CMakeFiles/sdldemo.dir/src/Text.cpp.o: ../src/Text.h
 
 CMakeFiles/sdldemo.dir/src/Texture.cpp.o: ../src/SDLerror.cpp
 CMakeFiles/sdldemo.dir/src/Texture.cpp.o: ../src/SDLerror.h

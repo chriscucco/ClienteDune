@@ -142,8 +142,7 @@ int Socket::recv_msj(unsigned char *text,int max){
 
 
 void Socket::send_string(std::string text,int size){
-	unsigned char **t=reinterpret_cast<unsigned char**>(&text);
-	this->send_msj(*t,size);
+	this->send_msj((unsigned char *)text.c_str(),size);
 }
 
 

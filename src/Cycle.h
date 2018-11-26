@@ -23,7 +23,16 @@ private:
 	
 public:
     Cycle(Game* game, std::mutex *mut);
-
+    void move();
+	void create();
+	void terrain();
+	void gusano();
+	void attack();
+	void end();
+	void destroy_unit();
+	void energy();
+	void money();
+	void notice();
     virtual void run() override;
 };
 

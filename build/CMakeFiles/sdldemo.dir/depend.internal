@@ -8,6 +8,13 @@ CMakeFiles/sdldemo.dir/src/Animation.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.h
+CMakeFiles/sdldemo.dir/src/Button.cpp.o
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.h
 CMakeFiles/sdldemo.dir/src/Button_CentroDeConstruccion.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.h
@@ -686,6 +693,13 @@ CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o
 CMakeFiles/sdldemo.dir/src/Lock.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Lock.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Lock.h
+CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/MasterSurface.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/MasterSurface.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.h
 CMakeFiles/sdldemo.dir/src/Moveable.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Moveable.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Moveable.h
@@ -822,6 +836,20 @@ CMakeFiles/sdldemo.dir/src/Tanque.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Tanque.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Vehicle.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Vehicle.h
+CMakeFiles/sdldemo.dir/src/Terrain.cpp.o
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Terrain.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Terrain.h
+CMakeFiles/sdldemo.dir/src/Text.cpp.o
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Text.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Text.h
 CMakeFiles/sdldemo.dir/src/Texture.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.h

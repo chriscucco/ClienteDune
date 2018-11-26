@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Animation.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Animation.cpp.o"
+  "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_CentroDeConstruccion.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_CentroDeConstruccion.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Cosechadora.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_Cosechadora.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_CuartelAtreides.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_CuartelAtreides.cpp.o"
@@ -49,6 +50,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/InfanteriaLigera.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/InfanteriaLigera.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/InfanteriaPesada.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Lock.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Lock.cpp.o"
+  "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/MasterSurface.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Moveable.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Moveable.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Palacio.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Palacio.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Precipicio.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Precipicio.cpp.o"
@@ -65,6 +67,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Static.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Static.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Surface.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Tanque.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Tanque.cpp.o"
+  "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Terrain.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Terrain.cpp.o"
+  "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Text.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Text.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Texture.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Texture.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Thread.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Thread.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Timer.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Timer.cpp.o"

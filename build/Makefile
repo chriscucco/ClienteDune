@@ -163,6 +163,33 @@ src/Animation.cpp.s:
 	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Animation.cpp.s
 .PHONY : src/Animation.cpp.s
 
+src/Button.o: src/Button.cpp.o
+
+.PHONY : src/Button.o
+
+# target to build an object file
+src/Button.cpp.o:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Button.cpp.o
+.PHONY : src/Button.cpp.o
+
+src/Button.i: src/Button.cpp.i
+
+.PHONY : src/Button.i
+
+# target to preprocess a source file
+src/Button.cpp.i:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Button.cpp.i
+.PHONY : src/Button.cpp.i
+
+src/Button.s: src/Button.cpp.s
+
+.PHONY : src/Button.s
+
+# target to generate assembly for a file
+src/Button.cpp.s:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Button.cpp.s
+.PHONY : src/Button.cpp.s
+
 src/Button_CentroDeConstruccion.o: src/Button_CentroDeConstruccion.cpp.o
 
 .PHONY : src/Button_CentroDeConstruccion.o
@@ -1351,6 +1378,33 @@ src/Lock.cpp.s:
 	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Lock.cpp.s
 .PHONY : src/Lock.cpp.s
 
+src/MasterSurface.o: src/MasterSurface.cpp.o
+
+.PHONY : src/MasterSurface.o
+
+# target to build an object file
+src/MasterSurface.cpp.o:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o
+.PHONY : src/MasterSurface.cpp.o
+
+src/MasterSurface.i: src/MasterSurface.cpp.i
+
+.PHONY : src/MasterSurface.i
+
+# target to preprocess a source file
+src/MasterSurface.cpp.i:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.i
+.PHONY : src/MasterSurface.cpp.i
+
+src/MasterSurface.s: src/MasterSurface.cpp.s
+
+.PHONY : src/MasterSurface.s
+
+# target to generate assembly for a file
+src/MasterSurface.cpp.s:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.s
+.PHONY : src/MasterSurface.cpp.s
+
 src/Moveable.o: src/Moveable.cpp.o
 
 .PHONY : src/Moveable.o
@@ -1783,6 +1837,60 @@ src/Tanque.cpp.s:
 	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Tanque.cpp.s
 .PHONY : src/Tanque.cpp.s
 
+src/Terrain.o: src/Terrain.cpp.o
+
+.PHONY : src/Terrain.o
+
+# target to build an object file
+src/Terrain.cpp.o:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Terrain.cpp.o
+.PHONY : src/Terrain.cpp.o
+
+src/Terrain.i: src/Terrain.cpp.i
+
+.PHONY : src/Terrain.i
+
+# target to preprocess a source file
+src/Terrain.cpp.i:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Terrain.cpp.i
+.PHONY : src/Terrain.cpp.i
+
+src/Terrain.s: src/Terrain.cpp.s
+
+.PHONY : src/Terrain.s
+
+# target to generate assembly for a file
+src/Terrain.cpp.s:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Terrain.cpp.s
+.PHONY : src/Terrain.cpp.s
+
+src/Text.o: src/Text.cpp.o
+
+.PHONY : src/Text.o
+
+# target to build an object file
+src/Text.cpp.o:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Text.cpp.o
+.PHONY : src/Text.cpp.o
+
+src/Text.i: src/Text.cpp.i
+
+.PHONY : src/Text.i
+
+# target to preprocess a source file
+src/Text.cpp.i:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Text.cpp.i
+.PHONY : src/Text.cpp.i
+
+src/Text.s: src/Text.cpp.s
+
+.PHONY : src/Text.s
+
+# target to generate assembly for a file
+src/Text.cpp.s:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Text.cpp.s
+.PHONY : src/Text.cpp.s
+
 src/Texture.o: src/Texture.cpp.o
 
 .PHONY : src/Texture.o
@@ -2042,6 +2150,9 @@ help:
 	@echo "... src/Animation.o"
 	@echo "... src/Animation.i"
 	@echo "... src/Animation.s"
+	@echo "... src/Button.o"
+	@echo "... src/Button.i"
+	@echo "... src/Button.s"
 	@echo "... src/Button_CentroDeConstruccion.o"
 	@echo "... src/Button_CentroDeConstruccion.i"
 	@echo "... src/Button_CentroDeConstruccion.s"
@@ -2174,6 +2285,9 @@ help:
 	@echo "... src/Lock.o"
 	@echo "... src/Lock.i"
 	@echo "... src/Lock.s"
+	@echo "... src/MasterSurface.o"
+	@echo "... src/MasterSurface.i"
+	@echo "... src/MasterSurface.s"
 	@echo "... src/Moveable.o"
 	@echo "... src/Moveable.i"
 	@echo "... src/Moveable.s"
@@ -2222,6 +2336,12 @@ help:
 	@echo "... src/Tanque.o"
 	@echo "... src/Tanque.i"
 	@echo "... src/Tanque.s"
+	@echo "... src/Terrain.o"
+	@echo "... src/Terrain.i"
+	@echo "... src/Terrain.s"
+	@echo "... src/Text.o"
+	@echo "... src/Text.i"
+	@echo "... src/Text.s"
 	@echo "... src/Texture.o"
 	@echo "... src/Texture.i"
 	@echo "... src/Texture.s"

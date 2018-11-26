@@ -67,6 +67,10 @@
 
 class Game{
 private:
+	int corner_x;
+	int corner_y;
+	int map_size_x;
+	int map_size_y;
 	std::shared_ptr<MasterSurface> master{new MasterSurface()};
 	int my_id;
 	SDL_Texture *background;
@@ -91,7 +95,11 @@ private:
 public:
 	void init_buttons();
 	int give_id();
-	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int button_x, int button_y, int x, int y);
+	void go_right();
+	void go_left();
+	void go_down();
+	void go_up();
+	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y, int map_size_x, int map_size_y);
 	void add_centrodeconstruccion(int id,int size_x, int size_y, int x, int y, int team);
 	void add_tomadeaire(int id,int size_x, int size_y, int x, int y, int team);
 	void add_refineria(int id,int size_x, int size_y, int x, int y, int team);

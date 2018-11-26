@@ -30,6 +30,10 @@
 #define EXPLOSIONFUERTE 51
 #define EXPLOSIONTANQUE 52
 #define EXPLOSIONPERSONAJE 53
+#define BUTTON_SIZE 50
+
+#define STEP 10
+
 
 
 void Game::init_buttons(){
@@ -87,7 +91,7 @@ int Game::give_id(){
 }
 
 
-Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int button_x, int button_y, int x, int y){
+Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y, int map_x, int map_y){
 	SDL_DisplayMode DM;
 	SDL_GetCurrentDisplayMode(0, &DM);
 	int Width = DM.w;
@@ -97,8 +101,12 @@ Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* 
 	this->win_background=w;
 	this->loose_background=l;
 	this->s=skt;
-	this->button_size_x=button_x;
-	this->button_size_y=button_y;
+	this->button_size_x=BUTTON_SIZE;
+	this->button_size_y=BUTTON_SIZE;
+	this->corner_x=init_x;
+	this->corner_y=init_y;
+	this->map_size_x=map_x;
+	this->map_size_y=map_y;
 	this->size_x=x;
 	this->size_y=y;
 	this->init_buttons();
@@ -375,6 +383,40 @@ void Game::modify_texture(SDL_Texture* t){
 }
 
 
+void Game::go_right(){
+	if(this->corner_x>(this->map_size_x-this->size_x-STEP)){
+		this->corner_x=(this->map_size_x-this->size_x);
+	} else {
+		this->corner_x+=STEP;
+	}
+}
+
+void Game::go_left(){
+	if(this->corner_x<STEP){
+		this->corner_x=0;
+	} else {
+		this->corner_x=this->corner_x-STEP;
+	}
+}
+
+
+void Game::go_down(){
+	if(this->corner_y>(this->map_size_y-this->size_y-STEP)){
+		this->corner_y=(this->map_size_y-this->size_y);
+	} else {
+		this->corner_y+=STEP;
+	}
+}
+
+void Game::go_up(){
+	if(this->corner_y<STEP){
+		this->corner_y=0;
+	} else {
+		this->corner_y=this->corner_y-STEP;
+	}
+}
+
+
 void Game::finish_game(bool win){
 	unsigned int i=0;
 	while(i<this->moveables.size()){
@@ -557,8 +599,10 @@ void Game::add_moveable(int type,int id,int size_x, int size_y, int x, int y,int
 void Game::copystatics(){
 	unsigned int i=0;
 	while(i<this->statics.size()){
-		Texture t(this->renderer, this->statics.at(i)->getsurf());
-		SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->statics.at(i)->getpos());
+		if(this->statics.at(i)->is_inside_screen(this->corner_x,this->corner_y,this->size_x,this->size_y)){
+			Texture t(this->renderer, this->statics.at(i)->getsurf());
+			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->statics.at(i)->get_converted_pos(this->corner_x,this->corner_y));
+		}
 		i++;
 	}
 }
@@ -568,8 +612,10 @@ void Game::copyanimated(){
 	unsigned int i=0;
 	while(i<this->animated.size()){
 		if(!(this->animated.at(i)->finished())){
-			Texture t(this->renderer,this->animated.at(i)->getsurf());
-			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->animated.at(i)->getpos());
+			if(this->animated.at(i)->is_inside_screen(this->corner_x,this->corner_y,this->size_x,this->size_y)){
+				Texture t(this->renderer,this->animated.at(i)->getsurf());
+				SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->animated.at(i)->get_converted_pos(this->corner_x,this->corner_y));
+			}
 			i++;
 		} else {
 			this->animated.erase(this->animated.begin()+i);
@@ -581,8 +627,10 @@ void Game::copyanimated(){
 void Game::copymoveables(){
 	unsigned int i=0;
 	while(i<this->moveables.size()){
-		Texture t(this->renderer, this->moveables.at(i)->getsurf());
-		SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->moveables.at(i)->getpos());
+		if(this->moveables.at(i)->is_inside_screen(this->corner_x,this->corner_y,this->size_x,this->size_y)){
+			Texture t(this->renderer, this->moveables.at(i)->getsurf());
+			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->moveables.at(i)->get_converted_pos(this->corner_x,this->corner_y));
+		}
 		i++;
 	}		
 }
@@ -591,8 +639,10 @@ void Game::copymoveables(){
 void Game::copyterrain(){
 	unsigned int i=0;
 	while(i<this->terrains.size()){
-		Texture t(this->renderer, this->terrains.at(i)->getsurf());
-		SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->terrains.at(i)->getpos());
+		if(this->terrains.at(i)->is_inside_screen(this->corner_x,this->corner_y,this->size_x,this->size_y)){
+			Texture t(this->renderer, this->terrains.at(i)->getsurf());
+			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->terrains.at(i)->get_converted_pos(this->corner_x,this->corner_y));
+		}
 		i++;
 	}	
 }
@@ -639,7 +689,6 @@ void Game::modify_energy(int i){
 void Game::refreshscreen(){
 	SDL_RenderClear(this->renderer);
 	SDL_RenderCopy(this->renderer, this->background, NULL, NULL);
-	copybuttons();
 	copyterrain();
 	copystatics();
 	copymoveables();

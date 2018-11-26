@@ -20,6 +20,10 @@ int main(int argc, char **argv){
 try{
 	Socket skt(argv[1],argv[2]);
 	int id=skt.recv_int();
+	int init_x=skt.recv_int();
+	int init_y=skt.recv_int();
+	int map_size_x=skt.recv_int();
+	int map_size_y=skt.recv_int();
 	if ( SDL_Init(SDL_INIT_VIDEO) < 0){
 		std::cerr << "ERROR AL INICIAR EL SDL" << std::endl;
 		throw SDLerror();
@@ -70,7 +74,7 @@ try{
     r.present();
  
 
-	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,50,50,Width,Height);
+	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,init_x,init_y,Width,Height,map_size_x,map_size_y);
 	unsigned int recv_type,recv_id,size_x,size_y,x,y,team;
 	unsigned char c;
 	while(1){
@@ -157,6 +161,21 @@ try{
 						pos.x=((x_before+x)/2);
 						s.clicked_zone(pos);
 					}
+				case SDL_KEYDOWN:
+                	switch(event.key.keysym.sym){
+                		case SDLK_UP:
+                	    	s.go_up();
+                    		break;
+                    	case SDLK_DOWN:
+                	    	s.go_down();
+                    		break;
+                		case SDLK_LEFT:
+                    		s.go_left();
+                    		break;
+                		case SDLK_RIGHT:
+                			s.go_right();
+                    		break;
+                	}
 				}
 			} 
 			Lock l(m);

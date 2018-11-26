@@ -12,6 +12,7 @@
 class Animation{
 protected:
 	SDL_Rect botton_pos;
+	SDL_Rect converted_pos;
 	std::vector<std::shared_ptr<Surface>> botton_surface;
 	unsigned int current_path;
 	unsigned int iterative;
@@ -19,6 +20,8 @@ protected:
 public:
 	Animation();
 	SDL_Surface* getsurf();
+	SDL_Rect* get_converted_pos(int x,int y);
+	bool is_inside_screen(int x, int y, int size_x, int size_y);
 	SDL_Rect* getpos();
 	bool finished();
 	~Animation();

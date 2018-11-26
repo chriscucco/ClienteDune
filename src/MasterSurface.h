@@ -16,8 +16,20 @@ private:
 	std::vector<std::shared_ptr<Surface>> explosiontanque;
 	std::vector<std::shared_ptr<Surface>> trike;
 	std::vector<std::shared_ptr<Surface>> cosechadora;
+	std::vector<std::shared_ptr<Surface>> raider;
+	std::vector<std::shared_ptr<Surface>> sonictank;
+	std::vector<std::shared_ptr<Surface>> tanque;
 	std::vector<std::shared_ptr<Surface>> desviador;
 	std::vector<std::shared_ptr<Surface>> devastador;
+	std::vector<std::shared_ptr<Surface>> fremen;
+	std::vector<std::shared_ptr<Surface>> fremen_attack;
+	std::vector<std::shared_ptr<Surface>> sardaukar;
+	std::vector<std::shared_ptr<Surface>> sardaukar_attack;
+	std::vector<std::shared_ptr<Surface>> gusano;
+	std::vector<std::shared_ptr<Surface>> infanterialigera;
+	std::vector<std::shared_ptr<Surface>> infanteriapesada;
+	std::vector<std::shared_ptr<Surface>> infanterialigera_attack;
+	std::vector<std::shared_ptr<Surface>> infanteriapesada_attack;
 	std::shared_ptr<Surface> button_centrodeconstruccion;
 	std::shared_ptr<Surface> button_cosechadora;
 	std::shared_ptr<Surface> button_cuartelatreides;
@@ -44,12 +56,17 @@ private:
 	std::shared_ptr<Surface> cuartelatreides;
 	std::shared_ptr<Surface> cuartelharkonnen;
 	std::shared_ptr<Surface> cuartelordos;
+	std::shared_ptr<Surface> fabricaligera;
+	std::shared_ptr<Surface> fabricapesada;
+	std::shared_ptr<Surface> palacio;
+	std::shared_ptr<Surface> refineria;
+	std::shared_ptr<Surface> silo;
+	std::shared_ptr<Surface> trampadeaire;
 	std::shared_ptr<Surface> duna;
 	std::shared_ptr<Surface> especiafuerte;
 	std::shared_ptr<Surface> especiasuave;
 	std::shared_ptr<Surface> precipicio;
 	std::shared_ptr<Surface> roca;
-
 public:
 	MasterSurface();
 	void init_trike();
@@ -60,6 +77,26 @@ public:
 	std::vector<std::shared_ptr<Surface>> get_desviador_surface();
 	void init_devastador();
 	std::vector<std::shared_ptr<Surface>> get_devastador_surface();
+	void init_raider();
+	std::vector<std::shared_ptr<Surface>> get_raider_surface();
+	void init_sonictank();
+	std::vector<std::shared_ptr<Surface>> get_sonictank_surface();
+	void init_tanque();
+	std::vector<std::shared_ptr<Surface>> get_tanque_surface();
+	void init_fremen();
+	std::vector<std::shared_ptr<Surface>> get_fremen_surface();
+	std::vector<std::shared_ptr<Surface>> get_fremenattack_surface();
+	void init_infanterialigera();
+	void init_infanteriapesada();
+	std::vector<std::shared_ptr<Surface>> get_infanterialigera_surface();
+	std::vector<std::shared_ptr<Surface>> get_infanterialigeraattack_surface();
+	std::vector<std::shared_ptr<Surface>> get_infanteriapesada_surface();
+	std::vector<std::shared_ptr<Surface>> get_infanteriapesadaattack_surface();
+	void init_sardaukar();
+	std::vector<std::shared_ptr<Surface>> get_sardaukar_surface();
+	std::vector<std::shared_ptr<Surface>> get_sardaukarattack_surface();
+	void init_gusano();
+	std::vector<std::shared_ptr<Surface>> get_gusano_surface();
 	void init_button_centrodeconstruccion();
 	std::shared_ptr<Surface> get_button_centrodeconstruccion_surface();
 	void init_button_cosechadora();
@@ -104,6 +141,14 @@ public:
 	std::shared_ptr<Surface> get_button_trike_surface();
 	void init_centrodeconstruccion();
 	std::shared_ptr<Surface> get_centrodeconstruccion_surface();
+	void init_palacio();
+	std::shared_ptr<Surface> get_palacio_surface();
+	void init_refineria();
+	std::shared_ptr<Surface> get_refineria_surface();
+	void init_silo();
+	std::shared_ptr<Surface> get_silo_surface();
+	void init_trampadeaire();
+	std::shared_ptr<Surface> get_trampadeaire_surface();
 	void init_cima();
 	std::shared_ptr<Surface> get_cima_surface();
 	void init_duna();
@@ -122,6 +167,10 @@ public:
 	std::shared_ptr<Surface> get_cuartelharkonnen_surface();
 	void init_cuartelordos();
 	std::shared_ptr<Surface> get_cuartelordos_surface();
+	void init_fabricaligera();
+	std::shared_ptr<Surface> get_fabricaligera_surface();
+	void init_fabricapesada();
+	std::shared_ptr<Surface> get_fabricapesada_surface();
 	void init_explosionpersonaje();
 	std::vector<std::shared_ptr<Surface>> get_explosionpersonaje_surface();
 	void init_explosionfuerte();
@@ -130,3 +179,4 @@ public:
 	std::vector<std::shared_ptr<Surface>> get_explosiontanque_surface();
 	~MasterSurface();
 };
+

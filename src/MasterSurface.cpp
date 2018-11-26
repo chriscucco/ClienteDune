@@ -1,17 +1,21 @@
 #ifndef MASTERSURFACE_CPP_
 #define MASTERSURFACE_CPP_
-
 #include "MasterSurface.h"
 
 
 MasterSurface::MasterSurface(){
-	this->init_explosionpersonaje();
-	this->init_explosionfuerte();
-	this->init_explosiontanque();
 	this->init_trike();
 	this->init_cosechadora();
 	this->init_desviador();
 	this->init_devastador();
+	this->init_raider();
+	this->init_sonictank();
+	this->init_tanque();
+	this->init_fremen();
+	this->init_infanterialigera();
+	this->init_infanteriapesada();
+	this->init_sardaukar();
+	this->init_gusano();
 	this->init_button_centrodeconstruccion();
 	this->init_button_cosechadora();
 	this->init_button_cuartelatreides();
@@ -34,6 +38,10 @@ MasterSurface::MasterSurface(){
 	this->init_button_trampadeaire();
 	this->init_button_trike();
 	this->init_centrodeconstruccion();
+	this->init_palacio();
+	this->init_refineria();
+	this->init_silo();
+	this->init_trampadeaire();
 	this->init_cima();
 	this->init_duna();
 	this->init_especiafuerte();
@@ -43,7 +51,13 @@ MasterSurface::MasterSurface(){
 	this->init_cuartelatreides();
 	this->init_cuartelharkonnen();
 	this->init_cuartelordos();
+	this->init_fabricaligera();
+	this->init_fabricapesada();
+	this->init_explosionpersonaje();
+	this->init_explosionfuerte();
+	this->init_explosiontanque();
 }
+
 
 void MasterSurface::init_explosionpersonaje(){
 	std::shared_ptr<Surface> s1(new Surface("imgs/Explosion/ExplotaPersonaje/1.png"));
@@ -65,6 +79,283 @@ void MasterSurface::init_explosionpersonaje(){
 
 std::vector<std::shared_ptr<Surface>> MasterSurface::get_explosionpersonaje_surface(){
 	return this->explosionpersonaje;
+}
+
+
+void MasterSurface::init_gusano(){
+	std::shared_ptr<Surface> s1(new Surface("imgs/Gusano/1.png"));
+	std::shared_ptr<Surface> s2(new Surface("imgs/Gusano/2.png"));
+	std::shared_ptr<Surface> s3(new Surface("imgs/Gusano/3.png"));
+	std::shared_ptr<Surface> s4(new Surface("imgs/Gusano/4.png"));
+	std::shared_ptr<Surface> s5(new Surface("imgs/Gusano/5.png"));
+	std::shared_ptr<Surface> s6(new Surface("imgs/Gusano/6.png"));
+	std::shared_ptr<Surface> s7(new Surface("imgs/Gusano/7.png"));
+	std::shared_ptr<Surface> s8(new Surface("imgs/Gusano/8.png"));
+	std::shared_ptr<Surface> s9(new Surface("imgs/Gusano/9.png"));
+	std::shared_ptr<Surface> s10(new Surface("imgs/Gusano/10.png"));
+	this->gusano.push_back(s1);
+	this->gusano.push_back(s2);
+	this->gusano.push_back(s3);
+	this->gusano.push_back(s4);
+	this->gusano.push_back(s5);
+	this->gusano.push_back(s6);
+	this->gusano.push_back(s7);
+	this->gusano.push_back(s8);
+	this->gusano.push_back(s9);
+	this->gusano.push_back(s10);
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_gusano_surface(){
+	return this->gusano;
+}
+
+
+void MasterSurface::init_fremen(){	
+	std::shared_ptr<Surface> s1(new Surface("imgs/Fremen/Movible/Arriba/1.png"));
+	std::shared_ptr<Surface> s2(new Surface("imgs/Fremen/Movible/Arriba/2.png"));
+	std::shared_ptr<Surface> s3(new Surface("imgs/Fremen/Movible/Derecha/1.png"));
+	std::shared_ptr<Surface> s4(new Surface("imgs/Fremen/Movible/Derecha/2.png"));
+	std::shared_ptr<Surface> s5(new Surface("imgs/Fremen/Movible/Abajo/1.png"));
+	std::shared_ptr<Surface> s6(new Surface("imgs/Fremen/Movible/Abajo/2.png"));
+	std::shared_ptr<Surface> s7(new Surface("imgs/Fremen/Movible/Izquierda/1.png"));
+	std::shared_ptr<Surface> s8(new Surface("imgs/Fremen/Movible/Izquierda/2.png"));
+	this->fremen.push_back(s1);
+	this->fremen.push_back(s2);
+	this->fremen.push_back(s3);
+	this->fremen.push_back(s4);
+	this->fremen.push_back(s5);
+	this->fremen.push_back(s6);
+	this->fremen.push_back(s7);
+	this->fremen.push_back(s8);
+	std::shared_ptr<Surface> s10(new Surface("imgs/Fremen/Ataque/Arriba/0.png"));
+	std::shared_ptr<Surface> s11(new Surface("imgs/Fremen/Ataque/Arriba/1.png"));
+	std::shared_ptr<Surface> s12(new Surface("imgs/Fremen/Ataque/Arriba/2.png"));
+	std::shared_ptr<Surface> s13(new Surface("imgs/Fremen/Ataque/Arriba/3.png"));
+	std::shared_ptr<Surface> s14(new Surface("imgs/Fremen/Ataque/Derecha/0.png"));
+	std::shared_ptr<Surface> s15(new Surface("imgs/Fremen/Ataque/Derecha/1.png"));
+	std::shared_ptr<Surface> s16(new Surface("imgs/Fremen/Ataque/Derecha/2.png"));
+	std::shared_ptr<Surface> s17(new Surface("imgs/Fremen/Ataque/Derecha/3.png"));
+	std::shared_ptr<Surface> s18(new Surface("imgs/Fremen/Ataque/Abajo/0.png"));
+	std::shared_ptr<Surface> s19(new Surface("imgs/Fremen/Ataque/Abajo/1.png"));
+	std::shared_ptr<Surface> s20(new Surface("imgs/Fremen/Ataque/Abajo/2.png"));
+	std::shared_ptr<Surface> s21(new Surface("imgs/Fremen/Ataque/Abajo/3.png"));
+	std::shared_ptr<Surface> s22(new Surface("imgs/Fremen/Ataque/Izquierda/0.png"));
+	std::shared_ptr<Surface> s23(new Surface("imgs/Fremen/Ataque/Izquierda/1.png"));
+	std::shared_ptr<Surface> s24(new Surface("imgs/Fremen/Ataque/Izquierda/2.png"));
+	std::shared_ptr<Surface> s25(new Surface("imgs/Fremen/Ataque/Izquierda/3.png"));
+	this->fremen_attack.push_back(s10);
+	this->fremen_attack.push_back(s11);
+	this->fremen_attack.push_back(s12);
+	this->fremen_attack.push_back(s13);
+	this->fremen_attack.push_back(s14);
+	this->fremen_attack.push_back(s15);
+	this->fremen_attack.push_back(s16);
+	this->fremen_attack.push_back(s17);
+	this->fremen_attack.push_back(s18);
+	this->fremen_attack.push_back(s19);
+	this->fremen_attack.push_back(s20);
+	this->fremen_attack.push_back(s21);
+	this->fremen_attack.push_back(s22);
+	this->fremen_attack.push_back(s23);
+	this->fremen_attack.push_back(s24);
+	this->fremen_attack.push_back(s25);
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_fremen_surface(){
+	return this->fremen;
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_fremenattack_surface(){
+	return this->fremen_attack;
+}
+
+
+void MasterSurface::init_infanterialigera(){	
+	std::shared_ptr<Surface> s1(new Surface("imgs/InfanteriaLigera/Movible/Arriba/1.png"));
+	std::shared_ptr<Surface> s2(new Surface("imgs/InfanteriaLigera/Movible/Arriba/2.png"));
+	std::shared_ptr<Surface> s3(new Surface("imgs/InfanteriaLigera/Movible/Derecha/1.png"));
+	std::shared_ptr<Surface> s4(new Surface("imgs/InfanteriaLigera/Movible/Derecha/2.png"));
+	std::shared_ptr<Surface> s5(new Surface("imgs/InfanteriaLigera/Movible/Abajo/1.png"));
+	std::shared_ptr<Surface> s6(new Surface("imgs/InfanteriaLigera/Movible/Abajo/2.png"));
+	std::shared_ptr<Surface> s7(new Surface("imgs/InfanteriaLigera/Movible/Izquierda/1.png"));
+	std::shared_ptr<Surface> s8(new Surface("imgs/InfanteriaLigera/Movible/Izquierda/2.png"));
+	this->infanterialigera.push_back(s1);
+	this->infanterialigera.push_back(s2);
+	this->infanterialigera.push_back(s3);
+	this->infanterialigera.push_back(s4);
+	this->infanterialigera.push_back(s5);
+	this->infanterialigera.push_back(s6);
+	this->infanterialigera.push_back(s7);
+	this->infanterialigera.push_back(s8);
+	std::shared_ptr<Surface> s10(new Surface("imgs/InfanteriaLigera/Ataque/Arriba/0.png"));
+	std::shared_ptr<Surface> s11(new Surface("imgs/InfanteriaLigera/Ataque/Arriba/1.png"));
+	std::shared_ptr<Surface> s12(new Surface("imgs/InfanteriaLigera/Ataque/Arriba/2.png"));
+	std::shared_ptr<Surface> s13(new Surface("imgs/InfanteriaLigera/Ataque/Arriba/3.png"));
+	std::shared_ptr<Surface> s14(new Surface("imgs/InfanteriaLigera/Ataque/Derecha/0.png"));
+	std::shared_ptr<Surface> s15(new Surface("imgs/InfanteriaLigera/Ataque/Derecha/1.png"));
+	std::shared_ptr<Surface> s16(new Surface("imgs/InfanteriaLigera/Ataque/Derecha/2.png"));
+	std::shared_ptr<Surface> s17(new Surface("imgs/InfanteriaLigera/Ataque/Derecha/3.png"));
+	std::shared_ptr<Surface> s18(new Surface("imgs/InfanteriaLigera/Ataque/Abajo/0.png"));
+	std::shared_ptr<Surface> s19(new Surface("imgs/InfanteriaLigera/Ataque/Abajo/1.png"));
+	std::shared_ptr<Surface> s20(new Surface("imgs/InfanteriaLigera/Ataque/Abajo/2.png"));
+	std::shared_ptr<Surface> s21(new Surface("imgs/InfanteriaLigera/Ataque/Abajo/3.png"));
+	std::shared_ptr<Surface> s22(new Surface("imgs/InfanteriaLigera/Ataque/Izquierda/0.png"));
+	std::shared_ptr<Surface> s23(new Surface("imgs/InfanteriaLigera/Ataque/Izquierda/1.png"));
+	std::shared_ptr<Surface> s24(new Surface("imgs/InfanteriaLigera/Ataque/Izquierda/2.png"));
+	std::shared_ptr<Surface> s25(new Surface("imgs/InfanteriaLigera/Ataque/Izquierda/3.png"));
+	this->infanterialigera_attack.push_back(s10);
+	this->infanterialigera_attack.push_back(s11);
+	this->infanterialigera_attack.push_back(s12);
+	this->infanterialigera_attack.push_back(s13);
+	this->infanterialigera_attack.push_back(s14);
+	this->infanterialigera_attack.push_back(s15);
+	this->infanterialigera_attack.push_back(s16);
+	this->infanterialigera_attack.push_back(s17);
+	this->infanterialigera_attack.push_back(s18);
+	this->infanterialigera_attack.push_back(s19);
+	this->infanterialigera_attack.push_back(s20);
+	this->infanterialigera_attack.push_back(s21);
+	this->infanterialigera_attack.push_back(s22);
+	this->infanterialigera_attack.push_back(s23);
+	this->infanterialigera_attack.push_back(s24);
+	this->infanterialigera_attack.push_back(s25);
+}
+
+
+void MasterSurface::init_infanteriapesada(){
+	std::shared_ptr<Surface> s1(new Surface("imgs/InfanteriaPesada/Movible/Arriba/1.png"));
+	std::shared_ptr<Surface> s2(new Surface("imgs/InfanteriaPesada/Movible/Arriba/2.png"));
+	std::shared_ptr<Surface> s3(new Surface("imgs/InfanteriaPesada/Movible/Derecha/1.png"));
+	std::shared_ptr<Surface> s4(new Surface("imgs/InfanteriaPesada/Movible/Derecha/2.png"));
+	std::shared_ptr<Surface> s5(new Surface("imgs/InfanteriaPesada/Movible/Abajo/1.png"));
+	std::shared_ptr<Surface> s6(new Surface("imgs/InfanteriaPesada/Movible/Abajo/2.png"));
+	std::shared_ptr<Surface> s7(new Surface("imgs/InfanteriaPesada/Movible/Izquierda/1.png"));
+	std::shared_ptr<Surface> s8(new Surface("imgs/InfanteriaPesada/Movible/Izquierda/2.png"));
+	this->infanteriapesada.push_back(s1);
+	this->infanteriapesada.push_back(s2);
+	this->infanteriapesada.push_back(s3);
+	this->infanteriapesada.push_back(s4);
+	this->infanteriapesada.push_back(s5);
+	this->infanteriapesada.push_back(s6);
+	this->infanteriapesada.push_back(s7);
+	this->infanteriapesada.push_back(s8);
+	std::shared_ptr<Surface> s10(new Surface("imgs/InfanteriaPesada/Ataque/Arriba/0.png"));
+	std::shared_ptr<Surface> s11(new Surface("imgs/InfanteriaPesada/Ataque/Arriba/1.png"));
+	std::shared_ptr<Surface> s12(new Surface("imgs/InfanteriaPesada/Ataque/Arriba/2.png"));
+	std::shared_ptr<Surface> s13(new Surface("imgs/InfanteriaPesada/Ataque/Arriba/3.png"));
+	std::shared_ptr<Surface> s14(new Surface("imgs/InfanteriaPesada/Ataque/Derecha/0.png"));
+	std::shared_ptr<Surface> s15(new Surface("imgs/InfanteriaPesada/Ataque/Derecha/1.png"));
+	std::shared_ptr<Surface> s16(new Surface("imgs/InfanteriaPesada/Ataque/Derecha/2.png"));
+	std::shared_ptr<Surface> s17(new Surface("imgs/InfanteriaPesada/Ataque/Derecha/3.png"));
+	std::shared_ptr<Surface> s18(new Surface("imgs/InfanteriaPesada/Ataque/Abajo/0.png"));
+	std::shared_ptr<Surface> s19(new Surface("imgs/InfanteriaPesada/Ataque/Abajo/1.png"));
+	std::shared_ptr<Surface> s20(new Surface("imgs/InfanteriaPesada/Ataque/Abajo/2.png"));
+	std::shared_ptr<Surface> s21(new Surface("imgs/InfanteriaPesada/Ataque/Abajo/3.png"));
+	std::shared_ptr<Surface> s22(new Surface("imgs/InfanteriaPesada/Ataque/Izquierda/0.png"));
+	std::shared_ptr<Surface> s23(new Surface("imgs/InfanteriaPesada/Ataque/Izquierda/1.png"));
+	std::shared_ptr<Surface> s24(new Surface("imgs/InfanteriaPesada/Ataque/Izquierda/2.png"));
+	std::shared_ptr<Surface> s25(new Surface("imgs/InfanteriaPesada/Ataque/Izquierda/3.png"));
+	this->infanteriapesada_attack.push_back(s10);
+	this->infanteriapesada_attack.push_back(s11);
+	this->infanteriapesada_attack.push_back(s12);
+	this->infanteriapesada_attack.push_back(s13);
+	this->infanteriapesada_attack.push_back(s14);
+	this->infanteriapesada_attack.push_back(s15);
+	this->infanteriapesada_attack.push_back(s16);
+	this->infanteriapesada_attack.push_back(s17);
+	this->infanteriapesada_attack.push_back(s18);
+	this->infanteriapesada_attack.push_back(s19);
+	this->infanteriapesada_attack.push_back(s20);
+	this->infanteriapesada_attack.push_back(s21);
+	this->infanteriapesada_attack.push_back(s22);
+	this->infanteriapesada_attack.push_back(s23);
+	this->infanteriapesada_attack.push_back(s24);
+	this->infanteriapesada_attack.push_back(s25);
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_infanterialigera_surface(){
+	return this->infanterialigera;
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_infanterialigeraattack_surface(){
+	return this->infanterialigera_attack;
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_infanteriapesada_surface(){
+	return this->infanteriapesada;
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_infanteriapesadaattack_surface(){
+	return this->infanteriapesada_attack;
+}
+
+
+void MasterSurface::init_sardaukar(){
+	std::shared_ptr<Surface> s1(new Surface("imgs/Sardaukar/Movible/Arriba/1.png"));
+	std::shared_ptr<Surface> s2(new Surface("imgs/Sardaukar/Movible/Arriba/2.png"));
+	std::shared_ptr<Surface> s3(new Surface("imgs/Sardaukar/Movible/Derecha/1.png"));
+	std::shared_ptr<Surface> s4(new Surface("imgs/Sardaukar/Movible/Derecha/2.png"));
+	std::shared_ptr<Surface> s5(new Surface("imgs/Sardaukar/Movible/Abajo/1.png"));
+	std::shared_ptr<Surface> s6(new Surface("imgs/Sardaukar/Movible/Abajo/2.png"));
+	std::shared_ptr<Surface> s7(new Surface("imgs/Sardaukar/Movible/Izquierda/1.png"));
+	std::shared_ptr<Surface> s8(new Surface("imgs/Sardaukar/Movible/Izquierda/2.png"));
+	this->sardaukar.push_back(s1);
+	this->sardaukar.push_back(s2);
+	this->sardaukar.push_back(s3);
+	this->sardaukar.push_back(s4);
+	this->sardaukar.push_back(s5);
+	this->sardaukar.push_back(s6);
+	this->sardaukar.push_back(s7);
+	this->sardaukar.push_back(s8);
+	std::shared_ptr<Surface> s10(new Surface("imgs/Sardaukar/Ataque/Arriba/0.png"));
+	std::shared_ptr<Surface> s11(new Surface("imgs/Sardaukar/Ataque/Arriba/1.png"));
+	std::shared_ptr<Surface> s12(new Surface("imgs/Sardaukar/Ataque/Arriba/2.png"));
+	std::shared_ptr<Surface> s13(new Surface("imgs/Sardaukar/Ataque/Arriba/3.png"));
+	std::shared_ptr<Surface> s14(new Surface("imgs/Sardaukar/Ataque/Derecha/0.png"));
+	std::shared_ptr<Surface> s15(new Surface("imgs/Sardaukar/Ataque/Derecha/1.png"));
+	std::shared_ptr<Surface> s16(new Surface("imgs/Sardaukar/Ataque/Derecha/2.png"));
+	std::shared_ptr<Surface> s17(new Surface("imgs/Sardaukar/Ataque/Derecha/3.png"));
+	std::shared_ptr<Surface> s18(new Surface("imgs/Sardaukar/Ataque/Abajo/0.png"));
+	std::shared_ptr<Surface> s19(new Surface("imgs/Sardaukar/Ataque/Abajo/1.png"));
+	std::shared_ptr<Surface> s20(new Surface("imgs/Sardaukar/Ataque/Abajo/2.png"));
+	std::shared_ptr<Surface> s21(new Surface("imgs/Sardaukar/Ataque/Abajo/3.png"));
+	std::shared_ptr<Surface> s22(new Surface("imgs/Sardaukar/Ataque/Izquierda/0.png"));
+	std::shared_ptr<Surface> s23(new Surface("imgs/Sardaukar/Ataque/Izquierda/1.png"));
+	std::shared_ptr<Surface> s24(new Surface("imgs/Sardaukar/Ataque/Izquierda/2.png"));
+	std::shared_ptr<Surface> s25(new Surface("imgs/Sardaukar/Ataque/Izquierda/3.png"));
+	this->sardaukar_attack.push_back(s10);
+	this->sardaukar_attack.push_back(s11);
+	this->sardaukar_attack.push_back(s12);
+	this->sardaukar_attack.push_back(s13);
+	this->sardaukar_attack.push_back(s14);
+	this->sardaukar_attack.push_back(s15);
+	this->sardaukar_attack.push_back(s16);
+	this->sardaukar_attack.push_back(s17);
+	this->sardaukar_attack.push_back(s18);
+	this->sardaukar_attack.push_back(s19);
+	this->sardaukar_attack.push_back(s20);
+	this->sardaukar_attack.push_back(s21);
+	this->sardaukar_attack.push_back(s22);
+	this->sardaukar_attack.push_back(s23);
+	this->sardaukar_attack.push_back(s24);
+	this->sardaukar_attack.push_back(s25);
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_sardaukar_surface(){
+	return this->sardaukar;
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_sardaukarattack_surface(){
+	return this->sardaukar_attack;
 }
 
 
@@ -108,6 +399,7 @@ std::vector<std::shared_ptr<Surface>> MasterSurface::get_explosionfuerte_surface
 	return this->explosionfuerte;
 }
 
+
 void MasterSurface::init_explosiontanque(){
 	std::shared_ptr<Surface> s1(new Surface("imgs/Explosion/ExplosionTanque/1.png"));
 	std::shared_ptr<Surface> s2(new Surface("imgs/Explosion/ExplosionTanque/2.png"));
@@ -143,7 +435,6 @@ void MasterSurface::init_explosiontanque(){
 std::vector<std::shared_ptr<Surface>> MasterSurface::get_explosiontanque_surface(){
 	return this->explosiontanque;
 }
-
 
 
 void MasterSurface::init_trike(){
@@ -195,6 +486,7 @@ std::vector<std::shared_ptr<Surface>> MasterSurface::get_cosechadora_surface(){
 	return this->cosechadora;
 }
 
+
 void MasterSurface::init_desviador(){
 	std::shared_ptr<Surface> s1(new Surface("imgs/Vehiculos/Desviador/1.png"));
 	std::shared_ptr<Surface> s2(new Surface("imgs/Vehiculos/Desviador/2.png"));
@@ -245,19 +537,97 @@ std::vector<std::shared_ptr<Surface>> MasterSurface::get_devastador_surface(){
 }
 
 
+void MasterSurface::init_raider(){
+	std::shared_ptr<Surface> s1(new Surface("imgs/Vehiculos/Raider/1.png"));
+	std::shared_ptr<Surface> s2(new Surface("imgs/Vehiculos/Raider/2.png"));
+	std::shared_ptr<Surface> s3(new Surface("imgs/Vehiculos/Raider/3.png"));
+	std::shared_ptr<Surface> s4(new Surface("imgs/Vehiculos/Raider/4.png"));
+	std::shared_ptr<Surface> s5(new Surface("imgs/Vehiculos/Raider/5.png"));
+	std::shared_ptr<Surface> s6(new Surface("imgs/Vehiculos/Raider/6.png"));
+	std::shared_ptr<Surface> s7(new Surface("imgs/Vehiculos/Raider/7.png"));
+	std::shared_ptr<Surface> s8(new Surface("imgs/Vehiculos/Raider/8.png"));
+	this->raider.push_back(s1);
+	this->raider.push_back(s2);
+	this->raider.push_back(s3);
+	this->raider.push_back(s4);
+	this->raider.push_back(s5);
+	this->raider.push_back(s6);
+	this->raider.push_back(s7);
+	this->raider.push_back(s8);
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_raider_surface(){
+	return this->raider;
+}
+
+
+void MasterSurface::init_sonictank(){
+	std::shared_ptr<Surface> s1(new Surface("imgs/Vehiculos/SonicTank/1.png"));
+	std::shared_ptr<Surface> s2(new Surface("imgs/Vehiculos/SonicTank/2.png"));
+	std::shared_ptr<Surface> s3(new Surface("imgs/Vehiculos/SonicTank/3.png"));
+	std::shared_ptr<Surface> s4(new Surface("imgs/Vehiculos/SonicTank/4.png"));
+	std::shared_ptr<Surface> s5(new Surface("imgs/Vehiculos/SonicTank/5.png"));
+	std::shared_ptr<Surface> s6(new Surface("imgs/Vehiculos/SonicTank/6.png"));
+	std::shared_ptr<Surface> s7(new Surface("imgs/Vehiculos/SonicTank/7.png"));
+	std::shared_ptr<Surface> s8(new Surface("imgs/Vehiculos/SonicTank/8.png"));
+	this->sonictank.push_back(s1);
+	this->sonictank.push_back(s2);
+	this->sonictank.push_back(s3);
+	this->sonictank.push_back(s4);
+	this->sonictank.push_back(s5);
+	this->sonictank.push_back(s6);
+	this->sonictank.push_back(s7);
+	this->sonictank.push_back(s8);
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_sonictank_surface(){
+	return this->sonictank;
+}
+
+
+void MasterSurface::init_tanque(){
+	std::shared_ptr<Surface> s1(new Surface("imgs/Vehiculos/Tanque/1.png"));
+	std::shared_ptr<Surface> s2(new Surface("imgs/Vehiculos/Tanque/2.png"));
+	std::shared_ptr<Surface> s3(new Surface("imgs/Vehiculos/Tanque/3.png"));
+	std::shared_ptr<Surface> s4(new Surface("imgs/Vehiculos/Tanque/4.png"));
+	std::shared_ptr<Surface> s5(new Surface("imgs/Vehiculos/Tanque/5.png"));
+	std::shared_ptr<Surface> s6(new Surface("imgs/Vehiculos/Tanque/6.png"));
+	std::shared_ptr<Surface> s7(new Surface("imgs/Vehiculos/Tanque/7.png"));
+	std::shared_ptr<Surface> s8(new Surface("imgs/Vehiculos/Tanque/8.png"));
+	this->tanque.push_back(s1);
+	this->tanque.push_back(s2);
+	this->tanque.push_back(s3);
+	this->tanque.push_back(s4);
+	this->tanque.push_back(s5);
+	this->tanque.push_back(s6);
+	this->tanque.push_back(s7);
+	this->tanque.push_back(s8);
+}
+
+
+std::vector<std::shared_ptr<Surface>> MasterSurface::get_tanque_surface(){
+	return this->tanque;
+}
+
+
 void MasterSurface::init_button_centrodeconstruccion(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/CentroDeConstruccion.png"));
 	this->button_centrodeconstruccion=s;
 }
 
+
 std::shared_ptr<Surface> MasterSurface::get_button_centrodeconstruccion_surface(){
 	return this->button_centrodeconstruccion;
 }
+
 
 void MasterSurface::init_button_cosechadora(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Cosechadora.png"));
 	this->button_cosechadora=s;
 }
+
 
 std::shared_ptr<Surface> MasterSurface::get_button_cosechadora_surface(){
 	return this->button_cosechadora;
@@ -269,6 +639,7 @@ void MasterSurface::init_button_cuartelatreides(){
 	this->button_cuartelatreides=s;
 }
 
+
 std::shared_ptr<Surface> MasterSurface::get_button_cuartelatreides_surface(){
 	return this->button_cuartelatreides;
 }
@@ -278,6 +649,7 @@ void MasterSurface::init_button_cuartelharkonnen(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/CuartelHarkonnen.png"));
 	this->button_cuartelharkonnen=s;
 }
+
 
 std::shared_ptr<Surface> MasterSurface::get_button_cuartelharkonnen_surface(){
 	return this->button_cuartelharkonnen;
@@ -289,6 +661,7 @@ void MasterSurface::init_button_cuartelordos(){
 	this->button_cuartelordos=s;
 }
 
+
 std::shared_ptr<Surface> MasterSurface::get_button_cuartelordos_surface(){
 	return this->button_cuartelordos;
 }
@@ -298,6 +671,7 @@ void MasterSurface::init_button_desviador(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Desviador.png"));
 	this->button_desviador=s;
 }
+
 
 std::shared_ptr<Surface> MasterSurface::get_button_desviador_surface(){
 	return this->button_desviador;
@@ -324,6 +698,7 @@ void MasterSurface::init_button_fabricaligera(){
 std::shared_ptr<Surface> MasterSurface::get_button_fabricaligera_surface(){
 	return this->button_fabricaligera;
 }
+
 
 void MasterSurface::init_button_fabricapesada(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/FabricaPesada.png"));
@@ -356,6 +731,7 @@ void MasterSurface::init_button_infanterialigera(){
 std::shared_ptr<Surface> MasterSurface::get_button_infanterialigera_surface(){
 	return this->button_infanterialigera;
 }
+
 
 void MasterSurface::init_button_infanteriapesada(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/InfanteriaPesada.png"));
@@ -444,6 +820,7 @@ std::shared_ptr<Surface> MasterSurface::get_button_tanque_surface(){
 	return this->button_tanque;
 }
 
+
 void MasterSurface::init_button_trampadeaire(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/TrampaDeAire.png"));
 	this->button_trampadeaire=s;
@@ -453,6 +830,7 @@ void MasterSurface::init_button_trampadeaire(){
 std::shared_ptr<Surface> MasterSurface::get_button_trampadeaire_surface(){
 	return this->button_trampadeaire;
 }
+
 
 void MasterSurface::init_button_trike(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Trike.png"));
@@ -486,6 +864,7 @@ std::shared_ptr<Surface> MasterSurface::get_cuartelatreides_surface(){
 	return this->cuartelatreides;
 }
 
+
 void MasterSurface::init_cuartelharkonnen(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/CuartelHarkonnen.png"));
 	this->cuartelharkonnen=s;
@@ -497,6 +876,28 @@ std::shared_ptr<Surface> MasterSurface::get_cuartelharkonnen_surface(){
 }
 
 
+void MasterSurface::init_fabricaligera(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/FabricaLigera.png"));
+	this->fabricaligera=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_fabricaligera_surface(){
+	return this->fabricaligera;
+}
+
+
+void MasterSurface::init_fabricapesada(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/FabricaPesada.png"));
+	this->fabricapesada=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_fabricapesada_surface(){
+	return this->fabricapesada;
+}
+
+
 void MasterSurface::init_cuartelordos(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/CuartelOrdos.png"));
 	this->cuartelordos=s;
@@ -505,6 +906,50 @@ void MasterSurface::init_cuartelordos(){
 
 std::shared_ptr<Surface> MasterSurface::get_cuartelordos_surface(){
 	return this->cuartelordos;
+}
+
+
+void MasterSurface::init_palacio(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/Palacio.png"));
+	this->palacio=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_palacio_surface(){
+	return this->palacio;
+}
+
+
+void MasterSurface::init_refineria(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/Refineria.png"));
+	this->refineria=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_refineria_surface(){
+	return this->refineria;
+}
+
+
+void MasterSurface::init_silo(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/Silo.png"));
+	this->silo=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_silo_surface(){
+	return this->silo;
+}
+
+
+void MasterSurface::init_trampadeaire(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Edificios/TrampaDeAire.png"));
+	this->trampadeaire=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_trampadeaire_surface(){
+	return this->trampadeaire;
 }
 
 
@@ -540,6 +985,7 @@ std::shared_ptr<Surface> MasterSurface::get_especiafuerte_surface(){
 	return this->especiafuerte;
 }
 
+
 void MasterSurface::init_especiasuave(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Terreno/EspeciaSuave.png"));
 	this->especiasuave=s;
@@ -573,8 +1019,8 @@ std::shared_ptr<Surface> MasterSurface::get_roca_surface(){
 }
 
 
-
 MasterSurface::~MasterSurface(){}
 
 
 #endif
+

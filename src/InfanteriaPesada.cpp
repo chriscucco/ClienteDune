@@ -1,7 +1,7 @@
 #include "InfanteriaPesada.h"
 
 
-InfanteriaPesada::InfanteriaPesada(int id,int size_x, int size_y, int x, int y, int team){
+InfanteriaPesada::InfanteriaPesada(int id,int size_x, int size_y, int x, int y, int team,std::vector<std::shared_ptr<Surface>> v1,std::vector<std::shared_ptr<Surface>> v2){
 	this->id=id;
 	this->botton_pos.w=size_x;
 	this->botton_pos.h=size_y;

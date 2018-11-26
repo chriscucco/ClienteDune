@@ -31,6 +31,7 @@
 #define EXPLOSIONTANQUE 52
 #define EXPLOSIONPERSONAJE 53
 
+
 void Game::init_buttons(){
 	SDL_DisplayMode DM;
 	SDL_GetCurrentDisplayMode(0, &DM);
@@ -79,6 +80,7 @@ void Game::init_buttons(){
 	this->buttons.push_back(b20);
 	this->buttons.push_back(b21);
 }
+
 
 int Game::give_id(){
 	return this->my_id;
@@ -192,53 +194,54 @@ void Game::add_centrodeconstruccion(int id,int size_x, int size_y, int x, int y,
 
 
 void Game::add_tomadeaire(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new TrampaDeAire(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new TrampaDeAire(id,size_x,size_y,x,y,team,this->master->get_trampadeaire_surface()));
 	this->statics.push_back(d);
 }
 
 
 void Game::add_refineria(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new Refineria(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new Refineria(id,size_x,size_y,x,y,team,this->master->get_refineria_surface()));
 	this->statics.push_back(d);
 }
 
 
 void Game::add_silo(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new Silo(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new Silo(id,size_x,size_y,x,y,team,this->master->get_silo_surface()));
 	this->statics.push_back(d);
 }
 
 	
 void Game::add_fabricaligera(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new FabricaLigera(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new FabricaLigera(id,size_x,size_y,x,y,team,this->master->get_fabricaligera_surface()));
 	this->statics.push_back(d);
 }
 
+
 void Game::add_sardaukar(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new Sardaukar(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new Sardaukar(id,size_x,size_y,x,y,team,this->master->get_sardaukar_surface(),this->master->get_sardaukarattack_surface()));
 	this->moveables.push_back(m);
 }
 
 void Game::add_infanterialigera(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new InfanteriaLigera(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new InfanteriaLigera(id,size_x,size_y,x,y,team,this->master->get_infanterialigera_surface(),this->master->get_infanterialigeraattack_surface()));
 	this->moveables.push_back(m);
 }
 
 
 void Game::add_infanteriapesada(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new InfanteriaPesada(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new InfanteriaPesada(id,size_x,size_y,x,y,team,this->master->get_infanteriapesada_surface(),this->master->get_infanteriapesadaattack_surface()));
 	this->moveables.push_back(m);
 }
+
 
 void Game::add_fremen(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new Fremen(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new Fremen(id,size_x,size_y,x,y,team,this->master->get_fremen_surface(),this->master->get_fremenattack_surface()));
 	this->moveables.push_back(m);
 }
-
 
 	
 void Game::add_febricapesada(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new FabricaPesada(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new FabricaPesada(id,size_x,size_y,x,y,team, this->master->get_fabricapesada_surface()));
 	this->statics.push_back(d);
 }
 
@@ -262,27 +265,31 @@ void Game::add_cuartelordos(int id,int size_x, int size_y, int x, int y, int tea
 
 	
 void Game::add_palacio(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Static> d(new Palacio(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Static> d(new Palacio(id,size_x,size_y,x,y,team,this->master->get_palacio_surface()));
 	this->statics.push_back(d);
 }
+
 
 void Game::add_desviador(int id,int size_x, int size_y, int x, int y, int team){
 	std::shared_ptr<Moveable> m(new Desviador(id,size_x,size_y,x,y,team,this->master->get_desviador_surface()));
 	this->moveables.push_back(m);
 }
 
+
 void Game::add_devastador(int id,int size_x, int size_y, int x, int y, int team){
 	std::shared_ptr<Moveable> m(new Devastador(id,size_x,size_y,x,y,team,this->master->get_devastador_surface()));
 	this->moveables.push_back(m);
 }
 
+
 void Game::add_raider(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new Raider(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new Raider(id,size_x,size_y,x,y,team,this->master->get_raider_surface()));
 	this->moveables.push_back(m);
 }
 
+
 void Game::add_sonictank(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new SonicTank(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new SonicTank(id,size_x,size_y,x,y,team,this->master->get_sonictank_surface()));
 	this->moveables.push_back(m);
 }
 
@@ -294,24 +301,28 @@ void Game::add_cosechadora(int id,int size_x, int size_y, int x, int y, int team
 
 
 void Game::add_tanque(int id,int size_x, int size_y, int x, int y, int team){
-	std::shared_ptr<Moveable> m(new Tanque(id,size_x,size_y,x,y,team));
+	std::shared_ptr<Moveable> m(new Tanque(id,size_x,size_y,x,y,team,this->master->get_tanque_surface()));
 	this->moveables.push_back(m);
 }
+
 
 void Game::add_trike(int id,int size_x, int size_y, int x, int y, int team){
 	std::shared_ptr<Moveable> m(new Trike(id,size_x,size_y,x,y,team,this->master->get_trike_surface()));
 	this->moveables.push_back(m);
 }
 
+
 void Game::add_duna(int id,int size_x, int size_y, int x, int y){
 	std::shared_ptr<Terrain> m(new Duna(id,size_x,size_y,x,y,this->master->get_duna_surface()));
 	this->terrains.push_back(m);
 }
 
+
 void Game::add_cima(int id,int size_x, int size_y, int x, int y){
 	std::shared_ptr<Terrain> m(new Cima(id,size_x,size_y,x,y,this->master->get_cima_surface()));
 	this->terrains.push_back(m);
 }
+
 
 void Game::add_especiafuerte(int id,int size_x, int size_y, int x, int y){
 	std::shared_ptr<Terrain> m(new EspeciaFuerte(id,size_x,size_y,x,y,this->master->get_especiafuerte_surface()));
@@ -358,6 +369,7 @@ int Game::get_my_id(){
 	return this->my_id;
 }
 
+
 void Game::modify_texture(SDL_Texture* t){
 	this->background=t;
 }
@@ -390,6 +402,7 @@ void Game::finish_game(bool win){
 		modify_texture(this->loose_background);
 	}
 }
+
 
 void Game::add(int type,int id,int size_x, int size_y, int x, int y, int team){
 	if((type>=0)&&(type<=9)){
@@ -435,6 +448,7 @@ void Game::add_static(int type,int id,int size_x, int size_y, int x, int y, int 
 	}	
 }
 
+
 void Game::add_terrain(int type,int id, int size_x, int size_y, int x, int y){
 	switch(type){
 		case ROCA:
@@ -458,8 +472,9 @@ void Game::add_terrain(int type,int id, int size_x, int size_y, int x, int y){
 	}
 }
 
+
 void Game::add_gusano(int size_x, int size_y,int x,int y){
-	std::shared_ptr<Animation> a(new Gusano(size_x,size_x,x,y));
+	std::shared_ptr<Animation> a(new Gusano(size_x,size_x,x,y,this->master->get_gusano_surface()));
 	this->animated.push_back(a);
 }
 
@@ -474,6 +489,7 @@ void Game::add_tank_explosion(int size_x, int size_y,int x,int y){
 	std::shared_ptr<Animation> a(new ExplosionTanque(size_x,size_x,x,y,this->master->get_explosiontanque_surface()));
 	this->animated.push_back(a);
 }
+
 
 void Game::add_moveable_explosion(int size_x, int size_y,int x,int y){
 	std::shared_ptr<Animation> a(new ExplosionPersonaje(size_x,size_x,x,y,this->master->get_explosionpersonaje_surface()));
@@ -561,6 +577,7 @@ void Game::copyanimated(){
 	}
 }
 
+
 void Game::copymoveables(){
 	unsigned int i=0;
 	while(i<this->moveables.size()){
@@ -599,7 +616,6 @@ void Game::copytext(){
 }
 
 
-
 void Game::copybuttons(){
 	unsigned int i=0;
 	while(i<this->buttons.size()){
@@ -610,10 +626,10 @@ void Game::copybuttons(){
 }
 
 
-
 void Game::modify_money(int i){
 	this->money->modify_value(i);
 }
+
 
 void Game::modify_energy(int i){
 	this->energy->modify_value(i);
@@ -633,6 +649,7 @@ void Game::refreshscreen(){
 	SDL_RenderPresent(this->renderer);
 }
 
+
 std::shared_ptr<Moveable> Game::search_moveable_by_id(int id){
 	unsigned int i=0;
 	bool found=false;
@@ -644,6 +661,7 @@ std::shared_ptr<Moveable> Game::search_moveable_by_id(int id){
 	}
 	return (this->moveables.at(i-1));	
 }
+
 
 std::shared_ptr<Static> Game::search_static_by_id(int id){
 	unsigned int i=0;
@@ -686,6 +704,7 @@ std::shared_ptr<Moveable> Game::search_enemy_moveable_by_pos(int x, int y){
 	return m;
 }
 
+
 std::shared_ptr<Moveable> Game::search_my_moveable_by_pos(int x, int y){
 	std::shared_ptr<Moveable> m=NULL;
 	for (unsigned int i=0; i<this->moveables.size(); ++i){
@@ -696,6 +715,7 @@ std::shared_ptr<Moveable> Game::search_my_moveable_by_pos(int x, int y){
 	}
 	return m;
 }
+
 
 std::shared_ptr<Static> Game::search_enemy_static_by_pos(int x, int y){
 	std::shared_ptr<Static> s=NULL;
@@ -719,6 +739,7 @@ std::shared_ptr<Static> Game::search_my_static_by_pos(int x, int y){
 	}
 	return s;
 }
+
 
 std::shared_ptr<Button> Game::search_button_by_pos(int x, int y){
 	std::shared_ptr<Button> b=NULL;
@@ -809,7 +830,6 @@ bool Game::destroy_terrain(int id){
 }
 
 
-
 void Game::destroy_unit(int id){
 	bool is_moveable=this->destroy_moveable(id);
 	if(!is_moveable){
@@ -871,6 +891,7 @@ bool Game::check_if_is_something_mine(int x, int y){
 	return found;
 }
 
+
 void Game::right_click_selected(int x, int y){
 	if(this->selected.size()<0){
 		return;
@@ -890,6 +911,7 @@ void Game::right_click_selected(int x, int y){
 		}
 	}
 }
+
 
 void Game::selected_moveable(std::shared_ptr<Moveable> m){
 	this->free_selected();
@@ -940,6 +962,7 @@ void Game::selected_static(std::shared_ptr<Static> s){
 	}
 	this->free_selected();
 }
+
 
 void Game::selected_nothing(int x, int y){
 	std::shared_ptr<Button> b=this->is_selected_building_button();
@@ -992,6 +1015,4 @@ void Game::clicked_zone(SDL_Rect pos){
 
 
 Game::~Game(){}
-
-
 

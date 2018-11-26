@@ -36,8 +36,8 @@ Surface::Surface(SDL_Surface* background, SDL_Surface* screenSurface){
 
 
 Surface::Surface(char t,std::string text){
-	TTF_Font* font = TTF_OpenFont("AmaticBold.ttf", 50);
-	if(font==0){
+	this->font = TTF_OpenFont("AmaticBold.ttf", 50);
+	if(this->font==0){
 		printf("TTF_OpenFont: %s\n", TTF_GetError());
 		throw SDLerror();
 	}
@@ -47,7 +47,7 @@ Surface::Surface(char t,std::string text){
 	} else {
 		color={255,0,0};
 	}
-	this->surface=TTF_RenderText_Solid(font, text.c_str(), color);
+	this->surface=TTF_RenderText_Solid(this->font, text.c_str(), color);
 	if (this->surface==nullptr){
    		std::cerr << "Error al cargar la imagen " << std::endl;
    	throw SDLerror();
@@ -69,6 +69,9 @@ SDL_Surface* Surface::get_surface(){
 
 Surface::~Surface(){
 	SDL_FreeSurface(this->surface);
+	if(this->font!=nullptr){
+		TTF_CloseFont(this->font);
+	}
 }
 
 

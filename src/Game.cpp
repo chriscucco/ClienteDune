@@ -802,6 +802,15 @@ std::shared_ptr<Button> Game::search_button_by_pos(int x, int y){
 }
 
 
+int Game::get_current_corner_x(){
+	return this->corner_x;
+}
+
+int Game::get_current_corner_y(){
+	return this->corner_y;
+}
+
+
 bool Game::destroy_moveable(int id){
 	bool found=false;
 	unsigned int i;

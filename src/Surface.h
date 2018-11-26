@@ -11,6 +11,7 @@
 class Surface{
 private:
 	SDL_Surface* surface;
+	TTF_Font* font{nullptr};
 public:
 	Surface(SDL_Window* window);
 	Surface(std::string path);

@@ -100,6 +100,8 @@ public:
 	void go_down();
 	void go_up();
 	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y, int map_size_x, int map_size_y);
+	int get_current_corner_x();
+	int get_current_corner_y();
 	void add_centrodeconstruccion(int id,int size_x, int size_y, int x, int y, int team);
 	void add_tomadeaire(int id,int size_x, int size_y, int x, int y, int team);
 	void add_refineria(int id,int size_x, int size_y, int x, int y, int team);

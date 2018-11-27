@@ -126,8 +126,6 @@ try{
 					break;
 				case SDL_MOUSEBUTTONDOWN:
 					SDL_GetMouseState(&x_before, &y_before);
-					x_before=(x_before+(s.get_current_corner_x()));
-					y_before=(y_before+(s.get_current_corner_y()));
 					if(event.button.button==SDL_BUTTON_LEFT){
 						is_right_click=false;
 					}  else if (event.button.button==SDL_BUTTON_RIGHT){
@@ -142,8 +140,6 @@ try{
 					int x;
 					int y;
 					SDL_GetMouseState(&x, &y);
-					x=(x+(s.get_current_corner_x()));
-					y=(y+(s.get_current_corner_y()));
 					if((x<=x_before+3)&&(x>=x_before-3)&&(y<=y_before+3)&&(y>=y_before-3)){
 						s.clicked(x_before,y_before,is_right_click);
 					} else if (is_right_click){
@@ -161,8 +157,8 @@ try{
 						} else {
 							pos.h=(y-y_before);
 						}
-						pos.y=(y+y_before)/2;
-						pos.x=((x_before+x)/2);
+						pos.y=(((y+y_before)/2)+s.get_current_corner_y());
+						pos.x=(((x_before+x)/2)+s.get_current_corner_x());
 						s.clicked_zone(pos);
 					}
 				case SDL_KEYDOWN:

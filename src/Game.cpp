@@ -1038,13 +1038,14 @@ void Game::selected_nothing(int x, int y){
 
 void Game::clicked(int x, int y, bool is_right_click){
 	if(is_right_click){
-		this->right_click_selected(x,y);
+		this->right_click_selected((x+this->corner_x),(y+this->corner_y));
 	} else {
-		std::shared_ptr<Moveable> m=this->search_my_moveable_by_pos(x,y);
+
+		std::shared_ptr<Moveable> m=this->search_my_moveable_by_pos((x+this->corner_x),(y+this->corner_y));
 		if(m!=NULL){
 			this->selected_moveable(m);
 		} else {
-			std::shared_ptr<Static> s=this->search_my_static_by_pos(x,y);
+			std::shared_ptr<Static> s=this->search_my_static_by_pos((x+this->corner_x),(y+this->corner_y));
 			if(s!=NULL){
 				this->selected_static(s);
 			} else {
@@ -1052,7 +1053,7 @@ void Game::clicked(int x, int y, bool is_right_click){
 				if(b!=NULL){
 					this->selected_button(b);
 				} else {
-					this->selected_nothing(x,y);
+					this->selected_nothing((x+this->corner_x),(y+this->corner_y));
 				}
 			}
 		}

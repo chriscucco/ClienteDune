@@ -115,6 +115,9 @@ o(char)||nueva_energia(int)
 
 COMANDOS QUE MANDA EL CLIENTE
 
+CLIENTE DICE DE QUE EQUIPO ES
+t(char)||id(int)    1:Atreides 2:Harkonnen  3:Ordos
+
 CLIENTE INDICA QUE VENDE EDIFICIO
 v(char)||id_edificio(int)
 

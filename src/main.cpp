@@ -47,6 +47,8 @@ try{
 	Surface screenSurface(w.get_window());
     Surface init_background("terrain/Portada.png");
     Surface optimized_background(init_background.get_surface(),screenSurface.get_surface());
+    Surface teamselection("terrain/teamselection.png");
+    Surface team_optimized(teamselection.get_surface(),screenSurface.get_surface());
     Surface background("terrain/Sand.jpg");
     Surface optimized_background2(background.get_surface(), screenSurface.get_surface());	
     Surface win_background("terrain/FinalGanaste.png");
@@ -64,11 +66,59 @@ try{
     optimized_background2.scale(screenSurface.get_surface(), &stretchRect);
     optimized_background3.scale(screenSurface.get_surface(), &stretchRect);
     optimized_background4.scale(screenSurface.get_surface(), &stretchRect);
+    team_optimized.scale(screenSurface.get_surface(), &stretchRect);
+
     Renderer r(w.get_window());     
     Texture texture(r.get_renderer(), optimized_background.get_surface());
     Texture texture2(r.get_renderer(), optimized_background2.get_surface());
     Texture texture3(r.get_renderer(), optimized_background3.get_surface());
     Texture texture4(r.get_renderer(), optimized_background4.get_surface());
+    Texture texture_team(r.get_renderer(), team_optimized.get_surface());
+    
+    r.clear(); 
+    r.copy(texture_team.get_texture());
+    r.present();
+
+    bool selection=true;
+    int team_number;
+	SDL_Event ev;
+	Timer time(FPS);
+	while (selection){
+		while(SDL_PollEvent(&ev)){	   
+	   		switch(ev.type) {
+				case SDL_QUIT:
+					throw SDLerror();
+					break;
+				case SDL_WINDOWEVENT:
+    				r.present();
+					break;
+				case SDL_MOUSEBUTTONUP:
+					int x;
+					int y;
+					SDL_GetMouseState(&x, &y);
+					if((x>(Width/10))&&(x<((Width/10)*3))&&(y>(Height/3))&&(y<((Height/5)*4))){
+						selection=false;
+						team_number=1;
+					} else if((x>((Width/10)*4))&&(x<((Width/10)*6))&&(y>(Height/3))&&(y<((Height/5)*4))){
+						selection=false;
+						team_number=2;
+					} else if((x>((Width/10)*7))&&(x<((Width/10)*9))&&(y>(Height/3))&&(y<((Height/5)*4))){
+						selection=false;
+						team_number=3;
+					}
+					break;
+			}
+		}
+		r.clear(); 
+    	r.copy(texture_team.get_texture());
+		r.present(); 
+		std::this_thread::sleep_for(std::chrono::milliseconds(time.remain_time()));
+	}
+
+	unsigned char team_code='t';
+	skt.send_msj(&team_code,1);
+	skt.send_int(team_number);
+
     r.clear(); 
     r.copy(texture.get_texture());
     r.present();

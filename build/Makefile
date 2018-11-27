@@ -514,6 +514,33 @@ src/Button_InfanteriaPesada.cpp.s:
 	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Button_InfanteriaPesada.cpp.s
 .PHONY : src/Button_InfanteriaPesada.cpp.s
 
+src/Button_Money.o: src/Button_Money.cpp.o
+
+.PHONY : src/Button_Money.o
+
+# target to build an object file
+src/Button_Money.cpp.o:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o
+.PHONY : src/Button_Money.cpp.o
+
+src/Button_Money.i: src/Button_Money.cpp.i
+
+.PHONY : src/Button_Money.i
+
+# target to preprocess a source file
+src/Button_Money.cpp.i:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Button_Money.cpp.i
+.PHONY : src/Button_Money.cpp.i
+
+src/Button_Money.s: src/Button_Money.cpp.s
+
+.PHONY : src/Button_Money.s
+
+# target to generate assembly for a file
+src/Button_Money.cpp.s:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Button_Money.cpp.s
+.PHONY : src/Button_Money.cpp.s
+
 src/Button_Palacio.o: src/Button_Palacio.cpp.o
 
 .PHONY : src/Button_Palacio.o
@@ -2189,6 +2216,9 @@ help:
 	@echo "... src/Button_InfanteriaPesada.o"
 	@echo "... src/Button_InfanteriaPesada.i"
 	@echo "... src/Button_InfanteriaPesada.s"
+	@echo "... src/Button_Money.o"
+	@echo "... src/Button_Money.i"
+	@echo "... src/Button_Money.s"
 	@echo "... src/Button_Palacio.o"
 	@echo "... src/Button_Palacio.i"
 	@echo "... src/Button_Palacio.s"

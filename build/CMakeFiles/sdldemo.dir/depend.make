@@ -123,6 +123,15 @@ CMakeFiles/sdldemo.dir/src/Button_InfanteriaPesada.cpp.o: ../src/SDLerror.h
 CMakeFiles/sdldemo.dir/src/Button_InfanteriaPesada.cpp.o: ../src/Surface.cpp
 CMakeFiles/sdldemo.dir/src/Button_InfanteriaPesada.cpp.o: ../src/Surface.h
 
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/Button.cpp
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/Button.h
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/Button_Money.cpp
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/Button_Money.h
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/SDLerror.cpp
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/SDLerror.h
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/Surface.cpp
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/Surface.h
+
 CMakeFiles/sdldemo.dir/src/Button_Palacio.cpp.o: ../src/Button.cpp
 CMakeFiles/sdldemo.dir/src/Button_Palacio.cpp.o: ../src/Button.h
 CMakeFiles/sdldemo.dir/src/Button_Palacio.cpp.o: ../src/Button_Palacio.cpp
@@ -300,6 +309,8 @@ CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_InfanteriaLigera.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_InfanteriaLigera.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_InfanteriaPesada.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_InfanteriaPesada.h
+CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_Money.cpp
+CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_Money.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_Palacio.cpp
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_Palacio.h
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Button_Raider.cpp
@@ -552,6 +563,8 @@ CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_InfanteriaLigera.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_InfanteriaLigera.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_InfanteriaPesada.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_InfanteriaPesada.h
+CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_Money.cpp
+CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_Money.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_Palacio.cpp
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_Palacio.h
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Button_Raider.cpp
@@ -935,6 +948,8 @@ CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_InfanteriaLigera.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_InfanteriaLigera.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_InfanteriaPesada.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_InfanteriaPesada.h
+CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_Money.cpp
+CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_Money.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_Palacio.cpp
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_Palacio.h
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/Button_Raider.cpp

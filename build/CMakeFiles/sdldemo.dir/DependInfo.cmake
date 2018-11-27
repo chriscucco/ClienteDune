@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Fremen.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_Fremen.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaLigera.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_InfanteriaLigera.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaPesada.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_InfanteriaPesada.cpp.o"
+  "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_Palacio.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Raider.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_Raider.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Refineria.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Button_Refineria.cpp.o"

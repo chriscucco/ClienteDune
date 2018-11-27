@@ -148,6 +148,14 @@ Button_InfanteriaPesada.h
 Button.cpp
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.cpp
 
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp
+Button_Money.h
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.h
+
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.h
+Button.cpp
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.cpp
+
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.cpp
 Button_Palacio.h
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.h
@@ -571,6 +579,8 @@ Button_TrampaDeAire.cpp
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_TrampaDeAire.cpp
 Button_Trike.cpp
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Trike.cpp
+Button_Money.cpp
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp
 Sardaukar.cpp
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Sardaukar.cpp
 Fremen.cpp

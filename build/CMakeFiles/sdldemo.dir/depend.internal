@@ -123,6 +123,15 @@ CMakeFiles/sdldemo.dir/src/Button_InfanteriaPesada.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.h
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.h
 CMakeFiles/sdldemo.dir/src/Button_Palacio.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.h
@@ -301,6 +310,8 @@ CMakeFiles/sdldemo.dir/src/Cycle.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaLigera.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaPesada.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaPesada.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Raider.cpp
@@ -553,6 +564,8 @@ CMakeFiles/sdldemo.dir/src/Game.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaLigera.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaPesada.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaPesada.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Raider.cpp
@@ -936,6 +949,8 @@ CMakeFiles/sdldemo.dir/src/main.cpp.o
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaLigera.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaPesada.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_InfanteriaPesada.h
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp
+ /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.cpp
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Palacio.h
  /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Raider.cpp

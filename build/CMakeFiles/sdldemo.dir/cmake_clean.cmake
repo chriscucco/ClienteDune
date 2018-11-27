@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sdldemo.dir/src/Button_Tanque.cpp.o"
   "CMakeFiles/sdldemo.dir/src/Button_TrampaDeAire.cpp.o"
   "CMakeFiles/sdldemo.dir/src/Button_Trike.cpp.o"
+  "CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o"
   "CMakeFiles/sdldemo.dir/src/Button.cpp.o"
   "CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o"
   "CMakeFiles/sdldemo.dir/src/Cima.cpp.o"

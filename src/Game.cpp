@@ -20,6 +20,7 @@
 #define DESVIADOR 18
 #define DEVASTADOR 19
 #define COSECHADORA 20
+#define BUTTON_MONEY 21
 #define ROCA 30
 #define DUNA  31
 #define ESPECIAFUERTE 32
@@ -31,7 +32,6 @@
 #define EXPLOSIONTANQUE 52
 #define EXPLOSIONPERSONAJE 53
 #define BUTTON_SIZE 50
-
 #define STEP 10
 
 
@@ -62,6 +62,7 @@ void Game::init_buttons(){
 	std::shared_ptr<Button> b19(new Button_InfanteriaLigera(INFANTERIALIGERA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*2),this->master->get_button_infanterialigera_surface()));
 	std::shared_ptr<Button> b20(new Button_InfanteriaPesada(INFANTERIAPESADA,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*3),this->master->get_button_infanteriapesada_surface()));
 	std::shared_ptr<Button> b21(new Button_Sardaukar(SARDAUKAR,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*4),this->master->get_button_sardaukar_surface()));
+	std::shared_ptr<Button> b22(new Button_Money(BUTTON_MONEY,this->button_size_x,this->button_size_y,(Width-this->button_size_x-5),(Height/2+this->button_size_y*5),this->master->get_button_money_surface()));
 	this->buttons.push_back(b1);
 	this->buttons.push_back(b2);
 	this->buttons.push_back(b3);
@@ -83,6 +84,7 @@ void Game::init_buttons(){
 	this->buttons.push_back(b19);
 	this->buttons.push_back(b20);
 	this->buttons.push_back(b21);
+	this->buttons.push_back(b22);
 }
 
 
@@ -995,6 +997,18 @@ std::shared_ptr<Button> Game::is_selected_unit_button(){
 	return b;
 }
 
+bool Game::is_selected_sell_button(){
+	bool found=false;
+	for (unsigned int i=0; i<this->button_selected.size(); ++i){
+		int id=this->button_selected.at(i)->get_id();
+		if(id==BUTTON_MONEY){
+			found=true;
+			break;
+		}
+	}
+	return found;
+}
+
 
 std::shared_ptr<Button> Game::is_selected_building_button(){
 	std::shared_ptr<Button> b=NULL;
@@ -1010,13 +1024,19 @@ std::shared_ptr<Button> Game::is_selected_building_button(){
 
 
 void Game::selected_static(std::shared_ptr<Static> s){
-	std::shared_ptr<Button> b=this->is_selected_unit_button();
-	if(b!=NULL){
-		unsigned char c='u';
+	if(this->is_selected_sell_button()){
+		unsigned char c='v';
 		this->s->send_msj(&c,1);
-		this->s->send_int(b->get_id());
 		this->s->send_int(s->get_id());
-		this->s->send_int(this->my_id);
+	} else {
+		std::shared_ptr<Button> b=this->is_selected_unit_button();
+		if(b!=NULL){
+			unsigned char c='u';
+			this->s->send_msj(&c,1);
+			this->s->send_int(b->get_id());
+			this->s->send_int(s->get_id());
+			this->s->send_int(this->my_id);
+		}
 	}
 	this->free_selected();
 }

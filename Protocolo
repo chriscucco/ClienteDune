@@ -115,6 +115,8 @@ o(char)||nueva_energia(int)
 
 COMANDOS QUE MANDA EL CLIENTE
 
+CLIENTE INDICA QUE VENDE EDIFICIO
+v(char)||id_edificio(int)
 
 CLIENTE ENVÍA SOLICITUD PARA MOVERSE:
 m(char)||id_propio(int)||x(int)||y(int)

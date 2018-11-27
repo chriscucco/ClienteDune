@@ -585,9 +585,33 @@ CMakeFiles/sdldemo.dir/src/Button_Trike.cpp.o.provides: CMakeFiles/sdldemo.dir/s
 CMakeFiles/sdldemo.dir/src/Button_Trike.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src/Button_Trike.cpp.o
 
 
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: CMakeFiles/sdldemo.dir/flags.make
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o: ../src/Button_Money.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp
+
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdldemo.dir/src/Button_Money.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp > CMakeFiles/sdldemo.dir/src/Button_Money.cpp.i
+
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdldemo.dir/src/Button_Money.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button_Money.cpp -o CMakeFiles/sdldemo.dir/src/Button_Money.cpp.s
+
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o.requires:
+
+.PHONY : CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o.requires
+
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o.provides: CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o.provides.build
+.PHONY : CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o.provides
+
+CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o
+
+
 CMakeFiles/sdldemo.dir/src/Button.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Button.cpp.o: ../src/Button.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/sdldemo.dir/src/Button.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/sdldemo.dir/src/Button.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Button.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Button.cpp
 
 CMakeFiles/sdldemo.dir/src/Button.cpp.i: cmake_force
@@ -611,7 +635,7 @@ CMakeFiles/sdldemo.dir/src/Button.cpp.o.provides.build: CMakeFiles/sdldemo.dir/s
 
 CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o: ../src/CentroDeConstruccion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/CentroDeConstruccion.cpp
 
 CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.i: cmake_force
@@ -635,7 +659,7 @@ CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/sdldemo.dir/src/Cima.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Cima.cpp.o: ../src/Cima.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/sdldemo.dir/src/Cima.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/sdldemo.dir/src/Cima.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Cima.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Cima.cpp
 
 CMakeFiles/sdldemo.dir/src/Cima.cpp.i: cmake_force
@@ -659,7 +683,7 @@ CMakeFiles/sdldemo.dir/src/Cima.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src
 
 CMakeFiles/sdldemo.dir/src/Cosechadora.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Cosechadora.cpp.o: ../src/Cosechadora.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/sdldemo.dir/src/Cosechadora.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/sdldemo.dir/src/Cosechadora.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Cosechadora.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Cosechadora.cpp
 
 CMakeFiles/sdldemo.dir/src/Cosechadora.cpp.i: cmake_force
@@ -683,7 +707,7 @@ CMakeFiles/sdldemo.dir/src/Cosechadora.cpp.o.provides.build: CMakeFiles/sdldemo.
 
 CMakeFiles/sdldemo.dir/src/CuartelAtreides.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/CuartelAtreides.cpp.o: ../src/CuartelAtreides.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/sdldemo.dir/src/CuartelAtreides.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/sdldemo.dir/src/CuartelAtreides.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/CuartelAtreides.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/CuartelAtreides.cpp
 
 CMakeFiles/sdldemo.dir/src/CuartelAtreides.cpp.i: cmake_force
@@ -707,7 +731,7 @@ CMakeFiles/sdldemo.dir/src/CuartelAtreides.cpp.o.provides.build: CMakeFiles/sdld
 
 CMakeFiles/sdldemo.dir/src/CuartelHarkonnen.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/CuartelHarkonnen.cpp.o: ../src/CuartelHarkonnen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/sdldemo.dir/src/CuartelHarkonnen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/sdldemo.dir/src/CuartelHarkonnen.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/CuartelHarkonnen.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/CuartelHarkonnen.cpp
 
 CMakeFiles/sdldemo.dir/src/CuartelHarkonnen.cpp.i: cmake_force
@@ -731,7 +755,7 @@ CMakeFiles/sdldemo.dir/src/CuartelHarkonnen.cpp.o.provides.build: CMakeFiles/sdl
 
 CMakeFiles/sdldemo.dir/src/CuartelOrdos.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/CuartelOrdos.cpp.o: ../src/CuartelOrdos.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/sdldemo.dir/src/CuartelOrdos.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/sdldemo.dir/src/CuartelOrdos.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/CuartelOrdos.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/CuartelOrdos.cpp
 
 CMakeFiles/sdldemo.dir/src/CuartelOrdos.cpp.i: cmake_force
@@ -755,7 +779,7 @@ CMakeFiles/sdldemo.dir/src/CuartelOrdos.cpp.o.provides.build: CMakeFiles/sdldemo
 
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.o: ../src/Cycle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/sdldemo.dir/src/Cycle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/sdldemo.dir/src/Cycle.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Cycle.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Cycle.cpp
 
 CMakeFiles/sdldemo.dir/src/Cycle.cpp.i: cmake_force
@@ -779,7 +803,7 @@ CMakeFiles/sdldemo.dir/src/Cycle.cpp.o.provides.build: CMakeFiles/sdldemo.dir/sr
 
 CMakeFiles/sdldemo.dir/src/Desviador.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Desviador.cpp.o: ../src/Desviador.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/sdldemo.dir/src/Desviador.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/sdldemo.dir/src/Desviador.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Desviador.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Desviador.cpp
 
 CMakeFiles/sdldemo.dir/src/Desviador.cpp.i: cmake_force
@@ -803,7 +827,7 @@ CMakeFiles/sdldemo.dir/src/Desviador.cpp.o.provides.build: CMakeFiles/sdldemo.di
 
 CMakeFiles/sdldemo.dir/src/Devastador.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Devastador.cpp.o: ../src/Devastador.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/sdldemo.dir/src/Devastador.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/sdldemo.dir/src/Devastador.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Devastador.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Devastador.cpp
 
 CMakeFiles/sdldemo.dir/src/Devastador.cpp.i: cmake_force
@@ -827,7 +851,7 @@ CMakeFiles/sdldemo.dir/src/Devastador.cpp.o.provides.build: CMakeFiles/sdldemo.d
 
 CMakeFiles/sdldemo.dir/src/Duna.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Duna.cpp.o: ../src/Duna.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/sdldemo.dir/src/Duna.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/sdldemo.dir/src/Duna.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Duna.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Duna.cpp
 
 CMakeFiles/sdldemo.dir/src/Duna.cpp.i: cmake_force
@@ -851,7 +875,7 @@ CMakeFiles/sdldemo.dir/src/Duna.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src
 
 CMakeFiles/sdldemo.dir/src/EspeciaFuerte.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/EspeciaFuerte.cpp.o: ../src/EspeciaFuerte.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/sdldemo.dir/src/EspeciaFuerte.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/sdldemo.dir/src/EspeciaFuerte.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/EspeciaFuerte.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/EspeciaFuerte.cpp
 
 CMakeFiles/sdldemo.dir/src/EspeciaFuerte.cpp.i: cmake_force
@@ -875,7 +899,7 @@ CMakeFiles/sdldemo.dir/src/EspeciaFuerte.cpp.o.provides.build: CMakeFiles/sdldem
 
 CMakeFiles/sdldemo.dir/src/EspeciaSuave.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/EspeciaSuave.cpp.o: ../src/EspeciaSuave.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/sdldemo.dir/src/EspeciaSuave.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/sdldemo.dir/src/EspeciaSuave.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/EspeciaSuave.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/EspeciaSuave.cpp
 
 CMakeFiles/sdldemo.dir/src/EspeciaSuave.cpp.i: cmake_force
@@ -899,7 +923,7 @@ CMakeFiles/sdldemo.dir/src/EspeciaSuave.cpp.o.provides.build: CMakeFiles/sdldemo
 
 CMakeFiles/sdldemo.dir/src/ExplosionFuerte.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/ExplosionFuerte.cpp.o: ../src/ExplosionFuerte.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/sdldemo.dir/src/ExplosionFuerte.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/sdldemo.dir/src/ExplosionFuerte.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/ExplosionFuerte.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/ExplosionFuerte.cpp
 
 CMakeFiles/sdldemo.dir/src/ExplosionFuerte.cpp.i: cmake_force
@@ -923,7 +947,7 @@ CMakeFiles/sdldemo.dir/src/ExplosionFuerte.cpp.o.provides.build: CMakeFiles/sdld
 
 CMakeFiles/sdldemo.dir/src/ExplosionPersonaje.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/ExplosionPersonaje.cpp.o: ../src/ExplosionPersonaje.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/sdldemo.dir/src/ExplosionPersonaje.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/sdldemo.dir/src/ExplosionPersonaje.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/ExplosionPersonaje.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/ExplosionPersonaje.cpp
 
 CMakeFiles/sdldemo.dir/src/ExplosionPersonaje.cpp.i: cmake_force
@@ -947,7 +971,7 @@ CMakeFiles/sdldemo.dir/src/ExplosionPersonaje.cpp.o.provides.build: CMakeFiles/s
 
 CMakeFiles/sdldemo.dir/src/ExplosionTanque.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/ExplosionTanque.cpp.o: ../src/ExplosionTanque.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/sdldemo.dir/src/ExplosionTanque.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/sdldemo.dir/src/ExplosionTanque.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/ExplosionTanque.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/ExplosionTanque.cpp
 
 CMakeFiles/sdldemo.dir/src/ExplosionTanque.cpp.i: cmake_force
@@ -971,7 +995,7 @@ CMakeFiles/sdldemo.dir/src/ExplosionTanque.cpp.o.provides.build: CMakeFiles/sdld
 
 CMakeFiles/sdldemo.dir/src/FabricaLigera.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/FabricaLigera.cpp.o: ../src/FabricaLigera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/sdldemo.dir/src/FabricaLigera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/sdldemo.dir/src/FabricaLigera.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/FabricaLigera.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/FabricaLigera.cpp
 
 CMakeFiles/sdldemo.dir/src/FabricaLigera.cpp.i: cmake_force
@@ -995,7 +1019,7 @@ CMakeFiles/sdldemo.dir/src/FabricaLigera.cpp.o.provides.build: CMakeFiles/sdldem
 
 CMakeFiles/sdldemo.dir/src/FabricaPesada.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/FabricaPesada.cpp.o: ../src/FabricaPesada.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/sdldemo.dir/src/FabricaPesada.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/sdldemo.dir/src/FabricaPesada.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/FabricaPesada.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/FabricaPesada.cpp
 
 CMakeFiles/sdldemo.dir/src/FabricaPesada.cpp.i: cmake_force
@@ -1019,7 +1043,7 @@ CMakeFiles/sdldemo.dir/src/FabricaPesada.cpp.o.provides.build: CMakeFiles/sdldem
 
 CMakeFiles/sdldemo.dir/src/Fremen.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Fremen.cpp.o: ../src/Fremen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/sdldemo.dir/src/Fremen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/sdldemo.dir/src/Fremen.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Fremen.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Fremen.cpp
 
 CMakeFiles/sdldemo.dir/src/Fremen.cpp.i: cmake_force
@@ -1043,7 +1067,7 @@ CMakeFiles/sdldemo.dir/src/Fremen.cpp.o.provides.build: CMakeFiles/sdldemo.dir/s
 
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Game.cpp.o: ../src/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/sdldemo.dir/src/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/sdldemo.dir/src/Game.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Game.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Game.cpp
 
 CMakeFiles/sdldemo.dir/src/Game.cpp.i: cmake_force
@@ -1067,7 +1091,7 @@ CMakeFiles/sdldemo.dir/src/Game.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src
 
 CMakeFiles/sdldemo.dir/src/Gusano.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Gusano.cpp.o: ../src/Gusano.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/sdldemo.dir/src/Gusano.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/sdldemo.dir/src/Gusano.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Gusano.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Gusano.cpp
 
 CMakeFiles/sdldemo.dir/src/Gusano.cpp.i: cmake_force
@@ -1091,7 +1115,7 @@ CMakeFiles/sdldemo.dir/src/Gusano.cpp.o.provides.build: CMakeFiles/sdldemo.dir/s
 
 CMakeFiles/sdldemo.dir/src/InfanteriaLigera.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/InfanteriaLigera.cpp.o: ../src/InfanteriaLigera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/sdldemo.dir/src/InfanteriaLigera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/sdldemo.dir/src/InfanteriaLigera.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/InfanteriaLigera.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/InfanteriaLigera.cpp
 
 CMakeFiles/sdldemo.dir/src/InfanteriaLigera.cpp.i: cmake_force
@@ -1115,7 +1139,7 @@ CMakeFiles/sdldemo.dir/src/InfanteriaLigera.cpp.o.provides.build: CMakeFiles/sdl
 
 CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o: ../src/InfanteriaPesada.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/InfanteriaPesada.cpp
 
 CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.i: cmake_force
@@ -1139,7 +1163,7 @@ CMakeFiles/sdldemo.dir/src/InfanteriaPesada.cpp.o.provides.build: CMakeFiles/sdl
 
 CMakeFiles/sdldemo.dir/src/Lock.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Lock.cpp.o: ../src/Lock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/sdldemo.dir/src/Lock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/sdldemo.dir/src/Lock.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Lock.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Lock.cpp
 
 CMakeFiles/sdldemo.dir/src/Lock.cpp.i: cmake_force
@@ -1163,7 +1187,7 @@ CMakeFiles/sdldemo.dir/src/Lock.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src
 
 CMakeFiles/sdldemo.dir/src/main.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/sdldemo.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/sdldemo.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/main.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/main.cpp
 
 CMakeFiles/sdldemo.dir/src/main.cpp.i: cmake_force
@@ -1187,7 +1211,7 @@ CMakeFiles/sdldemo.dir/src/main.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src
 
 CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o: ../src/MasterSurface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/MasterSurface.cpp
 
 CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.i: cmake_force
@@ -1211,7 +1235,7 @@ CMakeFiles/sdldemo.dir/src/MasterSurface.cpp.o.provides.build: CMakeFiles/sdldem
 
 CMakeFiles/sdldemo.dir/src/Moveable.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Moveable.cpp.o: ../src/Moveable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/sdldemo.dir/src/Moveable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/sdldemo.dir/src/Moveable.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Moveable.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Moveable.cpp
 
 CMakeFiles/sdldemo.dir/src/Moveable.cpp.i: cmake_force
@@ -1235,7 +1259,7 @@ CMakeFiles/sdldemo.dir/src/Moveable.cpp.o.provides.build: CMakeFiles/sdldemo.dir
 
 CMakeFiles/sdldemo.dir/src/Palacio.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Palacio.cpp.o: ../src/Palacio.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/sdldemo.dir/src/Palacio.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/sdldemo.dir/src/Palacio.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Palacio.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Palacio.cpp
 
 CMakeFiles/sdldemo.dir/src/Palacio.cpp.i: cmake_force
@@ -1259,7 +1283,7 @@ CMakeFiles/sdldemo.dir/src/Palacio.cpp.o.provides.build: CMakeFiles/sdldemo.dir/
 
 CMakeFiles/sdldemo.dir/src/Precipicio.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Precipicio.cpp.o: ../src/Precipicio.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/sdldemo.dir/src/Precipicio.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/sdldemo.dir/src/Precipicio.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Precipicio.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Precipicio.cpp
 
 CMakeFiles/sdldemo.dir/src/Precipicio.cpp.i: cmake_force
@@ -1283,7 +1307,7 @@ CMakeFiles/sdldemo.dir/src/Precipicio.cpp.o.provides.build: CMakeFiles/sdldemo.d
 
 CMakeFiles/sdldemo.dir/src/Raider.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Raider.cpp.o: ../src/Raider.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/sdldemo.dir/src/Raider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/sdldemo.dir/src/Raider.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Raider.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Raider.cpp
 
 CMakeFiles/sdldemo.dir/src/Raider.cpp.i: cmake_force
@@ -1307,7 +1331,7 @@ CMakeFiles/sdldemo.dir/src/Raider.cpp.o.provides.build: CMakeFiles/sdldemo.dir/s
 
 CMakeFiles/sdldemo.dir/src/Refineria.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Refineria.cpp.o: ../src/Refineria.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/sdldemo.dir/src/Refineria.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/sdldemo.dir/src/Refineria.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Refineria.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Refineria.cpp
 
 CMakeFiles/sdldemo.dir/src/Refineria.cpp.i: cmake_force
@@ -1331,7 +1355,7 @@ CMakeFiles/sdldemo.dir/src/Refineria.cpp.o.provides.build: CMakeFiles/sdldemo.di
 
 CMakeFiles/sdldemo.dir/src/Renderer.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Renderer.cpp.o: ../src/Renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/sdldemo.dir/src/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/sdldemo.dir/src/Renderer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Renderer.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Renderer.cpp
 
 CMakeFiles/sdldemo.dir/src/Renderer.cpp.i: cmake_force
@@ -1355,7 +1379,7 @@ CMakeFiles/sdldemo.dir/src/Renderer.cpp.o.provides.build: CMakeFiles/sdldemo.dir
 
 CMakeFiles/sdldemo.dir/src/Roca.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Roca.cpp.o: ../src/Roca.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/sdldemo.dir/src/Roca.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/sdldemo.dir/src/Roca.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Roca.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Roca.cpp
 
 CMakeFiles/sdldemo.dir/src/Roca.cpp.i: cmake_force
@@ -1379,7 +1403,7 @@ CMakeFiles/sdldemo.dir/src/Roca.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src
 
 CMakeFiles/sdldemo.dir/src/Sardaukar.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Sardaukar.cpp.o: ../src/Sardaukar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/sdldemo.dir/src/Sardaukar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/sdldemo.dir/src/Sardaukar.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Sardaukar.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Sardaukar.cpp
 
 CMakeFiles/sdldemo.dir/src/Sardaukar.cpp.i: cmake_force
@@ -1403,7 +1427,7 @@ CMakeFiles/sdldemo.dir/src/Sardaukar.cpp.o.provides.build: CMakeFiles/sdldemo.di
 
 CMakeFiles/sdldemo.dir/src/SDLerror.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/SDLerror.cpp.o: ../src/SDLerror.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/sdldemo.dir/src/SDLerror.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/sdldemo.dir/src/SDLerror.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/SDLerror.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SDLerror.cpp
 
 CMakeFiles/sdldemo.dir/src/SDLerror.cpp.i: cmake_force
@@ -1427,7 +1451,7 @@ CMakeFiles/sdldemo.dir/src/SDLerror.cpp.o.provides.build: CMakeFiles/sdldemo.dir
 
 CMakeFiles/sdldemo.dir/src/Silo.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Silo.cpp.o: ../src/Silo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/sdldemo.dir/src/Silo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/sdldemo.dir/src/Silo.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Silo.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Silo.cpp
 
 CMakeFiles/sdldemo.dir/src/Silo.cpp.i: cmake_force
@@ -1451,7 +1475,7 @@ CMakeFiles/sdldemo.dir/src/Silo.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src
 
 CMakeFiles/sdldemo.dir/src/Socket.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Socket.cpp.o: ../src/Socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/sdldemo.dir/src/Socket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/sdldemo.dir/src/Socket.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Socket.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Socket.cpp
 
 CMakeFiles/sdldemo.dir/src/Socket.cpp.i: cmake_force
@@ -1475,7 +1499,7 @@ CMakeFiles/sdldemo.dir/src/Socket.cpp.o.provides.build: CMakeFiles/sdldemo.dir/s
 
 CMakeFiles/sdldemo.dir/src/SocketParameterError.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/SocketParameterError.cpp.o: ../src/SocketParameterError.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/sdldemo.dir/src/SocketParameterError.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/sdldemo.dir/src/SocketParameterError.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/SocketParameterError.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SocketParameterError.cpp
 
 CMakeFiles/sdldemo.dir/src/SocketParameterError.cpp.i: cmake_force
@@ -1499,7 +1523,7 @@ CMakeFiles/sdldemo.dir/src/SocketParameterError.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/sdldemo.dir/src/SonicTank.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/SonicTank.cpp.o: ../src/SonicTank.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/sdldemo.dir/src/SonicTank.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/sdldemo.dir/src/SonicTank.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/SonicTank.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/SonicTank.cpp
 
 CMakeFiles/sdldemo.dir/src/SonicTank.cpp.i: cmake_force
@@ -1523,7 +1547,7 @@ CMakeFiles/sdldemo.dir/src/SonicTank.cpp.o.provides.build: CMakeFiles/sdldemo.di
 
 CMakeFiles/sdldemo.dir/src/Static.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Static.cpp.o: ../src/Static.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/sdldemo.dir/src/Static.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/sdldemo.dir/src/Static.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Static.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Static.cpp
 
 CMakeFiles/sdldemo.dir/src/Static.cpp.i: cmake_force
@@ -1547,7 +1571,7 @@ CMakeFiles/sdldemo.dir/src/Static.cpp.o.provides.build: CMakeFiles/sdldemo.dir/s
 
 CMakeFiles/sdldemo.dir/src/Surface.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Surface.cpp.o: ../src/Surface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/sdldemo.dir/src/Surface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/sdldemo.dir/src/Surface.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Surface.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Surface.cpp
 
 CMakeFiles/sdldemo.dir/src/Surface.cpp.i: cmake_force
@@ -1571,7 +1595,7 @@ CMakeFiles/sdldemo.dir/src/Surface.cpp.o.provides.build: CMakeFiles/sdldemo.dir/
 
 CMakeFiles/sdldemo.dir/src/Tanque.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Tanque.cpp.o: ../src/Tanque.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/sdldemo.dir/src/Tanque.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/sdldemo.dir/src/Tanque.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Tanque.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Tanque.cpp
 
 CMakeFiles/sdldemo.dir/src/Tanque.cpp.i: cmake_force
@@ -1595,7 +1619,7 @@ CMakeFiles/sdldemo.dir/src/Tanque.cpp.o.provides.build: CMakeFiles/sdldemo.dir/s
 
 CMakeFiles/sdldemo.dir/src/Terrain.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Terrain.cpp.o: ../src/Terrain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/sdldemo.dir/src/Terrain.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/sdldemo.dir/src/Terrain.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Terrain.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Terrain.cpp
 
 CMakeFiles/sdldemo.dir/src/Terrain.cpp.i: cmake_force
@@ -1619,7 +1643,7 @@ CMakeFiles/sdldemo.dir/src/Terrain.cpp.o.provides.build: CMakeFiles/sdldemo.dir/
 
 CMakeFiles/sdldemo.dir/src/Text.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Text.cpp.o: ../src/Text.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/sdldemo.dir/src/Text.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/sdldemo.dir/src/Text.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Text.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Text.cpp
 
 CMakeFiles/sdldemo.dir/src/Text.cpp.i: cmake_force
@@ -1643,7 +1667,7 @@ CMakeFiles/sdldemo.dir/src/Text.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src
 
 CMakeFiles/sdldemo.dir/src/Texture.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Texture.cpp.o: ../src/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/sdldemo.dir/src/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/sdldemo.dir/src/Texture.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Texture.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Texture.cpp
 
 CMakeFiles/sdldemo.dir/src/Texture.cpp.i: cmake_force
@@ -1667,7 +1691,7 @@ CMakeFiles/sdldemo.dir/src/Texture.cpp.o.provides.build: CMakeFiles/sdldemo.dir/
 
 CMakeFiles/sdldemo.dir/src/Thread.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Thread.cpp.o: ../src/Thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/sdldemo.dir/src/Thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/sdldemo.dir/src/Thread.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Thread.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Thread.cpp
 
 CMakeFiles/sdldemo.dir/src/Thread.cpp.i: cmake_force
@@ -1691,7 +1715,7 @@ CMakeFiles/sdldemo.dir/src/Thread.cpp.o.provides.build: CMakeFiles/sdldemo.dir/s
 
 CMakeFiles/sdldemo.dir/src/Timer.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Timer.cpp.o: ../src/Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/sdldemo.dir/src/Timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/sdldemo.dir/src/Timer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Timer.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Timer.cpp
 
 CMakeFiles/sdldemo.dir/src/Timer.cpp.i: cmake_force
@@ -1715,7 +1739,7 @@ CMakeFiles/sdldemo.dir/src/Timer.cpp.o.provides.build: CMakeFiles/sdldemo.dir/sr
 
 CMakeFiles/sdldemo.dir/src/TrampaDeAire.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/TrampaDeAire.cpp.o: ../src/TrampaDeAire.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/sdldemo.dir/src/TrampaDeAire.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/sdldemo.dir/src/TrampaDeAire.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/TrampaDeAire.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/TrampaDeAire.cpp
 
 CMakeFiles/sdldemo.dir/src/TrampaDeAire.cpp.i: cmake_force
@@ -1739,7 +1763,7 @@ CMakeFiles/sdldemo.dir/src/TrampaDeAire.cpp.o.provides.build: CMakeFiles/sdldemo
 
 CMakeFiles/sdldemo.dir/src/Trike.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Trike.cpp.o: ../src/Trike.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/sdldemo.dir/src/Trike.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/sdldemo.dir/src/Trike.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Trike.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Trike.cpp
 
 CMakeFiles/sdldemo.dir/src/Trike.cpp.i: cmake_force
@@ -1763,7 +1787,7 @@ CMakeFiles/sdldemo.dir/src/Trike.cpp.o.provides.build: CMakeFiles/sdldemo.dir/sr
 
 CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o: ../src/Vehicle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Vehicle.cpp
 
 CMakeFiles/sdldemo.dir/src/Vehicle.cpp.i: cmake_force
@@ -1787,7 +1811,7 @@ CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o.provides.build: CMakeFiles/sdldemo.dir/
 
 CMakeFiles/sdldemo.dir/src/Warrior.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Warrior.cpp.o: ../src/Warrior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/sdldemo.dir/src/Warrior.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/sdldemo.dir/src/Warrior.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Warrior.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Warrior.cpp
 
 CMakeFiles/sdldemo.dir/src/Warrior.cpp.i: cmake_force
@@ -1811,7 +1835,7 @@ CMakeFiles/sdldemo.dir/src/Warrior.cpp.o.provides.build: CMakeFiles/sdldemo.dir/
 
 CMakeFiles/sdldemo.dir/src/Window.cpp.o: CMakeFiles/sdldemo.dir/flags.make
 CMakeFiles/sdldemo.dir/src/Window.cpp.o: ../src/Window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/sdldemo.dir/src/Window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/sdldemo.dir/src/Window.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Window.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Window.cpp
 
 CMakeFiles/sdldemo.dir/src/Window.cpp.i: cmake_force
@@ -1857,6 +1881,7 @@ sdldemo_OBJECTS = \
 "CMakeFiles/sdldemo.dir/src/Button_Tanque.cpp.o" \
 "CMakeFiles/sdldemo.dir/src/Button_TrampaDeAire.cpp.o" \
 "CMakeFiles/sdldemo.dir/src/Button_Trike.cpp.o" \
+"CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o" \
 "CMakeFiles/sdldemo.dir/src/Button.cpp.o" \
 "CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o" \
 "CMakeFiles/sdldemo.dir/src/Cima.cpp.o" \
@@ -1935,6 +1960,7 @@ libsdldemo.a: CMakeFiles/sdldemo.dir/src/Button_SonicTank.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Button_Tanque.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Button_TrampaDeAire.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Button_Trike.cpp.o
+libsdldemo.a: CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Button.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Cima.cpp.o
@@ -1989,7 +2015,7 @@ libsdldemo.a: CMakeFiles/sdldemo.dir/src/Warrior.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Window.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/build.make
 libsdldemo.a: CMakeFiles/sdldemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Linking CXX static library libsdldemo.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Linking CXX static library libsdldemo.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/sdldemo.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sdldemo.dir/link.txt --verbose=$(VERBOSE)
 
@@ -2020,6 +2046,7 @@ CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Button_SonicTank.cpp
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Button_Tanque.cpp.o.requires
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Button_TrampaDeAire.cpp.o.requires
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Button_Trike.cpp.o.requires
+CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Button_Money.cpp.o.requires
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Button.cpp.o.requires
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/CentroDeConstruccion.cpp.o.requires
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Cima.cpp.o.requires

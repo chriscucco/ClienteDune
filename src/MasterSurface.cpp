@@ -56,6 +56,7 @@ MasterSurface::MasterSurface(){
 	this->init_explosionpersonaje();
 	this->init_explosionfuerte();
 	this->init_explosiontanque();
+	this->init_button_money();
 }
 
 
@@ -730,6 +731,17 @@ void MasterSurface::init_button_infanterialigera(){
 
 std::shared_ptr<Surface> MasterSurface::get_button_infanterialigera_surface(){
 	return this->button_infanterialigera;
+}
+
+
+void MasterSurface::init_button_money(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Dinero.png"));
+	this->button_money=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_money_surface(){
+	return this->button_money;
 }
 
 

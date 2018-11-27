@@ -50,6 +50,7 @@
 #include "Button_SonicTank.cpp"
 #include "Button_TrampaDeAire.cpp"
 #include "Button_Trike.cpp"
+#include "Button_Money.cpp"
 #include "Sardaukar.cpp"
 #include "Fremen.cpp"
 #include "InfanteriaLigera.cpp"
@@ -171,6 +172,7 @@ public:
 	void right_click_selected(int x, int y);
 	void selected_moveable(std::shared_ptr<Moveable> m);
 	void selected_button(std::shared_ptr<Button> s);
+	bool is_selected_sell_button();
 	std::shared_ptr<Button> is_selected_unit_button();
 	std::shared_ptr<Button> is_selected_building_button();
 	void selected_static(std::shared_ptr<Static> s);

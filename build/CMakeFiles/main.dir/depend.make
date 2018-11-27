@@ -29,6 +29,8 @@ CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_InfanteriaLigera.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_InfanteriaLigera.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_InfanteriaPesada.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_InfanteriaPesada.h
+CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_Money.cpp
+CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_Money.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_Palacio.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_Palacio.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Button_Raider.cpp

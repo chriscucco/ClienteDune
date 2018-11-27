@@ -49,6 +49,8 @@ add_library(sdldemo
  src/Button_TrampaDeAire.h
  src/Button_Trike.cpp
  src/Button_Trike.h
+ src/Button_Money.cpp
+ src/Button_Money.h
  src/Button.cpp
  src/Button.h
  src/CentroDeConstruccion.cpp

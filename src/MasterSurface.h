@@ -30,6 +30,7 @@ private:
 	std::vector<std::shared_ptr<Surface>> infanteriapesada;
 	std::vector<std::shared_ptr<Surface>> infanterialigera_attack;
 	std::vector<std::shared_ptr<Surface>> infanteriapesada_attack;
+	std::shared_ptr<Surface> button_money;
 	std::shared_ptr<Surface> button_centrodeconstruccion;
 	std::shared_ptr<Surface> button_cosechadora;
 	std::shared_ptr<Surface> button_cuartelatreides;
@@ -139,6 +140,8 @@ public:
 	std::shared_ptr<Surface> get_button_trampadeaire_surface();
 	void init_button_trike();
 	std::shared_ptr<Surface> get_button_trike_surface();
+	void init_button_money();
+	std::shared_ptr<Surface> get_button_money_surface();
 	void init_centrodeconstruccion();
 	std::shared_ptr<Surface> get_centrodeconstruccion_surface();
 	void init_palacio();

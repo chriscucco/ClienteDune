@@ -171,6 +171,8 @@ add_executable (main
   src/main.cpp  
 )
 
-
+file(COPY ${CMAKE_SOURCE_DIR}/imgs DESTINATION ./)
+file(COPY ${CMAKE_SOURCE_DIR}/terrain DESTINATION ./)
+file(COPY ${CMAKE_SOURCE_DIR}/AmaticBold.ttf DESTINATION ./)
 target_link_libraries(main SDL2 SDL2_image SDL2_ttf)
 

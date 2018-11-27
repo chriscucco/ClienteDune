@@ -87,6 +87,18 @@ void Game::init_buttons(){
 	this->buttons.push_back(b22);
 }
 
+void Game::change_moveable_team(int id, int id_type, int new_team){
+	if(this->exist_moveable(id)){
+		std::shared_ptr<Moveable> m=this->search_moveable_by_id(id);
+		int x=m->x_pos();
+		int y=m->y_pos();
+		int w=m->h_size();
+		int h=m->v_size();
+		this->destroy_unit(id);
+		this->add(id_type,id,w,h,x,y,new_team);
+	}
+}
+
 
 int Game::give_id(){
 	return this->my_id;
@@ -698,6 +710,18 @@ void Game::refreshscreen(){
 	copybuttons();
 	copytext();
 	SDL_RenderPresent(this->renderer);
+}
+
+bool Game::exist_moveable(int id){
+	unsigned int i=0;
+	bool found=false;
+	while ((!found)&&(i<this->moveables.size())){
+		if(this->moveables.at(i)->get_id()==id){
+			found=true;
+		}
+		i++;
+	}
+	return found;	
 }
 
 

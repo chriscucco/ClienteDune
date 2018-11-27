@@ -134,6 +134,8 @@ public:
 	void add_precipicio(int id,int size_x, int size_y, int x, int y);
 	void add_roca(int id,int size_x, int size_y, int x, int y);
  	void free_selected();
+ 	void change_moveable_team(int id, int id_type, int new_team);
+ 	bool exist_moveable(int id);
 	Socket* get_socket();
 	int get_my_id();
 	void modify_texture(SDL_Texture* t);

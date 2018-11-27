@@ -33,6 +33,7 @@ public:
 	void energy();
 	void money();
 	void notice();
+	void change_moveable();
     virtual void run() override;
 };
 

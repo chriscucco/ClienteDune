@@ -107,7 +107,7 @@ w(char)||nueva_energia(int)
 
 
 SERVER ENVIA CAMBIO DE EQUIPO
-k(char)||id_unidad(int)||id_new_team()
+k(char)||id_unidad(int)||id_type(int)||id_new_team()
 
 
 

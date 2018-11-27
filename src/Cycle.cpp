@@ -104,41 +104,53 @@ void Cycle::notice(){
 }
 
 
+void Cycle::change_moveable(){
+  int id=this->game->get_socket()->recv_int();
+  int type_id=this->game->get_socket()->recv_int();
+  int new_team=this->game->get_socket()->recv_int();
+  Lock l(*(this->m));
+  this->game->change_moveable_team(id,type_id,new_team);
+}
+
+
 void Cycle::run(){
 	unsigned char c;
 	while(this->game->get_socket()->recv_msj(&c,1)){
     switch(c){
-      case 'm': 
-        this->move();
-        break;
-      case 'c': 
-        this->create();
-        break;
-      case 't': 
-        this->terrain();
-        break;
-      case 'g': 
-        this->gusano();
-        break;
-      case 'a': 
-        this->attack();
-        break;
-      case 'e': 
-        this->end();
-        break;
-      case 'd': 
-        this->destroy_unit();
-        break;
-      case 'w': 
-        this->energy();
-        break;
-      case 'p': 
-        this->money();
-        break;
-      case 'r': 
-        this->notice();
-        break;
-    }
+    	  case 'm': 
+	        this->move();
+        	break;
+      	case 'c': 
+	        this->create();
+        	break;
+      	case 't': 
+	        this->terrain();
+        	break;
+      	case 'g': 
+	        this->gusano();
+        	break;
+      	case 'a': 
+	        this->attack();
+        	break;
+      	case 'e': 
+	        this->end();
+        	break;
+      	case 'd': 
+	        this->destroy_unit();
+        	break;
+      	case 'w': 
+	        this->energy();
+        	break;
+      	case 'p': 
+	        this->money();
+        	break;
+	    case 'r': 
+        	this->notice();
+        	break;
+        case 'k':
+        	this->change_moveable();
+        	break;
+  		}
 	}
 }
 

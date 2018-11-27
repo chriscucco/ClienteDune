@@ -148,7 +148,7 @@ try{
         	int x=skt.recv_int();
         	int y=skt.recv_int();
         	s.add_terrain(recv_type,recv_id,size_x,size_y,x,y);
-    	} else if(c=='o'){
+    	} else if(c=='w'){
         	int new_energy=skt.recv_int();
         	s.modify_energy(new_energy);
     	}else if(c=='p'){

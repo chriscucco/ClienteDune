@@ -103,7 +103,11 @@ SERVER ENVIA CAMBIAR DINERO
 p(char)||nuevo_dinero(int)
 
 SERVER ENVIA CAMBIAR ENERGIA
-o(char)||nueva_energia(int)
+w(char)||nueva_energia(int)
+
+
+SERVER ENVIA CAMBIO DE EQUIPO
+k(char)||id_unidad(int)||id_new_team()
 
 
 

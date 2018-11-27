@@ -129,7 +129,7 @@ void Cycle::run(){
       case 'd': 
         this->destroy_unit();
         break;
-      case 'o': 
+      case 'w': 
         this->energy();
         break;
       case 'p': 

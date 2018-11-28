@@ -614,7 +614,7 @@ void Game::copystatics(){
 	unsigned int i=0;
 	while(i<this->statics.size()){
 		if(this->statics.at(i)->is_inside_screen(this->corner_x,this->corner_y,this->size_x,this->size_y)){
-			Texture t(this->renderer, this->statics.at(i)->getsurf());
+			Texture t(this->renderer, this->statics.at(i)->getsurf(),this->statics.at(i)->mine());
 			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->statics.at(i)->get_converted_pos(this->corner_x,this->corner_y));
 		}
 		i++;
@@ -642,7 +642,7 @@ void Game::copymoveables(){
 	unsigned int i=0;
 	while(i<this->moveables.size()){
 		if(this->moveables.at(i)->is_inside_screen(this->corner_x,this->corner_y,this->size_x,this->size_y)){
-			Texture t(this->renderer, this->moveables.at(i)->getsurf());
+			Texture t(this->renderer, this->moveables.at(i)->getsurf(),this->moveables.at(i)->get_team());
 			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->moveables.at(i)->get_converted_pos(this->corner_x,this->corner_y));
 		}
 		i++;

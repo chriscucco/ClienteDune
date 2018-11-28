@@ -14,20 +14,16 @@
 #include "Cycle.cpp"
 #include "Timer.cpp"
 
-#define FPS 30
+#define FPS 20
 
 int main(int argc, char **argv){
 try{
 	Socket skt(argv[1],argv[2]);
 	int id=skt.recv_int();
-	//int init_x=skt.recv_int();
-	//int init_y=skt.recv_int();
-	//int map_size_x=skt.recv_int();
-	//int map_size_y=skt.recv_int();
-	int init_x=0;
-	int init_y=0;
-	int map_size_x=5000;
-	int map_size_y=3000;
+	int init_x=skt.recv_int();
+	int init_y=skt.recv_int();
+	int map_size_x=skt.recv_int();
+	int map_size_y=skt.recv_int();
 	if ( SDL_Init(SDL_INIT_VIDEO) < 0){
 		std::cerr << "ERROR AL INICIAR EL SDL" << std::endl;
 		throw SDLerror();
@@ -119,9 +115,9 @@ try{
 		std::this_thread::sleep_for(std::chrono::milliseconds(time.remain_time()));
 	}
 	team_number++;
-//	unsigned char team_code='t';
-//	skt.send_msj(&team_code,1);
-//	skt.send_int(team_number);
+	unsigned char team_code='t';
+	skt.send_msj(&team_code,1);
+	skt.send_int(team_number);
 
     r.clear(); 
     r.copy(texture.get_texture());

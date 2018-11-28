@@ -136,6 +136,7 @@ public:
  	void free_selected();
  	void change_moveable_team(int id, int id_type, int new_team);
  	bool exist_moveable(int id);
+ 	void stop_attack(int id);
 	Socket* get_socket();
 	int get_my_id();
 	void modify_texture(SDL_Texture* t);

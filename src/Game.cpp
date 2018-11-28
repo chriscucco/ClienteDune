@@ -1116,6 +1116,14 @@ void Game::clicked_zone(SDL_Rect pos){
 	}
 }
 
+void Game::stop_attack(int id){
+	std::shared_ptr<Moveable> m=this->search_moveable_by_id(id);
+	if(m!=NULL){
+		m->stop_attack();
+	}
+}
+
+
 
 Game::~Game(){}
 

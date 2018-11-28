@@ -34,6 +34,7 @@ public:
 	void money();
 	void notice();
 	void change_moveable();
+	void stop_attacking();
     virtual void run() override;
 };
 

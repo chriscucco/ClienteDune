@@ -35,6 +35,8 @@ void Warrior::modify_pos(int x, int y){
 	this->botton_pos.y=y;
 }
 
+
+
 SDL_Surface* Warrior::getsurf(){
 	bool has_to_actualize=false;
 	if(!this->is_attacking){
@@ -62,6 +64,7 @@ SDL_Surface* Warrior::getsurf(){
 
 void Warrior::attack(int x,int y){
 	this->is_attacking=true;
+	this->last_surface=this->current_path;
 	if(x>this->botton_pos.x){
 		this->current_path=4;
 	} else if(x<this->botton_pos.x){
@@ -72,6 +75,14 @@ void Warrior::attack(int x,int y){
 		this->current_path=8;
 	}
 }
+
+void Warrior::stop_attack(){
+	if(this->is_attacking){
+		this->is_attacking=false;
+		this->current_path=this->last_surface;
+	}
+}
+
 	
 
 #endif

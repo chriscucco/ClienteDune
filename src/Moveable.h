@@ -27,6 +27,7 @@ public:
 	virtual void modify_pos(int x, int y)=0;
 	virtual bool is_cosechadora();
 	virtual void attack(int x,int y){}
+	virtual void stop_attack(){}
 	int h_size();
 	int v_size();
 	int y_pos();

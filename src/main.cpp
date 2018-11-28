@@ -16,6 +16,86 @@
 
 #define FPS 20
 
+
+void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int Height){
+	bool selection=true;
+    int team_number;
+	SDL_Event ev;
+	Timer time(FPS);
+	while (selection){
+		while(SDL_PollEvent(&ev)){	   
+	   		switch(ev.type) {
+				case SDL_QUIT:
+					throw SDLerror();
+					break;
+				case SDL_WINDOWEVENT:
+    				r->present();
+					break;
+				case SDL_MOUSEBUTTONUP:
+					int x;
+					int y;
+					SDL_GetMouseState(&x, &y);
+					if((x>(Width/10))&&(x<((Width/10)*3))&&(y>(Height/3))&&(y<((Height/5)*4))){
+						selection=false;
+						team_number=1;
+					} else if((x>((Width/10)*4))&&(x<((Width/10)*6))&&(y>(Height/3))&&(y<((Height/5)*4))){
+						selection=false;
+						team_number=2;
+					} else if((x>((Width/10)*7))&&(x<((Width/10)*9))&&(y>(Height/3))&&(y<((Height/5)*4))){
+						selection=false;
+						team_number=3;
+					}
+					break;
+			}
+		}
+		r->clear(); 
+    	r->copy(texture_team->get_texture());
+		r->present(); 
+		std::this_thread::sleep_for(std::chrono::milliseconds(time.remain_time()));
+	}
+	unsigned char team_code='t';
+	skt->send_msj(&team_code,1);
+	skt->send_int(team_number);
+}
+
+
+void init_game(Socket* skt,Game* s){
+	unsigned int recv_type,recv_id,size_x,size_y,x,y,team;
+	unsigned char c;
+	while(1){
+		skt->recv_msj(&c,1);
+		if(c=='x'){
+			break;
+		} else if(c=='c'){
+			recv_type=skt->recv_int();
+			recv_id=skt->recv_int();
+			size_x=skt->recv_int();
+			size_y=skt->recv_int();
+			x=skt->recv_int();
+			y=skt->recv_int();
+			team=skt->recv_int();
+			s->add(recv_type,recv_id,size_x,size_y,x,y,team);
+		} else if(c=='t'){
+        	int recv_type=skt->recv_int();
+        	int recv_id=skt->recv_int();
+        	int size_x=skt->recv_int();
+        	int size_y=skt->recv_int();
+        	int x=skt->recv_int();
+        	int y=skt->recv_int();
+        	s->add_terrain(recv_type,recv_id,size_x,size_y,x,y);
+    	} else if(c=='w'){
+        	int new_energy=skt->recv_int();
+        	s->modify_energy(new_energy);
+    	}else if(c=='p'){
+        	int new_money=skt->recv_int();
+        	s->modify_money(new_money);
+      	}
+	}
+}
+
+
+
+
 int main(int argc, char **argv){
 try{
 	Socket skt(argv[1],argv[2]);
@@ -53,109 +133,33 @@ try{
     Surface optimized_background2(background.get_surface(), screenSurface.get_surface());	
     Surface win_background("terrain/FinalGanaste.png");
     Surface optimized_background3(win_background.get_surface(),screenSurface.get_surface());
-     Surface loose_background("terrain/FinalPerdiste.png");
+    Surface loose_background("terrain/FinalPerdiste.png");
     Surface optimized_background4(loose_background.get_surface(),screenSurface.get_surface());
-	
 	SDL_Rect stretchRect; 
 	stretchRect.x = 0; 
 	stretchRect.y = 0; 
 	stretchRect.w = Width; 
 	stretchRect.h = Height; 
-
 	optimized_background.scale(screenSurface.get_surface(), &stretchRect);
     optimized_background2.scale(screenSurface.get_surface(), &stretchRect);
     optimized_background3.scale(screenSurface.get_surface(), &stretchRect);
     optimized_background4.scale(screenSurface.get_surface(), &stretchRect);
     team_optimized.scale(screenSurface.get_surface(), &stretchRect);
-
     Renderer r(w.get_window());     
     Texture texture(r.get_renderer(), optimized_background.get_surface());
     Texture texture2(r.get_renderer(), optimized_background2.get_surface());
     Texture texture3(r.get_renderer(), optimized_background3.get_surface());
     Texture texture4(r.get_renderer(), optimized_background4.get_surface());
-    Texture texture_team(r.get_renderer(), team_optimized.get_surface());
-    
+    Texture texture_team(r.get_renderer(), team_optimized.get_surface()); 
     r.clear(); 
     r.copy(texture_team.get_texture());
     r.present();
-
-    bool selection=true;
-    int team_number;
-	SDL_Event ev;
-	Timer time(FPS);
-	while (selection){
-		while(SDL_PollEvent(&ev)){	   
-	   		switch(ev.type) {
-				case SDL_QUIT:
-					throw SDLerror();
-					break;
-				case SDL_WINDOWEVENT:
-    				r.present();
-					break;
-				case SDL_MOUSEBUTTONUP:
-					int x;
-					int y;
-					SDL_GetMouseState(&x, &y);
-					if((x>(Width/10))&&(x<((Width/10)*3))&&(y>(Height/3))&&(y<((Height/5)*4))){
-						selection=false;
-						team_number=1;
-					} else if((x>((Width/10)*4))&&(x<((Width/10)*6))&&(y>(Height/3))&&(y<((Height/5)*4))){
-						selection=false;
-						team_number=2;
-					} else if((x>((Width/10)*7))&&(x<((Width/10)*9))&&(y>(Height/3))&&(y<((Height/5)*4))){
-						selection=false;
-						team_number=3;
-					}
-					break;
-			}
-		}
-		r.clear(); 
-    	r.copy(texture_team.get_texture());
-		r.present(); 
-		std::this_thread::sleep_for(std::chrono::milliseconds(time.remain_time()));
-	}
-	team_number++;
-	unsigned char team_code='t';
-	skt.send_msj(&team_code,1);
-	skt.send_int(team_number);
-
+    select_team(&r,&texture_team,&skt,Width,Height);
     r.clear(); 
     r.copy(texture.get_texture());
     r.present();
- 
-
-	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,init_x,init_y,Width,Height,map_size_x,map_size_y);
-	unsigned int recv_type,recv_id,size_x,size_y,x,y,team;
-	unsigned char c;
-	while(1){
-		skt.recv_msj(&c,1);
-		if(c=='x'){
-			break;
-		} else if(c=='c'){
-			recv_type=skt.recv_int();
-			recv_id=skt.recv_int();
-			size_x=skt.recv_int();
-			size_y=skt.recv_int();
-			x=skt.recv_int();
-			y=skt.recv_int();
-			team=skt.recv_int();
-			s.add(recv_type,recv_id,size_x,size_y,x,y,team);
-		} else if(c=='t'){
-        	int recv_type=skt.recv_int();
-        	int recv_id=skt.recv_int();
-        	int size_x=skt.recv_int();
-        	int size_y=skt.recv_int();
-        	int x=skt.recv_int();
-        	int y=skt.recv_int();
-        	s.add_terrain(recv_type,recv_id,size_x,size_y,x,y);
-    	} else if(c=='w'){
-        	int new_energy=skt.recv_int();
-        	s.modify_energy(new_energy);
-    	}else if(c=='p'){
-        	int new_money=skt.recv_int();
-        	s.modify_money(new_money);
-      }
-	}
+ 	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,init_x,init_y,Width,Height,map_size_x,map_size_y);
+	init_game(&skt,&s);
 	s.modify_texture(texture2.get_texture());
 	std::mutex m;
 	Cycle t(&s,&m);

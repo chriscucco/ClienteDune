@@ -112,6 +112,11 @@ void Cycle::change_moveable(){
   this->game->change_moveable_team(id,type_id,new_team);
 }
 
+void Cycle::stop_attacking(){
+  int id=this->game->get_socket()->recv_int();
+  this->game->stop_attack(id);
+}
+
 
 void Cycle::run(){
 	unsigned char c;
@@ -147,9 +152,12 @@ void Cycle::run(){
 	    case 'r': 
         	this->notice();
         	break;
-        case 'k':
+      case 'k':
         	this->change_moveable();
         	break;
+      case 's':
+          this->stop_attacking();
+          break;
   		}
 	}
 }

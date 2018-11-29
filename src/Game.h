@@ -155,6 +155,7 @@ public:
 	void copymoveables();
 	void copyterrain();
 	void copybuttons();
+	void copypointers();
 	void copytext();
 	void refreshscreen();
 	std::shared_ptr<Moveable> search_moveable_by_id(int id);

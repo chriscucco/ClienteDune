@@ -68,6 +68,8 @@ private:
 	std::shared_ptr<Surface> especiasuave;
 	std::shared_ptr<Surface> precipicio;
 	std::shared_ptr<Surface> roca;
+	std::shared_ptr<Surface> pointer;
+
 public:
 	MasterSurface();
 	void init_trike();
@@ -152,6 +154,8 @@ public:
 	std::shared_ptr<Surface> get_silo_surface();
 	void init_trampadeaire();
 	std::shared_ptr<Surface> get_trampadeaire_surface();
+	void init_pointer();
+	std::shared_ptr<Surface> get_pointer_surface();
 	void init_cima();
 	std::shared_ptr<Surface> get_cima_surface();
 	void init_duna();

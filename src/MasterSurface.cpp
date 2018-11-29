@@ -57,6 +57,7 @@ MasterSurface::MasterSurface(){
 	this->init_explosionfuerte();
 	this->init_explosiontanque();
 	this->init_button_money();
+	this->init_pointer();
 }
 
 
@@ -644,6 +645,18 @@ void MasterSurface::init_button_cuartelatreides(){
 std::shared_ptr<Surface> MasterSurface::get_button_cuartelatreides_surface(){
 	return this->button_cuartelatreides;
 }
+
+
+void MasterSurface::init_pointer(){
+	std::shared_ptr<Surface> s(new Surface("imgs/point.png"));
+	this->pointer=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_pointer_surface(){
+	return this->pointer;
+}
+
 
 
 void MasterSurface::init_button_cuartelharkonnen(){

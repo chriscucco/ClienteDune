@@ -33,6 +33,7 @@
 #define EXPLOSIONPERSONAJE 53
 #define BUTTON_SIZE 50
 #define STEP 10
+#define POINT_SCALE 5
 
 
 
@@ -649,6 +650,27 @@ void Game::copymoveables(){
 	}		
 }
 
+void Game::copypointers(){
+	
+
+	unsigned int i=0;
+	while(i<this->selected.size()){
+		if(this->selected.at(i)->is_inside_screen(this->corner_x,this->corner_y,this->size_x,this->size_y)){
+			SDL_Rect* pos=this->selected.at(i)->get_converted_pos(this->corner_x,this->corner_y);
+			pos->x+=(pos->w/2);
+			pos->w=(pos->w)/POINT_SCALE;
+			pos->h=(pos->h)/POINT_SCALE;
+			pos->y-=pos->h;
+			pos->x-=pos->w;
+			Texture t(this->renderer, this->master->get_pointer_surface()->get_surface(),this->my_id);
+			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, pos);
+		}
+		i++;
+	}
+
+
+}
+
 
 void Game::copyterrain(){
 	unsigned int i=0;
@@ -706,6 +728,7 @@ void Game::refreshscreen(){
 	copyterrain();
 	copystatics();
 	copymoveables();
+	copypointers();
 	copyanimated();
 	copybuttons();
 	copytext();

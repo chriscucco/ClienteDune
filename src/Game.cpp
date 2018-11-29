@@ -106,7 +106,7 @@ int Game::give_id(){
 }
 
 
-Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y, int map_x, int map_y){
+Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y, int map_x, int map_y,std::shared_ptr<MasterSurface> master) : master(master){
 	SDL_DisplayMode DM;
 	SDL_GetCurrentDisplayMode(0, &DM);
 	int Width = DM.w;

@@ -72,7 +72,7 @@ private:
 	int corner_y;
 	int map_size_x;
 	int map_size_y;
-	std::shared_ptr<MasterSurface> master{new MasterSurface()};
+	std::shared_ptr<MasterSurface> master;
 	int my_id;
 	SDL_Texture *background;
 	SDL_Texture *win_background;
@@ -100,7 +100,7 @@ public:
 	void go_left();
 	void go_down();
 	void go_up();
-	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y, int map_size_x, int map_size_y);
+	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y,int map_size_x, int map_size_y,std::shared_ptr<MasterSurface> master);
 	int get_current_corner_x();
 	int get_current_corner_y();
 	void add_centrodeconstruccion(int id,int size_x, int size_y, int x, int y, int team);

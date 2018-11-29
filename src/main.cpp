@@ -17,6 +17,94 @@
 #define FPS 20
 
 
+bool create_game(){
+	return true;
+}
+
+
+bool create_map(){
+	return true;
+}
+
+
+bool join_game(){
+	return true;
+}
+
+
+
+
+int first_window(Renderer *r,Texture *texture,int Width, int Height){
+	bool selection=true;
+    int result;
+    Surface s1("terrain/CrearJuego.png");
+    Surface s2("terrain/CrearMapa.png");
+    Surface s3("terrain/UnirseAJuego.png");
+
+    SDL_Rect botton_pos_s1;
+    SDL_Rect botton_pos_s2;
+    SDL_Rect botton_pos_s3;
+
+    botton_pos_s1.w=Width/2;
+    botton_pos_s1.h=Height/6;
+    botton_pos_s1.x=Width/4;
+    botton_pos_s1.y=Height/6;
+
+ 	botton_pos_s2.w=Width/2;
+    botton_pos_s2.h=Height/6;
+    botton_pos_s2.x=Width/4;
+    botton_pos_s2.y=(Height/12)*5;
+
+    botton_pos_s3.w=Width/2;
+    botton_pos_s3.h=Height/6;
+    botton_pos_s3.x=Width/4;
+    botton_pos_s3.y=(Height/12)*8;
+
+
+	SDL_Event ev;
+	Timer time(FPS);
+	while (selection){
+		while(SDL_PollEvent(&ev)){	   
+	   		switch(ev.type) {
+				case SDL_QUIT:
+					throw SDLerror();
+					break;
+				case SDL_WINDOWEVENT:
+    				r->present();
+					break;
+				case SDL_MOUSEBUTTONUP:
+					int x;
+					int y;
+					SDL_GetMouseState(&x, &y);
+					if((x>=Width/4)&&(x<=(Width/4)*3)){
+						if((y>=Height/6)&&(y<(Height/3))){
+							result=1;
+							selection=false;
+						} else if ((y>=(Height/12)*5)&&(y<(Height/12)*7)){
+							result=2;
+							selection=false;
+						} else if ((y>=(Height/12)*8)&&(y<=(Height/12)*10)){
+							result=3;
+							selection=false;
+						}
+					}
+			}
+		}
+		r->clear(); 
+    	r->copy(texture->get_texture());
+    	Texture t1(r->get_renderer(), s1.get_surface());
+		SDL_RenderCopy(r->get_renderer(), t1.get_texture(), NULL, &botton_pos_s1);
+		Texture t2(r->get_renderer(), s2.get_surface());
+		SDL_RenderCopy(r->get_renderer(), t2.get_texture(), NULL, &botton_pos_s2);
+		Texture t3(r->get_renderer(), s3.get_surface());
+		SDL_RenderCopy(r->get_renderer(), t3.get_texture(), NULL, &botton_pos_s3);
+		r->present(); 
+		std::this_thread::sleep_for(std::chrono::milliseconds(time.remain_time()));
+	}
+	return result;
+}
+
+
 void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int Height){
 	bool selection=true;
     int team_number;
@@ -56,6 +144,7 @@ void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int H
 	unsigned char team_code='t';
 	skt->send_msj(&team_code,1);
 	skt->send_int(team_number);
+	team_number++;
 }
 
 
@@ -98,12 +187,7 @@ void init_game(Socket* skt,Game* s){
 
 int main(int argc, char **argv){
 try{
-	Socket skt(argv[1],argv[2]);
-	int id=skt.recv_int();
-	int init_x=skt.recv_int();
-	int init_y=skt.recv_int();
-	int map_size_x=skt.recv_int();
-	int map_size_y=skt.recv_int();
+
 	if ( SDL_Init(SDL_INIT_VIDEO) < 0){
 		std::cerr << "ERROR AL INICIAR EL SDL" << std::endl;
 		throw SDLerror();
@@ -119,11 +203,13 @@ try{
 	if(TTF_Init()==-1){
 		throw SDLerror();
 	}
+	std::shared_ptr<MasterSurface> master(new MasterSurface());
 	SDL_DisplayMode DM;
 	SDL_GetCurrentDisplayMode(0, &DM);
 	auto Width = DM.w;
 	auto Height = DM.h;
     Window w("Dune",Width,Height);
+    Renderer r(w.get_window());     
 	Surface screenSurface(w.get_window());
     Surface init_background("terrain/Portada.png");
     Surface optimized_background(init_background.get_surface(),screenSurface.get_surface());
@@ -145,12 +231,24 @@ try{
     optimized_background3.scale(screenSurface.get_surface(), &stretchRect);
     optimized_background4.scale(screenSurface.get_surface(), &stretchRect);
     team_optimized.scale(screenSurface.get_surface(), &stretchRect);
-    Renderer r(w.get_window());     
     Texture texture(r.get_renderer(), optimized_background.get_surface());
     Texture texture2(r.get_renderer(), optimized_background2.get_surface());
     Texture texture3(r.get_renderer(), optimized_background3.get_surface());
     Texture texture4(r.get_renderer(), optimized_background4.get_surface());
     Texture texture_team(r.get_renderer(), team_optimized.get_surface()); 
+    Socket skt(argv[1],argv[2]);
+    bool finalize=false;
+//PANTALLA INICIAL
+    while(!finalize){
+    	int mode=first_window(&r,&texture,Width,Height);
+    	if(mode==1){
+    		finalize=create_game();
+    	} else if (mode==2){
+    		finalize=create_map();
+    	} else if (mode==3){
+    		finalize=join_game();
+    	}	
+    }
     r.clear(); 
     r.copy(texture_team.get_texture());
     r.present();
@@ -158,7 +256,12 @@ try{
     r.clear(); 
     r.copy(texture.get_texture());
     r.present();
- 	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,init_x,init_y,Width,Height,map_size_x,map_size_y);
+	int id=skt.recv_int();
+	int init_x=skt.recv_int();
+	int init_y=skt.recv_int();
+	int map_size_x=skt.recv_int();
+	int map_size_y=skt.recv_int();
+ 	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,init_x,init_y,Width,Height,map_size_x,map_size_y,master);
 	init_game(&skt,&s);
 	s.modify_texture(texture2.get_texture());
 	std::mutex m;

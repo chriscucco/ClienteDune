@@ -93,7 +93,7 @@ Botones de Movibles nuevos:
     
  
 COMANDOS QUE MANDA EL SERVIDOR
-
+change_moveable
 
 SERVER INDICA QUE SE RECHAZÓ UNA CONSTRUCCIÓN
 r(char)||type(int)
@@ -114,7 +114,7 @@ SERVER ENVIA CAMBIAR DINERO
 p(char)||nuevo_dinero(int)
 
 SERVER ENVIA CAMBIAR ENERGIA
-o(char)||nueva_energia(int)
+w(char)||nueva_energia(int)
 
 
 SERVER ENVIA CAMBIO DE EQUIPO

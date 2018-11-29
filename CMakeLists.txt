@@ -154,6 +154,8 @@ add_library(sdldemo
  src/Warrior.h
  src/Window.cpp
  src/Window.h
+ src/Editor.cpp
+ src/Editor.h
 )
 
 INCLUDE(FindPkgConfig)

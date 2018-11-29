@@ -69,6 +69,8 @@ CMakeFiles/main.dir/src/main.cpp.o: ../src/Devastador.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Devastador.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Duna.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/Duna.h
+CMakeFiles/main.dir/src/main.cpp.o: ../src/Editor.cpp
+CMakeFiles/main.dir/src/main.cpp.o: ../src/Editor.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/EspeciaFuerte.cpp
 CMakeFiles/main.dir/src/main.cpp.o: ../src/EspeciaFuerte.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/EspeciaSuave.cpp

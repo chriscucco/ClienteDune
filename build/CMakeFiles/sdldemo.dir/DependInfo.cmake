@@ -38,6 +38,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Desviador.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Desviador.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Devastador.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Devastador.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Duna.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Duna.cpp.o"
+  "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Editor.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/Editor.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/EspeciaFuerte.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/EspeciaFuerte.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/EspeciaSuave.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/EspeciaSuave.cpp.o"
   "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/ExplosionFuerte.cpp" "/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir/src/ExplosionFuerte.cpp.o"

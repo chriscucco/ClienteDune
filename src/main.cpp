@@ -13,6 +13,7 @@
 #include "Texture.cpp"
 #include "Cycle.cpp"
 #include "Timer.cpp"
+#include "Editor.cpp"
 
 #define FPS 20
 
@@ -22,8 +23,34 @@ bool create_game(){
 }
 
 
-bool create_map(){
-	return true;
+bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, std::shared_ptr<MasterSurface> master){
+	Editor editor(r,t->get_texture(),skt,Width,Height,master);
+	bool running = true;
+	SDL_Event event;
+	Timer timer(FPS);
+	while (running){
+		while(SDL_PollEvent(&event)){	   
+	   		switch(event.type) {
+				case SDL_QUIT:
+					running=false;
+					throw SDLerror();
+					break;
+				case SDL_WINDOWEVENT:
+					timer.reset();
+					editor.refreshscreen();
+					break;
+				case SDL_MOUSEBUTTONUP:
+					int x;
+					int y;
+					SDL_GetMouseState(&x, &y);
+					running=editor.clicked(x,y);
+				}
+		} 
+		editor.refreshscreen();
+		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
+	}
+	editor.save();
+	return false;
 }
 
 
@@ -244,7 +271,7 @@ try{
     	if(mode==1){
     		finalize=create_game();
     	} else if (mode==2){
-    		finalize=create_map();
+    		finalize=create_map(r.get_renderer(),&texture2,&skt,Width,Height,master);
     	} else if (mode==3){
     		finalize=join_game();
     	}	

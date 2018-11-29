@@ -58,6 +58,14 @@ MasterSurface::MasterSurface(){
 	this->init_explosiontanque();
 	this->init_button_money();
 	this->init_pointer();
+	this->init_button_cima();
+	this->init_button_duna();
+	this->init_button_precipicio();
+	this->init_button_especiafuerte();
+	this->init_button_especiasuave();
+	this->init_button_roca();
+	this->init_button_save();
+	this->init_button_cancel();
 }
 
 
@@ -747,6 +755,17 @@ std::shared_ptr<Surface> MasterSurface::get_button_infanterialigera_surface(){
 }
 
 
+void MasterSurface::init_button_roca(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Roca.png"));
+	this->button_roca=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_roca_surface(){
+	return this->button_roca;
+}
+
+
 void MasterSurface::init_button_money(){
 	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Dinero.png"));
 	this->button_money=s;
@@ -1041,6 +1060,83 @@ void MasterSurface::init_roca(){
 
 std::shared_ptr<Surface> MasterSurface::get_roca_surface(){
 	return this->roca;
+}
+
+
+void MasterSurface::init_button_cima(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Cima.png"));
+	this->button_cima=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_cima_surface(){
+	return this->button_cima;
+}
+
+
+void MasterSurface::init_button_especiafuerte(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/EspeciaFuerte.png"));
+	this->button_especiafuerte=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_especiafuerte_surface(){
+	return this->button_especiafuerte;
+}
+
+
+void MasterSurface::init_button_especiasuave(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/EspeciaSuave.png"));
+	this->button_especiasuave=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_especiasuave_surface(){
+	return this->button_especiasuave;
+}
+
+
+void MasterSurface::init_button_duna(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Duna.png"));
+	this->button_duna=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_duna_surface(){
+	return this->button_duna;
+}
+
+
+void MasterSurface::init_button_precipicio(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Precipicio.png"));
+	this->button_precipicio=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_precipicio_surface(){
+	return this->button_precipicio;
+}
+
+
+void MasterSurface::init_button_save(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Save.png"));
+	this->button_save=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_save_surface(){
+	return this->button_save;
+}
+
+
+void MasterSurface::init_button_cancel(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Delete.png"));
+	this->button_delete=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_cancel_surface(){
+	return this->button_delete;
 }
 
 

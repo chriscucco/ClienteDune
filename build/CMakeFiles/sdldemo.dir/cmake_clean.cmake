@@ -74,6 +74,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o"
   "CMakeFiles/sdldemo.dir/src/Warrior.cpp.o"
   "CMakeFiles/sdldemo.dir/src/Window.cpp.o"
+  "CMakeFiles/sdldemo.dir/src/Editor.cpp.o"
   "libsdldemo.pdb"
   "libsdldemo.a"
 )

@@ -19,12 +19,17 @@ protected:
 	int team;
 public:
 	Static();
+	//GET ID
 	int get_id();
 	SDL_Rect* getpos();
 	SDL_Rect* get_converted_pos(int x,int y);
+	//Obtiene size y
 	int h_size();
+	//Obtiene size x
 	int v_size();
+	//Obtiene y(esquina izquierda arriba)
 	int y_pos();
+	//Obtiene y(esquina izquierda arriba)
 	int x_pos();
 	int mine();
 	bool is_inside_screen(int x, int y, int size_x, int size_y);

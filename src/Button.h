@@ -14,7 +14,8 @@ protected:
 	std::shared_ptr<Surface> botton_surface;
 	int id;
 public:
-	Button();	
+	Button();
+	Button(const int id,int size_x, int size_y,int x, int y, std::shared_ptr<Surface> s);	
 	SDL_Rect* getpos();
 	int get_id();
 	bool click_is_inside_button(int x, int y);

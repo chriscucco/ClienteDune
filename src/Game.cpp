@@ -1,3 +1,7 @@
+#ifndef GAME_CPP_
+#define GAME_CPP_
+
+
 #include "Game.h"
 #define CENTRODECONSTRUCCION 0
 #define TRAMPADEAIRE 1
@@ -651,8 +655,6 @@ void Game::copymoveables(){
 }
 
 void Game::copypointers(){
-	
-
 	unsigned int i=0;
 	while(i<this->selected.size()){
 		if(this->selected.at(i)->is_inside_screen(this->corner_x,this->corner_y,this->size_x,this->size_y)){
@@ -1150,3 +1152,4 @@ void Game::stop_attack(int id){
 
 Game::~Game(){}
 
+#endif

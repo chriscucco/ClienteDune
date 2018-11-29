@@ -30,6 +30,11 @@ void Texture::parser_color(int id){
 	int g=0;
 	int b=0;
 	switch	(id){
+		case 0:
+			r=170;
+			g=170;
+			b=170;
+			break;
 		case 1:
 			r=200;
 			g=0;

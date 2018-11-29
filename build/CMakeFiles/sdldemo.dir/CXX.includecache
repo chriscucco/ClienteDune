@@ -370,6 +370,30 @@ Surface.cpp
 Terrain.cpp
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Terrain.cpp
 
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Editor.cpp
+Editor.h
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Editor.h
+
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Editor.h
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+stdio.h
+-
+iostream
+-
+Game.cpp
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Game.cpp
+fstream
+-
+memory
+-
+string
+-
+vector
+-
+
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/EspeciaFuerte.cpp
 EspeciaFuerte.h
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/EspeciaFuerte.h
@@ -1111,4 +1135,6 @@ Cycle.cpp
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Cycle.cpp
 Timer.cpp
 /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Timer.cpp
+Editor.cpp
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Editor.cpp
 

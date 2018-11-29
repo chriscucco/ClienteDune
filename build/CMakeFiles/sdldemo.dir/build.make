@@ -1857,6 +1857,30 @@ CMakeFiles/sdldemo.dir/src/Window.cpp.o.provides: CMakeFiles/sdldemo.dir/src/Win
 CMakeFiles/sdldemo.dir/src/Window.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src/Window.cpp.o
 
 
+CMakeFiles/sdldemo.dir/src/Editor.cpp.o: CMakeFiles/sdldemo.dir/flags.make
+CMakeFiles/sdldemo.dir/src/Editor.cpp.o: ../src/Editor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/sdldemo.dir/src/Editor.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdldemo.dir/src/Editor.cpp.o -c /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Editor.cpp
+
+CMakeFiles/sdldemo.dir/src/Editor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdldemo.dir/src/Editor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Editor.cpp > CMakeFiles/sdldemo.dir/src/Editor.cpp.i
+
+CMakeFiles/sdldemo.dir/src/Editor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdldemo.dir/src/Editor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/src/Editor.cpp -o CMakeFiles/sdldemo.dir/src/Editor.cpp.s
+
+CMakeFiles/sdldemo.dir/src/Editor.cpp.o.requires:
+
+.PHONY : CMakeFiles/sdldemo.dir/src/Editor.cpp.o.requires
+
+CMakeFiles/sdldemo.dir/src/Editor.cpp.o.provides: CMakeFiles/sdldemo.dir/src/Editor.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Editor.cpp.o.provides.build
+.PHONY : CMakeFiles/sdldemo.dir/src/Editor.cpp.o.provides
+
+CMakeFiles/sdldemo.dir/src/Editor.cpp.o.provides.build: CMakeFiles/sdldemo.dir/src/Editor.cpp.o
+
+
 # Object files for target sdldemo
 sdldemo_OBJECTS = \
 "CMakeFiles/sdldemo.dir/src/Animation.cpp.o" \
@@ -1933,7 +1957,8 @@ sdldemo_OBJECTS = \
 "CMakeFiles/sdldemo.dir/src/Trike.cpp.o" \
 "CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o" \
 "CMakeFiles/sdldemo.dir/src/Warrior.cpp.o" \
-"CMakeFiles/sdldemo.dir/src/Window.cpp.o"
+"CMakeFiles/sdldemo.dir/src/Window.cpp.o" \
+"CMakeFiles/sdldemo.dir/src/Editor.cpp.o"
 
 # External object files for target sdldemo
 sdldemo_EXTERNAL_OBJECTS =
@@ -2013,9 +2038,10 @@ libsdldemo.a: CMakeFiles/sdldemo.dir/src/Trike.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Warrior.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/src/Window.cpp.o
+libsdldemo.a: CMakeFiles/sdldemo.dir/src/Editor.cpp.o
 libsdldemo.a: CMakeFiles/sdldemo.dir/build.make
 libsdldemo.a: CMakeFiles/sdldemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Linking CXX static library libsdldemo.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Linking CXX static library libsdldemo.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/sdldemo.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sdldemo.dir/link.txt --verbose=$(VERBOSE)
 
@@ -2099,6 +2125,7 @@ CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Trike.cpp.o.requires
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Vehicle.cpp.o.requires
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Warrior.cpp.o.requires
 CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Window.cpp.o.requires
+CMakeFiles/sdldemo.dir/requires: CMakeFiles/sdldemo.dir/src/Editor.cpp.o.requires
 
 .PHONY : CMakeFiles/sdldemo.dir/requires
 

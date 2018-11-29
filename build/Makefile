@@ -1054,6 +1054,33 @@ src/Duna.cpp.s:
 	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Duna.cpp.s
 .PHONY : src/Duna.cpp.s
 
+src/Editor.o: src/Editor.cpp.o
+
+.PHONY : src/Editor.o
+
+# target to build an object file
+src/Editor.cpp.o:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Editor.cpp.o
+.PHONY : src/Editor.cpp.o
+
+src/Editor.i: src/Editor.cpp.i
+
+.PHONY : src/Editor.i
+
+# target to preprocess a source file
+src/Editor.cpp.i:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Editor.cpp.i
+.PHONY : src/Editor.cpp.i
+
+src/Editor.s: src/Editor.cpp.s
+
+.PHONY : src/Editor.s
+
+# target to generate assembly for a file
+src/Editor.cpp.s:
+	$(MAKE) -f CMakeFiles/sdldemo.dir/build.make CMakeFiles/sdldemo.dir/src/Editor.cpp.s
+.PHONY : src/Editor.cpp.s
+
 src/EspeciaFuerte.o: src/EspeciaFuerte.cpp.o
 
 .PHONY : src/EspeciaFuerte.o
@@ -2276,6 +2303,9 @@ help:
 	@echo "... src/Duna.o"
 	@echo "... src/Duna.i"
 	@echo "... src/Duna.s"
+	@echo "... src/Editor.o"
+	@echo "... src/Editor.i"
+	@echo "... src/Editor.s"
 	@echo "... src/EspeciaFuerte.o"
 	@echo "... src/EspeciaFuerte.i"
 	@echo "... src/EspeciaFuerte.s"

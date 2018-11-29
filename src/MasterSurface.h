@@ -52,6 +52,17 @@ private:
 	std::shared_ptr<Surface> button_tanque;
 	std::shared_ptr<Surface> button_trampadeaire;
 	std::shared_ptr<Surface> button_trike;
+
+	std::shared_ptr<Surface> button_roca;
+	std::shared_ptr<Surface> button_cima;
+	std::shared_ptr<Surface> button_especiafuerte;
+	std::shared_ptr<Surface> button_especiasuave;
+	std::shared_ptr<Surface> button_duna;
+	std::shared_ptr<Surface> button_precipicio;
+	std::shared_ptr<Surface> button_save;
+	std::shared_ptr<Surface> button_delete;
+
+
 	std::shared_ptr<Surface> centrodeconstruccion;
 	std::shared_ptr<Surface> cima;
 	std::shared_ptr<Surface> cuartelatreides;
@@ -184,6 +195,25 @@ public:
 	std::vector<std::shared_ptr<Surface>> get_explosionfuerte_surface();
 	void init_explosiontanque();
 	std::vector<std::shared_ptr<Surface>> get_explosiontanque_surface();
+
+	void init_button_cima();
+	std::shared_ptr<Surface> get_button_cima_surface();
+	void init_button_duna();
+	std::shared_ptr<Surface> get_button_duna_surface();
+	void init_button_precipicio();
+	std::shared_ptr<Surface> get_button_precipicio_surface();
+	void init_button_especiafuerte();
+	std::shared_ptr<Surface> get_button_especiafuerte_surface();
+	void init_button_especiasuave();
+	std::shared_ptr<Surface> get_button_especiasuave_surface();
+	void init_button_roca();
+	std::shared_ptr<Surface> get_button_roca_surface();
+	void init_button_save();
+	std::shared_ptr<Surface> get_button_save_surface();
+	void init_button_cancel();
+	std::shared_ptr<Surface> get_button_cancel_surface();
+
+
 	~MasterSurface();
 };
 

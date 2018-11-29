@@ -24,6 +24,8 @@ void Cycle::create(){
   int x=this->game->get_socket()->recv_int();
   int y=this->game->get_socket()->recv_int();
   int team=this->game->get_socket()->recv_int();
+  x-=size_x/2;
+  y-=size_y/2;
   Lock l(*(this->m));
   this->game->add(recv_type,recv_id,size_x,size_y,x,y,team);
 }
@@ -36,6 +38,8 @@ void Cycle::terrain(){
   int size_y=this->game->get_socket()->recv_int();
   int x=this->game->get_socket()->recv_int();
   int y=this->game->get_socket()->recv_int();
+  x-=size_x/2;
+  y-=size_y/2;
   Lock l(*(this->m));
   this->game->add_terrain(recv_type,recv_id,size_x,size_y,x,y);  
 }
@@ -47,6 +51,8 @@ void Cycle::gusano(){
   int size_y=this->game->get_socket()->recv_int();
   int x=this->game->get_socket()->recv_int();
   int y=this->game->get_socket()->recv_int();
+  x-=size_x/2;
+  y-=size_y/2;
   Lock l(*(this->m));
   this->game->add_animation(recv_type,size_x,size_y,x,y);
 }

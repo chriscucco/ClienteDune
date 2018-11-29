@@ -7,6 +7,8 @@
 
 
 void Vehicle::modify_pos(int x, int y){
+	x=x-this->botton_pos.w/2;
+	y=y-this->botton_pos.h/2;
 	if(x>this->botton_pos.x){
 		if(y>this->botton_pos.y){
 			this->current_path=3;

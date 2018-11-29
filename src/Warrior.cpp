@@ -5,6 +5,8 @@
 
 
 void Warrior::modify_pos(int x, int y){
+	x=x-this->botton_pos.w/2;
+	y=y-this->botton_pos.h/2;
 	this->is_attacking=false;
 	if(x>this->botton_pos.x){
 		if(this->current_path==2){

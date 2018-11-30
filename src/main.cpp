@@ -15,6 +15,9 @@
 #include "Creator.cpp"
 #include "Timer.cpp"
 #include "Editor.cpp"
+#define ATREIDES_TEAM 101
+#define HARKONNEN_TEAM 102
+#define ORDOS_TEAM 103
 
 #define FPS 20
 
@@ -148,13 +151,13 @@ void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int H
 					SDL_GetMouseState(&x, &y);
 					if((x>(Width/10))&&(x<((Width/10)*3))&&(y>(Height/3))&&(y<((Height/5)*4))){
 						selection=false;
-						team_number=1;
+						team_number=ATREIDES_TEAM;
 					} else if((x>((Width/10)*4))&&(x<((Width/10)*6))&&(y>(Height/3))&&(y<((Height/5)*4))){
 						selection=false;
-						team_number=2;
+						team_number=HARKONNEN_TEAM;
 					} else if((x>((Width/10)*7))&&(x<((Width/10)*9))&&(y>(Height/3))&&(y<((Height/5)*4))){
 						selection=false;
-						team_number=3;
+						team_number=ORDOS_TEAM;
 					}
 					break;
 			}
@@ -204,13 +207,13 @@ void init_game(Socket* skt,Game* s){
       	}
 	}
 }
+t(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)
 
 
 
 
 int main(int argc, char **argv){
 try{
-
 	if ( SDL_Init(SDL_INIT_VIDEO) < 0){
 		std::cerr << "ERROR AL INICIAR EL SDL" << std::endl;
 		throw SDLerror();

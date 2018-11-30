@@ -1,3 +1,162 @@
+PROTOCOLO VERSION FINAL:
+
+
+
+Parte de Crear Partida:
+
+//Cliente pide lista de mapas
+C: ‘p’<char>
+
+//Server manda loop de todos los mapas
+S: ‘m’<char>||sizeof nombre del mapa<int>||id_mapa<string>||id_mapa<int>
+
+||Server manda que ya paso todos los mapas
+S: ‘f’<char>
+
+//Cliente elige mapa y jugadores
+C: ‘m’<char>||id_mapa<int>||max_jugadores<int>
+
+//Server indica que la partida fue creada
+S: ‘o’<char>||id_partida<int>
+
+//Cliente indica que inicia la partidas
+C: ‘i’<char>||id_partida<int>
+
+//Server indica que inicio la partidas en la cual quiero jugar
+S: ‘r’<char>
+
+Pasa a la parte de Juego iniciado
+
+
+
+
+
+Parte de Unirse a una partida:
+
+//Cliente pide las partidas disponibles para unirse
+C: ‘n’<char>
+
+//Server devuelve  todas las partidas disponibles
+S: m’<char>|size_map_name<int>|map_name<string>|partida_id<int>
+
+//Server indica que ya mando todas las partidas disponibles
+S: ‘f’ <char>
+
+//Cliente pide unirse a una partidas
+C: ‘j’<char>||partida_id<int>
+
+//Servidor indica que acepto que se una a la partida
+S: ‘o’<char>||id_partida<int>
+
+//Server indica que inicio la partidas en la cual quiero jugar
+S: ‘r’<char>
+
+Pasa a la parte de Juego iniciado
+
+
+
+
+
+
+
+
+Parte de Crear mapa:
+
+(A definir entre nacho y ramiro)
+
+Termina de guardarlo y vuelve al menú principal
+
+
+
+
+
+
+
+
+
+Parte de Juego iniciado:
+
+//Cliente empieza diciendo a que casa pertenece
+C: ‘t’<char>|| id_casa(int) :	101-Atreides		102-Harkonnen	103-Ordos
+
+//Ahora el server manda id, esquina_x, esquina_y, tamaño_mapa_x, tamaño_mapa_y
+(todos int)
+
+
+//En esta parte el Server pasa todo el mapa al cliente (también son usados durante el juego):
+
+//Crear edificio o Movible:
+S: c(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)||team(int)
+
+//Crear terreno:
+S: t(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)
+
+//Modificar energia
+S: w(char)||nueva_energia(int)
+
+//Modificar Dinero
+S: p(char)||nuevo_dinero(int)
+
+//Server indica que termino la carga del mapa y empieza el juego
+S: x(char)
+
+
+
+
+Otros comandos durante el juego:
+
+Server:
+//Indica que se rechazo una construcción:
+S: r(char)||type(int)
+
+//Indica que se murio una unidad o desaparece un terreno
+d(char)||id(int)
+
+//Server indica que termino el juego
+e(char)||id_winner_team(int)
+
+//Server envía atacar
+a(char)||id_propio(int)||id_atacado(int)
+
+//Server envía mover
+m(char)||id_propio(int)||x(int)||y(int)
+
+
+//Server indica que una unidad cambio de equipo (para cuando ataca el desviador)
+k(char)||id_unidad(int)||id_tipo(int)||id_new_team()
+
+//Server indica que termino de atacar
+s(char)||id_unidad(int)
+
+//Server indica que sale gusano
+g(char)||type(int)||size_x(int)||size_y(int)||x(int)||y(int)
+
+
+
+
+
+
+
+
+
+Cliente:
+//Cliente indica que vende un edificio
+v(char)||id_edificio(int)
+
+//Cliente envía solicitud para moverse a un punto
+m(char)||id_propio(int)||x(int)||y(int)
+
+//Cliente envía solicitud de atacar
+a(char)||id_propio(int)||id_rival(int)
+
+//Cliente envía solicitud de construir edificio
+e(char)||my_id(int)||type(int)||x(int)||y(int)
+
+//Cliente envía solicitud para construir unidad
+u(char)||type(int)||static_type(int)||my_id(int)
+
+//Cliente envía que se va del juego
+s(char)||my_id(int)
 
 
 
@@ -8,9 +167,7 @@
 
 
 
-
-COMANDOS PARA CREAR ALGO NUEVO (SERVER A CLIENTE):
-c(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)||team(int)
+CODIGOS EN COMUN:
 
 Edificios:
     • Centro de Construccion: 0
@@ -37,8 +194,6 @@ Movibles:
     • Devastador: 19
     • Cosechadora: 20
 
-t(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)
-
 Terreno:
     • Roca: 30
     • Duna: 31
@@ -46,106 +201,10 @@ Terreno:
     • Especia Debil: 33
     • Cima: 34
     • Precipicio: 35
+Otros:
+    • Gusano: 50
+Equipos:
+    • Atreides:101
+    • Harkonnen: 102
+    • Ordos: 103
 
-No implementamos nada de balas todavía
-
-Bala:
-    • Rifle de asalto: 40
-    • Cañon: 41
-    • Lanzamisiles: 42
-    • Onda de sonido: 43
-    • Cañon 22mm: 44
-    • Cañon de plasma: 45
-
-g(char)||type(int)||size_x(int)||size_y(int)||x(int)||y(int)
-Gusano: 50
-Explocion fuerte: 51
-Explocion tanque: 52
-Explocion pesonaje: 53
-
-
-AL SERVIDOR NO LE IMPORTA
-Botones de edificios nuevos:
-    • Centro De construcción:60
-    • Cuartel Atreides: 61
-    • Cuartel Harkonnen:62
-    • Cuartel Ordos: 63
-    • Fabrica Ligera:64
-    • Fabrica Pesada: 65
-    • Palacio: 66
-    • Refineria: 67
-    • Silo: 68
-    • Trampa de Aire: 69
-
-Botones de Movibles nuevos:
-    • Cosechadora: 70
-    • Desviador: 71
-    • Devastador: 72
-    • Raider:73
-    • SonicTank: 74
-    • Tanque: 75
-    • Trike:76
-    • Fremen: 77
-    • Infanteria Ligera: 78
-    • Infanteria Pesada: 79
-    • Sardukar: 80
-
-    
- 
-COMANDOS QUE MANDA EL SERVIDOR
-change_moveable
-
-SERVER INDICA QUE SE RECHAZÓ UNA CONSTRUCCIÓN
-r(char)||type(int)
-
-SERVER INDICA QUE UNA UNIDAD MURIÓ
-d(char)||id(int)
-
-SERVER INDICA QUE SE TERMINO EL JUEGO
-e(char)||winner_team(int)
-
-SERVER ENVÍA ATACA
-a(char)||id_propio(int)||id_atacado(int)
-
-SERVER ENVÍA MOVER
-m(char)||id_propio(int)||x(int)||y(int)
-
-SERVER ENVIA CAMBIAR DINERO
-p(char)||nuevo_dinero(int)
-
-SERVER ENVIA CAMBIAR ENERGIA
-w(char)||nueva_energia(int)
-
-
-SERVER ENVIA CAMBIO DE EQUIPO
-k(char)||id_unidad(int)||id_tipo(int)||id_new_team()
-
-SERVER INDICA QUE TERMINO DE ATACAR
-s(char)||id_unidad(int)
-
-
-
-
-
-
-COMANDOS QUE MANDA EL CLIENTE
-
-CLIENTE DICE DE QUE EQUIPO ES
-t(char)||id(int)    1:Atreides 2:Harkonnen  3:Ordos
-
-CLIENTE INDICA QUE VENDE EDIFICIO
-v(char)||id_edificio(int)
-
-CLIENTE ENVÍA SOLICITUD PARA MOVERSE:
-m(char)||id_propio(int)||x(int)||y(int)
-
-CLIENTE ENVÍA SOLICITUD PARA ATACAR:
-a(char)||id_propio(int)||id_rival(int)
-
-CLIENTE INDICA QUE LE APRETARON UN BOTÓN DE EDIFICIO:
-e(char)||my_id(int)||type(int)||x(int)||y(int)
-
-CLIENTE INDICA QUE LE APRETARON UN BOTÓN DE CREAR UNIDAD:
-u(char)||type(int)||static_type(int)||my_id(int)
-
- 

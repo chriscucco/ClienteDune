@@ -23,6 +23,42 @@ void Text::modify_value(int i){
 	this->has_to_actualize=true;
 }
 
+void Text::modify_id(int i){
+	this->value=i;
+}
+
+int Text::get_value(){
+	return this->value;
+}
+
+bool Text::click_is_inside_text(int x, int y){
+	int x_from=(this->botton_pos.x+AJUSTE);
+	int x_to=(this->botton_pos.x+this->botton_pos.w-AJUSTE);
+	int y_from=this->botton_pos.y+AJUSTE;
+	int y_to=this->botton_pos.y+this->botton_pos.h-AJUSTE;
+	bool correct=((x>=x_from)&&(x<=x_to)&&(y>=y_from)&&(y<=y_to));
+	return correct;
+}
+
+int Text::get_x(){
+	return this->botton_pos.x;
+}
+
+
+int Text::get_y(){
+	return this->botton_pos.y;
+}
+
+
+int Text::get_w(){
+	return this->botton_pos.w;
+}
+
+
+int Text::get_h(){
+	return this->botton_pos.h;
+}
+
 
 int Text::get_remains(){
 	return this->repeats;
@@ -53,6 +89,11 @@ SDL_Surface* Text::get_surface(){
 		this->has_to_actualize=false;
 	}
 	return this->surf->get_surface();
+}
+
+std::shared_ptr<Surface> Text::get_surface(int i){
+	std::shared_ptr<Surface> s(new Surface('t',this->text));
+	return s;
 }
 
 

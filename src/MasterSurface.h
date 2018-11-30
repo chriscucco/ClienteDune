@@ -52,7 +52,6 @@ private:
 	std::shared_ptr<Surface> button_tanque;
 	std::shared_ptr<Surface> button_trampadeaire;
 	std::shared_ptr<Surface> button_trike;
-
 	std::shared_ptr<Surface> button_roca;
 	std::shared_ptr<Surface> button_cima;
 	std::shared_ptr<Surface> button_especiafuerte;
@@ -61,8 +60,6 @@ private:
 	std::shared_ptr<Surface> button_precipicio;
 	std::shared_ptr<Surface> button_save;
 	std::shared_ptr<Surface> button_delete;
-
-
 	std::shared_ptr<Surface> centrodeconstruccion;
 	std::shared_ptr<Surface> cima;
 	std::shared_ptr<Surface> cuartelatreides;
@@ -80,11 +77,14 @@ private:
 	std::shared_ptr<Surface> precipicio;
 	std::shared_ptr<Surface> roca;
 	std::shared_ptr<Surface> pointer;
-
+	std::shared_ptr<Surface> hpointer;
+	std::shared_ptr<Surface> initmatch;
 public:
 	MasterSurface();
 	void init_trike();
 	std::vector<std::shared_ptr<Surface>> get_trike_surface();
+	void init_initmatch();
+	std::shared_ptr<Surface> get_initmatch_surface();
 	void init_cosechadora();
 	std::vector<std::shared_ptr<Surface>> get_cosechadora_surface();
 	void init_desviador();
@@ -167,6 +167,8 @@ public:
 	std::shared_ptr<Surface> get_trampadeaire_surface();
 	void init_pointer();
 	std::shared_ptr<Surface> get_pointer_surface();
+	void init_hpointer();
+	std::shared_ptr<Surface> get_hpointer_surface();
 	void init_cima();
 	std::shared_ptr<Surface> get_cima_surface();
 	void init_duna();
@@ -195,7 +197,6 @@ public:
 	std::vector<std::shared_ptr<Surface>> get_explosionfuerte_surface();
 	void init_explosiontanque();
 	std::vector<std::shared_ptr<Surface>> get_explosiontanque_surface();
-
 	void init_button_cima();
 	std::shared_ptr<Surface> get_button_cima_surface();
 	void init_button_duna();

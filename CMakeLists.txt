@@ -156,6 +156,8 @@ add_library(sdldemo
  src/Window.h
  src/Editor.cpp
  src/Editor.h
+ src/Creator.cpp
+ src/Creator.h
 )
 
 INCLUDE(FindPkgConfig)

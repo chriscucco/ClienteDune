@@ -47,7 +47,6 @@ public:
 	bool clicked(int x,int y);
 	void save();
 	~Editor();
-
 };
 
 

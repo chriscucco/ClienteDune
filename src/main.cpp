@@ -12,15 +12,11 @@
 #include "Renderer.cpp"
 #include "Texture.cpp"
 #include "Cycle.cpp"
+#include "Creator.cpp"
 #include "Timer.cpp"
 #include "Editor.cpp"
 
 #define FPS 20
-
-
-bool create_game(){
-	return true;
-}
 
 
 bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, std::shared_ptr<MasterSurface> master){
@@ -269,7 +265,8 @@ try{
     while(!finalize){
     	int mode=first_window(&r,&texture,Width,Height);
     	if(mode==1){
-    		finalize=create_game();
+    		Creator c(r.get_renderer(),&texture2,&skt,Width,Height,master,FPS);
+    		finalize=c.run();
     	} else if (mode==2){
     		finalize=create_map(r.get_renderer(),&texture2,&skt,Width,Height,master);
     	} else if (mode==3){

@@ -66,6 +66,8 @@ MasterSurface::MasterSurface(){
 	this->init_button_roca();
 	this->init_button_save();
 	this->init_button_cancel();
+	this->init_hpointer();
+	this->init_initmatch();
 }
 
 
@@ -665,6 +667,16 @@ std::shared_ptr<Surface> MasterSurface::get_pointer_surface(){
 	return this->pointer;
 }
 
+void MasterSurface::init_hpointer(){
+	std::shared_ptr<Surface> s(new Surface("imgs/hpoint.png"));
+	this->hpointer=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_hpointer_surface(){
+	return this->hpointer;
+}
+
 
 
 void MasterSurface::init_button_cuartelharkonnen(){
@@ -1137,6 +1149,16 @@ void MasterSurface::init_button_cancel(){
 
 std::shared_ptr<Surface> MasterSurface::get_button_cancel_surface(){
 	return this->button_delete;
+}
+
+void MasterSurface::init_initmatch(){
+	std::shared_ptr<Surface> s(new Surface("terrain/InicioPartida.png"));
+	this->initmatch=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_initmatch_surface(){
+	return this->initmatch;
 }
 
 

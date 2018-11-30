@@ -6,6 +6,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#define AJUSTE 5
+
 
 class Text{
 private:
@@ -21,8 +23,16 @@ public:
 	SDL_Rect* getpos();
 	void modify_value(int i);
 	void modify_texture();
+	bool click_is_inside_text(int x, int y);
 	void printed();
+	int get_value();
 	int get_remains();
+	void modify_id(int i);
 	SDL_Surface* get_surface();
+	std::shared_ptr<Surface> get_surface(int i);
+	int get_x();
+	int get_y();
+	int get_w();
+	int get_h();
 	~Text();	
 };

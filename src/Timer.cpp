@@ -1,3 +1,6 @@
+#ifndef TIMER_CPP_
+#define TIMER_CPP_
+
 #include "Timer.h"
 #include <chrono>
 #include <thread>
@@ -28,3 +31,4 @@ int Timer::remain_time(){
 
 Timer::~Timer(){}
 	
+#endif

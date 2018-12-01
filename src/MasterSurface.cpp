@@ -68,6 +68,7 @@ MasterSurface::MasterSurface(){
 	this->init_button_cancel();
 	this->init_hpointer();
 	this->init_initmatch();
+	this->init_button_charge();
 }
 
 
@@ -1150,6 +1151,18 @@ void MasterSurface::init_button_cancel(){
 std::shared_ptr<Surface> MasterSurface::get_button_cancel_surface(){
 	return this->button_delete;
 }
+
+
+void MasterSurface::init_button_charge(){
+	std::shared_ptr<Surface> s(new Surface("imgs/Botones/Cargar.png"));
+	this->button_charge=s;
+}
+
+
+std::shared_ptr<Surface> MasterSurface::get_button_charge_surface(){
+	return this->button_charge;
+}
+
 
 void MasterSurface::init_initmatch(){
 	std::shared_ptr<Surface> s(new Surface("terrain/InicioPartida.png"));

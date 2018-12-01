@@ -8,7 +8,9 @@
 #define PRECIPICIO 35
 #define SAVE 36
 #define CANCEL 37
+#define CHARGE_BUTTON 38
 #define BUTTON_SIZE 50
+#define CHARGE_BUTTON_SIZE_X 150
 #define CENTER_SIZE 50
 #define TERRAIN_SIZE 70
 
@@ -33,6 +35,7 @@ void Editor::init_buttons(){
 	std::shared_ptr<Button> b7(new Button(PRECIPICIO,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*2),0,this->master->get_button_precipicio_surface()));
 	std::shared_ptr<Button> b8(new Button(SAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*3),0,this->master->get_button_save_surface()));
 	std::shared_ptr<Button> b9(new Button(CANCEL,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*4),0,this->master->get_button_cancel_surface()));
+	std::shared_ptr<Button> b10(new Button(CHARGE_BUTTON,CHARGE_BUTTON_SIZE_X,BUTTON_SIZE,(this->size_x-CHARGE_BUTTON_SIZE_X),0,this->master->get_button_charge_surface()));
 	this->buttons.push_back(b1);
 	this->buttons.push_back(b2);
 	this->buttons.push_back(b3);
@@ -42,6 +45,8 @@ void Editor::init_buttons(){
 	this->buttons.push_back(b7);
 	this->buttons.push_back(b8);
 	this->buttons.push_back(b9);
+	this->charge_button=b10;
+
 }
 
 
@@ -89,6 +94,9 @@ void Editor::copybuttons(){
 		Texture t(this->renderer, this->current_button->getsurf(),0);
 		SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->current_button->getpos());
 	}
+	Texture t2(this->renderer, this->charge_button->getsurf());
+	SDL_RenderCopy(this->renderer, t2.get_texture(), NULL, this->charge_button->getpos());
+
 }
 
 
@@ -288,17 +296,27 @@ void Editor::add_terrain(int x1, int y1){
 
 bool Editor::clicked(int x,int y){
 	bool cont=true;
-	std::shared_ptr<Button> b=this->search_button_by_clic(x,y);
-	if(b!=NULL){
-		if(b->get_id()==SAVE){
-			cont=false;
-		} else{
-			this->current_button=b;
-		}
+	if(this->charge_button->click_is_inside_button(x,y)){
+		this->charge_map();
+		return cont;
 	} else {
-		this->process_clic(x,y);
+		std::shared_ptr<Button> b=this->search_button_by_clic(x,y);
+		if(b!=NULL){
+			if(b->get_id()==SAVE){
+				cont=false;
+			} else{
+				this->current_button=b;
+			}
+		} else {
+			this->process_clic(x,y);
+		}
+		return cont;
 	}
-	return cont;
+}
+
+
+void Editor::charge_map(){
+	//CARGAR MAPA EN MEMORIA, TE LO DEJO A VOS NACHO
 }
 
 

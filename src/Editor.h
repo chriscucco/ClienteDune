@@ -18,6 +18,7 @@ private:
 	std::vector<std::shared_ptr<Terrain>> terrains;
 	std::vector<std::shared_ptr<Button>> buttons;
 	std::shared_ptr<Button> current_button{nullptr};
+	std::shared_ptr<Button> charge_button;
 	Socket* s;
 	int size_x;
 	int size_y;
@@ -45,6 +46,7 @@ public:
 	void insert_terrain(int x,int y,int w,int h);
 	void add_terrain(int x1, int y1);
 	bool clicked(int x,int y);
+	void charge_map();
 	void save();
 	~Editor();
 };

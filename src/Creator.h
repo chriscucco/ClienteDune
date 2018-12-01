@@ -31,7 +31,7 @@ public:
 	bool clicked(int x,int y);
 	std::shared_ptr<Text> search_maps(int x,int y);
 	std::shared_ptr<Text> search_maxplayers(int x,int y);
-	void wait_screen(int id);
+	void wait_screen();
 	~Creator();
 	
 };

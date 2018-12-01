@@ -17,7 +17,7 @@ S: ‘f’<char>
 C: ‘m’<char>||id_mapa<int>||max_jugadores<int>
 
 //Server indica que la partida fue creada
-S: ‘o’<char>||id_partida<int>
+S: ‘o’<char>
 
 //Cliente indica que inicia la partidas
 C: ‘i’<char>||id_partida<int>
@@ -46,7 +46,7 @@ S: ‘f’ <char>
 C: ‘j’<char>||partida_id<int>
 
 //Servidor indica que acepto que se una a la partida
-S: ‘o’<char>||id_partida<int>
+S: ‘o’<char>
 
 //Server indica que inicio la partidas en la cual quiero jugar
 S: ‘r’<char>

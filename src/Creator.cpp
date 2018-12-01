@@ -136,7 +136,6 @@ bool Creator::run(){
  		if(recv==0){
  			throw SDLerror();
  		} else if(rec=='o'){
- 			id_partida=this->skt->recv_int();
  			break;
  		}
  	}
@@ -191,7 +190,7 @@ bool Creator::clicked(int x,int y){
 }
 
 
-void Creator::wait_screen(int id_partida){
+void Creator::wait_screen(){
 	Text legend(this->r,"Esperando nuevos jugadores, hace clic para iniciar",1100,80,100,200,0);
 	Button b(0,500,150,400,400,this->master->get_initmatch_surface());
 	bool running = true;

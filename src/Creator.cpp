@@ -14,14 +14,12 @@ Creator::Creator(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int 
 	this->current_id=NULL;
 	std::shared_ptr<Text> s1(new Text(r,"Seleccion de Mapa:",400,50,0,0,0));
 	std::shared_ptr<Text> s2(new Text(r,"Cantidad Maxima de Jugadores",400,50,900,0,0));
-	std::shared_ptr<Text> s3(new Text(r,"Uno",150,50,1000,100,0));
 	std::shared_ptr<Text> s4(new Text(r,"Dos",150,50,1000,150,0));
 	std::shared_ptr<Text> s5(new Text(r,"Tres",150,50,1000,200,0));
 	std::shared_ptr<Text> s6(new Text(r,"Cuatro",150,50,1000,250,0));
 	std::shared_ptr<Text> s7(new Text(r,"Cinco",150,50,1000,300,0));
 	std::shared_ptr<Text> s8(new Text(r,"Seis",150,50,1000,350,0));
 	std::shared_ptr<Text> s9(new Text(r,"CREAR",300,100,800,500,0));
-	s3->modify_id(1);
 	s4->modify_id(2);
 	s5->modify_id(3);
 	s6->modify_id(4);
@@ -30,7 +28,6 @@ Creator::Creator(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int 
 	this->static_text.push_back(s1);
 	this->static_text.push_back(s2);
 	this->create=s9;
-	this->max_players.push_back(s3);
 	this->max_players.push_back(s4);
 	this->max_players.push_back(s5);
 	this->max_players.push_back(s6);

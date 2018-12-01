@@ -60,6 +60,7 @@
 #include "Texture.cpp"
 #include "Surface.cpp"
 #include "MasterSurface.cpp"
+#include "EndOfGame.cpp"
 #include <fstream>
 #include <memory>
 #include <string>

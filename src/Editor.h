@@ -22,6 +22,8 @@ private:
 	Socket* s;
 	int size_x;
 	int size_y;
+	int game_size_x;
+	int game_size_y;
 public:
 	Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master);
 	void init_buttons();

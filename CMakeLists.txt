@@ -160,6 +160,8 @@ add_library(sdldemo
  src/Creator.h
  src/Joiner.cpp
  src/Joiner.h
+ src/EndOfGame.cpp
+ src/EndOfGame.h
 )
 
 INCLUDE(FindPkgConfig)

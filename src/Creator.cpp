@@ -139,6 +139,8 @@ bool Creator::run(){
  		}
  	}
  	this->wait_screen();
+ 	unsigned char i='i';
+ 	this->skt->send_msj(&i,1);
  	return true;
 }
 
@@ -223,7 +225,7 @@ void Creator::wait_screen(){
 		SDL_RenderCopy(this->r, t2.get_texture(), NULL, legend.getpos());
 		SDL_RenderPresent(this->r);
 		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
-	}
+	}	
 }
 
 

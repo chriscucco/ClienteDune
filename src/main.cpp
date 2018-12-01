@@ -14,6 +14,7 @@
 #include "Cycle.cpp"
 #include "Creator.cpp"
 #include "Timer.cpp"
+#include "Joiner.cpp"
 #include "Editor.cpp"
 #define ATREIDES_TEAM 101
 #define HARKONNEN_TEAM 102
@@ -207,8 +208,6 @@ void init_game(Socket* skt,Game* s){
       	}
 	}
 }
-t(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)
-
 
 
 
@@ -273,7 +272,8 @@ try{
     	} else if (mode==2){
     		finalize=create_map(r.get_renderer(),&texture2,&skt,Width,Height,master);
     	} else if (mode==3){
-    		finalize=join_game();
+    		Joiner j(r.get_renderer(),&texture2,&skt,Width,Height,master,FPS);
+    		finalize=j.run();
     	}	
     }
     r.clear(); 

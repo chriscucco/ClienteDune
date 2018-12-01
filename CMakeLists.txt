@@ -158,6 +158,8 @@ add_library(sdldemo
  src/Editor.h
  src/Creator.cpp
  src/Creator.h
+ src/Joiner.cpp
+ src/Joiner.h
 )
 
 INCLUDE(FindPkgConfig)

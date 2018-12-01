@@ -129,7 +129,6 @@ bool Creator::run(){
 	this->skt->send_msj(&eme,1);
  	this->skt->send_int(this->current_id->get_value());
  	this->skt->send_int(this->current_max->get_value());
- 	unsigned int id_partida;
  	unsigned char rec;
  	while(1){
  		int recv=this->skt->recv_msj(&rec,1);
@@ -139,7 +138,7 @@ bool Creator::run(){
  			break;
  		}
  	}
- 	this->wait_screen(id_partida);
+ 	this->wait_screen();
  	return true;
 }
 

@@ -1,8 +1,15 @@
 #include "Creator.h"
 
+void Creator::send_close(){
+	unsigned char exit='s';
+	this->skt->send_msj(&exit,1);
+	skt->send_int(this->my_id);
+	throw EndOfGame();
+}
 
 
-Creator::Creator(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int h,std::shared_ptr<MasterSurface> m,int f){
+Creator::Creator(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int h,std::shared_ptr<MasterSurface> m,int f, int id){
+	this->my_id=id;
 	this->fps=f;
 	this->r=renderer;
 	this->t=texture;
@@ -14,14 +21,12 @@ Creator::Creator(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int 
 	this->current_id=NULL;
 	std::shared_ptr<Text> s1(new Text(r,"Seleccion de Mapa:",400,50,0,0,0));
 	std::shared_ptr<Text> s2(new Text(r,"Cantidad Maxima de Jugadores",400,50,900,0,0));
-	std::shared_ptr<Text> s3(new Text(r,"Uno",150,50,1000,100,0));
 	std::shared_ptr<Text> s4(new Text(r,"Dos",150,50,1000,150,0));
 	std::shared_ptr<Text> s5(new Text(r,"Tres",150,50,1000,200,0));
 	std::shared_ptr<Text> s6(new Text(r,"Cuatro",150,50,1000,250,0));
 	std::shared_ptr<Text> s7(new Text(r,"Cinco",150,50,1000,300,0));
 	std::shared_ptr<Text> s8(new Text(r,"Seis",150,50,1000,350,0));
 	std::shared_ptr<Text> s9(new Text(r,"CREAR",300,100,800,500,0));
-	s3->modify_id(1);
 	s4->modify_id(2);
 	s5->modify_id(3);
 	s6->modify_id(4);
@@ -30,7 +35,6 @@ Creator::Creator(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int 
 	this->static_text.push_back(s1);
 	this->static_text.push_back(s2);
 	this->create=s9;
-	this->max_players.push_back(s3);
 	this->max_players.push_back(s4);
 	this->max_players.push_back(s5);
 	this->max_players.push_back(s6);
@@ -109,8 +113,7 @@ bool Creator::run(){
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
 				case SDL_QUIT:
-					running=false;
-					throw EndOfGame();
+					this->send_close();
 					break;
 				case SDL_WINDOWEVENT:
 					timer.reset();
@@ -133,7 +136,7 @@ bool Creator::run(){
  	while(1){
  		int recv=this->skt->recv_msj(&rec,1);
  		if(recv==0){
- 			throw SDLerror();
+ 			throw EndOfGame();
  		} else if(rec=='o'){
  			break;
  		}
@@ -201,8 +204,7 @@ void Creator::wait_screen(){
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
 				case SDL_QUIT:
-					running=false;
-					throw SDLerror();
+					this->send_close();
 					break;
 				case SDL_WINDOWEVENT:
 					timer.reset();

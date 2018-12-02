@@ -1,8 +1,14 @@
 #include "Joiner.h"
 
+void Joiner::send_close(){
+	unsigned char exit='s';
+	this->skt->send_msj(&exit,1);
+	skt->send_int(this->my_id);
+	throw EndOfGame();
+}
 
-
-Joiner::Joiner(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int h,std::shared_ptr<MasterSurface> m,int f){
+Joiner::Joiner(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int h,std::shared_ptr<MasterSurface> m,int f, int id){
+	this->my_id=id;
 	this->fps=f;
 	this->r=renderer;
 	this->t=texture;
@@ -81,8 +87,7 @@ bool Joiner::run(){
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
 				case SDL_QUIT:
-					running=false;
-					throw SDLerror();
+					this->send_close();
 					break;
 				case SDL_WINDOWEVENT:
 					timer.reset();
@@ -104,7 +109,7 @@ bool Joiner::run(){
  	while(1){
  		int recv=this->skt->recv_msj(&rec,1);
  		if(recv==0){
- 			throw SDLerror();
+ 			throw EndOfGame();
  		} else if(rec=='o'){
  			break;
  		}
@@ -154,8 +159,7 @@ void Joiner::wait_screen(){
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
 				case SDL_QUIT:
-					running=false;
-					throw SDLerror();
+					this->send_close();
 					break;
 				case SDL_WINDOWEVENT:
 					timer.reset();

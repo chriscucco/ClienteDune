@@ -23,9 +23,11 @@ private:
 	std::vector<std::shared_ptr<Text>> maps;
 	std::shared_ptr<Text> current_id;
 	std::shared_ptr<Text> current_max;
-	std::shared_ptr<Text> create;	
+	std::shared_ptr<Text> create;
+	int my_id;	
 public:
-	Creator(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int h,std::shared_ptr<MasterSurface> m, int f);
+	Creator(SDL_Renderer* renderer, Texture* texture,Socket* s, int w, int h,std::shared_ptr<MasterSurface> m, int f, int id);
+	void send_close();
 	bool run();
 	void refresh_screen();
 	bool clicked(int x,int y);

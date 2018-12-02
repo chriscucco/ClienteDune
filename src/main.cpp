@@ -23,7 +23,15 @@
 #define FPS 20
 
 
-bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, std::shared_ptr<MasterSurface> master){
+void send_close(Socket* s, int id){
+	unsigned char exit='s';
+	s->send_msj(&exit,1);
+	s->send_int(id);
+	throw EndOfGame();
+}
+
+
+bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, std::shared_ptr<MasterSurface> master, int id){
 	Editor editor(r,t->get_texture(),skt,Width,Height,master);
 	bool running = true;
 	SDL_Event event;
@@ -32,8 +40,7 @@ bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, 
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
 				case SDL_QUIT:
-					running=false;
-					throw SDLerror();
+					send_close(skt,id);
 					break;
 				case SDL_WINDOWEVENT:
 					timer.reset();
@@ -61,7 +68,7 @@ bool join_game(){
 
 
 
-int first_window(Renderer *r,Texture *texture,int Width, int Height){
+int first_window(Renderer *r,Texture *texture,int Width, int Height, Socket* skt,int id){
 	bool selection=true;
     int result;
     Surface s1("terrain/CrearJuego.png");
@@ -94,7 +101,7 @@ int first_window(Renderer *r,Texture *texture,int Width, int Height){
 		while(SDL_PollEvent(&ev)){	   
 	   		switch(ev.type) {
 				case SDL_QUIT:
-					throw SDLerror();
+					send_close(skt,id);
 					break;
 				case SDL_WINDOWEVENT:
     				r->present();
@@ -132,7 +139,7 @@ int first_window(Renderer *r,Texture *texture,int Width, int Height){
 }
 
 
-void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int Height){
+void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int Height, int id){
 	bool selection=true;
     int team_number;
 	SDL_Event ev;
@@ -141,7 +148,7 @@ void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int H
 		while(SDL_PollEvent(&ev)){	   
 	   		switch(ev.type) {
 				case SDL_QUIT:
-					throw SDLerror();
+					send_close(skt,id);
 					break;
 				case SDL_WINDOWEVENT:
     				r->present();
@@ -210,7 +217,6 @@ void init_game(Socket* skt,Game* s){
 }
 
 
-
 int main(int argc, char **argv){
 try{
 	if ( SDL_Init(SDL_INIT_VIDEO) < 0){
@@ -262,28 +268,28 @@ try{
     Texture texture4(r.get_renderer(), optimized_background4.get_surface());
     Texture texture_team(r.get_renderer(), team_optimized.get_surface()); 
     Socket skt(argv[1],argv[2]);
+    int id=skt.recv_int();
     bool finalize=false;
 //PANTALLA INICIAL
     while(!finalize){
-    	int mode=first_window(&r,&texture,Width,Height);
+    	int mode=first_window(&r,&texture,Width,Height,&skt,id);
     	if(mode==1){
-    		Creator c(r.get_renderer(),&texture2,&skt,Width,Height,master,FPS);
+    		Creator c(r.get_renderer(),&texture2,&skt,Width,Height,master,FPS,id);
     		finalize=c.run();
     	} else if (mode==2){
-    		finalize=create_map(r.get_renderer(),&texture2,&skt,Width,Height,master);
+    		finalize=create_map(r.get_renderer(),&texture2,&skt,Width,Height,master,id);
     	} else if (mode==3){
-    		Joiner j(r.get_renderer(),&texture2,&skt,Width,Height,master,FPS);
+    		Joiner j(r.get_renderer(),&texture2,&skt,Width,Height,master,FPS,id);
     		finalize=j.run();
     	}	
     }
     r.clear(); 
     r.copy(texture_team.get_texture());
     r.present();
-    select_team(&r,&texture_team,&skt,Width,Height);
+    select_team(&r,&texture_team,&skt,Width,Height,id);
     r.clear(); 
     r.copy(texture.get_texture());
     r.present();
-	int id=skt.recv_int();
 	int init_x=skt.recv_int();
 	int init_y=skt.recv_int();
 	int map_size_x=skt.recv_int();
@@ -377,6 +383,12 @@ try{
 		SDL_Quit();
 		return 1;
 	} catch (SDLerror& error){
+        std::cout<<error.what()<<std::endl;
+        TTF_Quit();
+		IMG_Quit();
+        SDL_Quit();
+        return 2;
+    } catch (EndOfGame& error){
         std::cout<<error.what()<<std::endl;
         TTF_Quit();
 		IMG_Quit();

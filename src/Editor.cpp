@@ -192,21 +192,16 @@ void Editor::select_map_size(){
 
 
 
-
-
-
-
-
 void Editor::init_buttons(){
-	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)-(BUTTON_SIZE*4),0,this->master->get_button_centrodeconstruccion_surface()));
-	std::shared_ptr<Button> b2(new Button(ROCA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)-(BUTTON_SIZE*3),0,this->master->get_button_roca_surface()));
-	std::shared_ptr<Button> b3(new Button(DUNA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)-(BUTTON_SIZE*2),0,this->master->get_button_duna_surface()));
-	std::shared_ptr<Button> b4(new Button(ESPECIAFUERTE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)-(BUTTON_SIZE),0,this->master->get_button_especiafuerte_surface()));
-	std::shared_ptr<Button> b5(new Button(ESPECIASUAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3),0,this->master->get_button_especiasuave_surface()));
-	std::shared_ptr<Button> b6(new Button(CIMA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)+(BUTTON_SIZE),0,this->master->get_button_cima_surface()));
-	std::shared_ptr<Button> b7(new Button(PRECIPICIO,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)+(BUTTON_SIZE*2),0,this->master->get_button_precipicio_surface()));
-	std::shared_ptr<Button> b8(new Button(SAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)+(BUTTON_SIZE*3),0,this->master->get_button_save_surface()));
-	std::shared_ptr<Button> b9(new Button(CANCEL,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)+(BUTTON_SIZE*4),0,this->master->get_button_cancel_surface()));
+	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)-(BUTTON_SIZE*4),0,this->master->get_button_centrodeconstruccion_surface()));
+	std::shared_ptr<Button> b2(new Button(ROCA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)-(BUTTON_SIZE*3),0,this->master->get_button_roca_surface()));
+	std::shared_ptr<Button> b3(new Button(DUNA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)-(BUTTON_SIZE*2),0,this->master->get_button_duna_surface()));
+	std::shared_ptr<Button> b4(new Button(ESPECIAFUERTE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)-(BUTTON_SIZE),0,this->master->get_button_especiafuerte_surface()));
+	std::shared_ptr<Button> b5(new Button(ESPECIASUAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2),0,this->master->get_button_especiasuave_surface()));
+	std::shared_ptr<Button> b6(new Button(CIMA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE),0,this->master->get_button_cima_surface()));
+	std::shared_ptr<Button> b7(new Button(PRECIPICIO,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*2),0,this->master->get_button_precipicio_surface()));
+	std::shared_ptr<Button> b8(new Button(SAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*3),0,this->master->get_button_save_surface()));
+	std::shared_ptr<Button> b9(new Button(CANCEL,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*4),0,this->master->get_button_cancel_surface()));
 	std::shared_ptr<Button> b10(new Button(CHARGE_BUTTON,CHARGE_BUTTON_SIZE_X,BUTTON_SIZE,(this->size_x-CHARGE_BUTTON_SIZE_X),0,this->master->get_button_charge_surface()));
 	this->buttons.push_back(b1);
 	this->buttons.push_back(b2);
@@ -218,6 +213,7 @@ void Editor::init_buttons(){
 	this->buttons.push_back(b8);
 	this->buttons.push_back(b9);
 	this->charge_button=b10;
+
 }
 
 
@@ -339,12 +335,12 @@ bool Editor::is_able(int x, int y){
 
 
 bool Editor::can_put_static(int x, int y, int w, int h){
-	int x1=(x-(w/3));
+	int x1=(x-(w/2));
 	int x2=x;
-	int x3=(x+(w/3));
-	int y1=(y-(h/3));
+	int x3=(x+(w/2));
+	int y1=(y-(h/2));
 	int y2=y;
-	int y3=(y+(h/3));
+	int y3=(y+(h/2));
 	bool is_able1=this->is_able(x1,y1);
 	bool is_able2=this->is_able(x1,y2);
 	bool is_able3=this->is_able(x1,y3);
@@ -361,8 +357,8 @@ bool Editor::can_put_static(int x, int y, int w, int h){
 
 
 void Editor::add_centre(int x1, int y1){
-	int x=x1-(CENTER_SIZE/3);
-	int y=y1-(CENTER_SIZE/3);
+	int x=x1-(CENTER_SIZE/2);
+	int y=y1-(CENTER_SIZE/2);
 	int w=CENTER_SIZE;
 	int h=CENTER_SIZE;
 	bool can_put=this->can_put_static(x,y,w,h);
@@ -455,8 +451,8 @@ void Editor::insert_terrain(int x,int y,int w,int h){
 
 
 void Editor::add_terrain(int x1, int y1){
-	int x=x1-(TERRAIN_SIZE/3);
-	int y=y1-(TERRAIN_SIZE/3);
+	int x=x1-(TERRAIN_SIZE/2);
+	int y=y1-(TERRAIN_SIZE/2);
 	int w=TERRAIN_SIZE;
 	int h=TERRAIN_SIZE;
 	this->insert_terrain(x,y,w,h);
@@ -499,4 +495,3 @@ void Editor::save(){
 
 
 Editor::~Editor(){}
-

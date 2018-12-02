@@ -421,7 +421,7 @@ int Editor::get_pos_terrain(int x, int y){
 	return i;
 }
 
-bool Editor::is_able(int x, int y){
+bool Editor::check_if_is_ok(int x, int y){
 	unsigned int i=0;
 	while(i<this->statics.size()){
 		if(this->statics.at(i)->click_is_inside_static(x,y)){
@@ -442,23 +442,15 @@ bool Editor::is_able(int x, int y){
 
 
 bool Editor::can_put_static(int x, int y, int w, int h){
-	int x1=(x-(w/2));
-	int x2=x;
-	int x3=(x+(w/2));
-	int y1=(y-(h/2));
-	int y2=y;
-	int y3=(y+(h/2));
-	bool is_able1=this->is_able(x1,y1);
-	bool is_able2=this->is_able(x1,y2);
-	bool is_able3=this->is_able(x1,y3);
-	bool is_able4=this->is_able(x2,y1);
-	bool is_able5=this->is_able(x2,y2);
-	bool is_able6=this->is_able(x2,y3);
-	bool is_able7=this->is_able(x3,y1);
-	bool is_able8=this->is_able(x3,y2);
-	bool is_able9=this->is_able(x3,y3);
-
-	return ((is_able1)&&(is_able2)&&(is_able3)&&(is_able4)&&(is_able5)&&(is_able6)&&(is_able7)&&(is_able8)&&(is_able9));
+	bool is_ok=this->check_if_is_ok(x,y);
+	bool is_ok2=this->check_if_is_ok(x+w,y);
+	bool is_ok3=this->check_if_is_ok(x,y+h);
+	bool is_ok4=this->check_if_is_ok(x+w,y+h);
+	bool is_ok5=this->check_if_is_ok(x+(w/2),y+(h/2));
+	if((is_ok)&&(is_ok2)&&(is_ok3)&&(is_ok4)&&(is_ok5)){
+		return true;
+	}
+	return false;
 }
 
 
@@ -468,11 +460,11 @@ void Editor::add_centre(int x1, int y1){
 	int y=y1-(CENTER_SIZE/2);
 	int w=CENTER_SIZE;
 	int h=CENTER_SIZE;
-	//bool can_put=this->can_put_static(x,y,w,h);
-	//if(can_put){
+	bool can_put=this->can_put_static(x,y,w,h);
+	if(can_put){
 		std::shared_ptr<Static> d(new CentroDeConstruccion(CENTRODECONSTRUCCION,w,h,x,y,0,this->master->get_centrodeconstruccion_surface()));
 		this->statics.push_back(d);
-	//}
+	}
 }
 
 

@@ -47,7 +47,7 @@ public:
 	bool can_put_static(int x, int y, int w, int h);
 	int get_pos_static(int x, int y);
 	int get_pos_terrain(int x, int y);
-	bool is_able(int x, int y);
+	bool check_if_is_ok(int x, int y);
 	void add_roca(int id,int size_x, int size_y, int x, int y);
 	std::shared_ptr<Button> search_button_by_clic(int x,int y);
 	void process_clic(int x, int y);

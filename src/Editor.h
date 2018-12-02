@@ -26,6 +26,11 @@ private:
 	int size_y;
 	int game_size_x;
 	int game_size_y;
+	float kx_reductor;
+	float ky_reductor;
+	float kx_amplify;
+	float ky_amplify;
+
 public:
 	Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master, int id);
 	void init_buttons();

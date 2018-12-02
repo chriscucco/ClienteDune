@@ -126,7 +126,12 @@ void Cycle::stop_attacking(){
 
 void Cycle::run(){
 	unsigned char c;
-	while(this->game->get_socket()->recv_msj(&c,1)){
+  int recv;
+	while(1){
+    recv=this->game->get_socket()->recv_msj(&c,1);
+    if(recv==0){
+      throw EndOfGame();
+    }
     switch(c){
     	  case 'm': 
 	        this->move();

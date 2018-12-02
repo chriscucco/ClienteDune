@@ -176,7 +176,6 @@ void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int H
 		std::this_thread::sleep_for(std::chrono::milliseconds(time.remain_time()));
 	}
 	skt->send_int(team_number);
-	team_number++;
 }
 
 
@@ -184,7 +183,10 @@ void init_game(Socket* skt,Game* s){
 	unsigned int recv_type,recv_id,size_x,size_y,x,y,team;
 	unsigned char c;
 	while(1){
-		skt->recv_msj(&c,1);
+		int recv=skt->recv_msj(&c,1);
+		if(recv==0){
+			throw EndOfGame();
+		}
 		if(c=='x'){
 			break;
 		} else if(c=='c'){

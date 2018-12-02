@@ -329,8 +329,13 @@ void Editor::refreshscreen(){
 void Editor::copystatics(){
 	unsigned int i=0;
 	while(i<this->statics.size()){
+		SDL_Rect rect;
+		rect.x=((this->statics.at(i)->x_pos())*(this->kx_reductor));
+		rect.y=((this->statics.at(i)->y_pos())*(this->ky_reductor));
+		rect.w=((this->statics.at(i)->h_size())*(this->kx_reductor));
+		rect.h=((this->statics.at(i)->v_size())*(this->ky_reductor));
 		Texture t(this->renderer, this->statics.at(i)->getsurf(),this->statics.at(i)->mine());
-		SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->statics.at(i)->getpos());
+		SDL_RenderCopy(this->renderer, t.get_texture(), NULL, &rect);
 		i++;
 	}
 }
@@ -340,8 +345,13 @@ void Editor::copystatics(){
 void Editor::copyterrain(){
 	unsigned int i=0;
 	while(i<this->terrains.size()){
+			SDL_Rect rect;
+			rect.x=((this->terrains.at(i)->x_pos())*(this->kx_reductor));
+			rect.y=((this->terrains.at(i)->y_pos())*(this->ky_reductor));
+			rect.w=((this->terrains.at(i)->h_size())*(this->kx_reductor));
+			rect.h=((this->terrains.at(i)->v_size())*(this->ky_reductor));
 			Texture t(this->renderer, this->terrains.at(i)->getsurf());
-			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, this->terrains.at(i)->getpos());
+			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, &rect);
 			i++;
 		}
 }
@@ -458,11 +468,11 @@ void Editor::add_centre(int x1, int y1){
 	int y=y1-(CENTER_SIZE/2);
 	int w=CENTER_SIZE;
 	int h=CENTER_SIZE;
-	bool can_put=this->can_put_static(x,y,w,h);
-	if(can_put){
+	//bool can_put=this->can_put_static(x,y,w,h);
+	//if(can_put){
 		std::shared_ptr<Static> d(new CentroDeConstruccion(CENTRODECONSTRUCCION,w,h,x,y,0,this->master->get_centrodeconstruccion_surface()));
 		this->statics.push_back(d);
-	}
+	//}
 }
 
 
@@ -550,8 +560,8 @@ void Editor::insert_terrain(int x,int y,int w,int h){
 void Editor::add_terrain(int x1, int y1){
 	int x=x1-(TERRAIN_SIZE/2);
 	int y=y1-(TERRAIN_SIZE/2);
-	int w=TERRAIN_SIZE;
-	int h=TERRAIN_SIZE;
+	int w=(TERRAIN_SIZE);
+	int h=(TERRAIN_SIZE);
 	this->insert_terrain(x,y,w,h);
 }
 
@@ -572,6 +582,8 @@ bool Editor::clicked(int x,int y){
 				this->current_button=b;
 			}
 		} else {
+			x=x*this->kx_amplify;
+			y=y*this->ky_amplify;
 			this->process_clic(x,y);
 		}
 		return cont;

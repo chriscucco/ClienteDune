@@ -14,27 +14,199 @@
 #define CENTER_SIZE 50
 #define TERRAIN_SIZE 70
 
-Editor::Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master) : master(master){
+#define XUP_1 1
+#define XUP_10 10
+#define XUP_100 100
+#define XUP_1000 1000
+#define XDOWN_1 2
+#define XDOWN_10 20
+#define XDOWN_100 200
+#define XDOWN_1000 2000
+#define YUP_1 3
+#define YUP_10 30
+#define YUP_100 300
+#define YUP_1000 3000
+#define YDOWN_1 4
+#define YDOWN_10 40
+#define YDOWN_100 400
+#define YDOWN_1000 4000
+
+bool Editor::clicked_map_size(std::vector<std::shared_ptr<Button>> touchable_buttons, std::shared_ptr<Text> x_value, std::shared_ptr<Text> y_value,int x, int y){
+	int id=0;
+	for (unsigned int i=0; i<touchable_buttons.size(); ++i){
+		if(touchable_buttons.at(i)->click_is_inside_button(x,y)){
+			id=touchable_buttons.at(i)->get_id();
+		}
+	}
+/*	switch(id){
+		case 0:
+			break;
+
+	}*/
+	if(id){}
+	return false;
+}
+
+
+
+
+
+void Editor::send_close(){
+	unsigned char exit='s';
+	this->s->send_msj(&exit,1);
+	this->s->send_int(this->my_id);
+	throw EndOfGame();
+}
+
+
+Editor::Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master, int id) : master(master){
 	this->background=t;
 	this->renderer=r;
 	this->s=skt;
 	this->size_x=x;
 	this->size_y=y;
+	this->my_id=id;
 	this->init_buttons();
-
+	this->select_map_size();
 }
 
 
+void Editor::process_map_size(std::vector<std::shared_ptr<Button>> static_buttons,std::vector<std::shared_ptr<Button>> touchable_buttons,std::vector<std::shared_ptr<Text>> static_text){
+	std::shared_ptr<Text> x_value(new Text(this->renderer," ",150,150,300,(this->size_y/3)*2,0));
+	std::shared_ptr<Text> y_value(new Text(this->renderer," ",150,150,300+(this->size_x/2),(this->size_y/3)*2,0));
+	x_value->modify_value(2000);
+	y_value->modify_value(1000);
+	bool running = true;
+	SDL_Event event;
+	Timer timer(20);
+	while (running){
+		while(SDL_PollEvent(&event)){	   
+	   		switch(event.type) {
+				case SDL_QUIT:
+					this->send_close();
+					break;
+				case SDL_MOUSEBUTTONUP:
+					int x;
+					int y;
+					SDL_GetMouseState(&x, &y);
+					running=this->clicked_map_size(touchable_buttons,x_value,y_value,x,y);
+				case SDL_WINDOWEVENT:
+					timer.reset();
+					break;
+			}
+		}
+		SDL_RenderClear(this->renderer);
+		SDL_RenderCopy(this->renderer, this->background, NULL, NULL);
+		for (unsigned int i=0; i<static_text.size(); ++i){
+			Texture t2(this->renderer,static_text.at(i)->get_surface(0)->get_surface(),-1);
+			SDL_RenderCopy(this->renderer, t2.get_texture(), NULL, static_text.at(i)->getpos());
+		}
+		for (unsigned int i=0; i<touchable_buttons.size(); ++i){
+			Texture t2(this->renderer,touchable_buttons.at(i)->getsurf());
+			SDL_RenderCopy(this->renderer, t2.get_texture(), NULL, touchable_buttons.at(i)->getpos());
+		}
+		for (unsigned int i=0; i<static_buttons.size(); ++i){
+			Texture t2(this->renderer,static_buttons.at(i)->getsurf());
+			SDL_RenderCopy(this->renderer, t2.get_texture(), NULL, static_buttons.at(i)->getpos());
+		}
+		Texture x_size(this->renderer,x_value->get_value_surface()->get_surface(),-1);
+		SDL_RenderCopy(this->renderer, x_size.get_texture(), NULL, x_value->getpos());
+		Texture y_size(this->renderer,y_value->get_value_surface()->get_surface(),-1);
+		SDL_RenderCopy(this->renderer, y_size.get_texture(), NULL, y_value->getpos());
+		SDL_RenderPresent(this->renderer);
+		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
+	}
+}
+
+
+
+
+
+void Editor::select_map_size(){
+	std::shared_ptr<Surface> up(new Surface("imgs/CreadorMapa/Arriba.png"));
+	std::shared_ptr<Surface> down(new Surface("imgs/CreadorMapa/Abajo.png"));
+	std::shared_ptr<Surface> x1(new Surface("imgs/CreadorMapa/x1.png"));
+	std::shared_ptr<Surface> x10(new Surface("imgs/CreadorMapa/x10.png"));
+	std::shared_ptr<Surface> x100(new Surface("imgs/CreadorMapa/x100.png"));
+	std::shared_ptr<Surface> x1000(new Surface("imgs/CreadorMapa/x1000.png"));
+	std::shared_ptr<Button> x_x1(new Button(0,100,100,200,this->size_y/3,x1));
+	std::shared_ptr<Button> x_x10(new Button(0,100,100,300,this->size_y/3,x10));
+	std::shared_ptr<Button> x_x100(new Button(0,100,100,400,this->size_y/3,x100));
+	std::shared_ptr<Button> x_x1000(new Button(0,100,100,500,this->size_y/3,x1000));
+	std::shared_ptr<Button> y_x1(new Button(0,100,100,(this->size_x/2)+200,this->size_y/3,x1));
+	std::shared_ptr<Button> y_x10(new Button(0,100,100,(this->size_x/2)+300,this->size_y/3,x10));
+	std::shared_ptr<Button> y_x100(new Button(0,100,100,(this->size_x/2)+400,this->size_y/3,x100));
+	std::shared_ptr<Button> y_x1000(new Button(0,100,100,(this->size_x/2)+500,this->size_y/3,x1000));
+	std::vector<std::shared_ptr<Button>> static_buttons;
+	static_buttons.push_back(x_x1);
+	static_buttons.push_back(x_x10);
+	static_buttons.push_back(x_x100);
+	static_buttons.push_back(x_x1000);
+	static_buttons.push_back(y_x1);
+	static_buttons.push_back(y_x10);
+	static_buttons.push_back(y_x100);
+	static_buttons.push_back(y_x1000);
+	std::shared_ptr<Button> xup_x1(new Button(0,100,100,200,this->size_y/3-100,up));
+	std::shared_ptr<Button> xup_x10(new Button(0,100,100,300,this->size_y/3-100,up));
+	std::shared_ptr<Button> xup_x100(new Button(0,100,100,400,this->size_y/3-100,up));
+	std::shared_ptr<Button> xup_x1000(new Button(0,100,100,500,this->size_y/3-100,up));
+	std::shared_ptr<Button> yup_x1(new Button(0,100,100,(this->size_x/2)+200,this->size_y/3-100,up));
+	std::shared_ptr<Button> yup_x10(new Button(0,100,100,(this->size_x/2)+300,this->size_y/3-100,up));
+	std::shared_ptr<Button> yup_x100(new Button(0,100,100,(this->size_x/2)+400,this->size_y/3-100,up));
+	std::shared_ptr<Button> yup_x1000(new Button(0,100,100,(this->size_x/2)+500,this->size_y/3-100,up));
+	std::shared_ptr<Button> xdown_x1(new Button(0,100,100,200,this->size_y/3+100,down));
+	std::shared_ptr<Button> xdown_x10(new Button(0,100,100,300,this->size_y/3+100,down));
+	std::shared_ptr<Button> xdown_x100(new Button(0,100,100,400,this->size_y/3+100,down));
+	std::shared_ptr<Button> xdown_x1000(new Button(0,100,100,500,this->size_y/3+100,down));
+	std::shared_ptr<Button> ydown_x1(new Button(0,100,100,(this->size_x/2)+200,this->size_y/3+100,down));
+	std::shared_ptr<Button> ydown_x10(new Button(0,100,100,(this->size_x/2)+300,this->size_y/3+100,down));
+	std::shared_ptr<Button> ydown_x100(new Button(0,100,100,(this->size_x/2)+400,this->size_y/3+100,down));
+	std::shared_ptr<Button> ydown_x1000(new Button(0,100,100,(this->size_x/2)+500,this->size_y/3+100,down));
+	std::vector<std::shared_ptr<Button>> touchable_buttons;
+	touchable_buttons.push_back(xup_x1);
+	touchable_buttons.push_back(xup_x10);
+	touchable_buttons.push_back(xup_x100);
+	touchable_buttons.push_back(xup_x1000);
+	touchable_buttons.push_back(yup_x1);
+	touchable_buttons.push_back(yup_x10);
+	touchable_buttons.push_back(yup_x100);
+	touchable_buttons.push_back(yup_x1000);
+	touchable_buttons.push_back(xdown_x1);
+	touchable_buttons.push_back(xdown_x10);
+	touchable_buttons.push_back(xdown_x100);
+	touchable_buttons.push_back(xdown_x1000);
+	touchable_buttons.push_back(ydown_x1);
+	touchable_buttons.push_back(ydown_x10);
+	touchable_buttons.push_back(ydown_x100);
+	touchable_buttons.push_back(ydown_x1000);
+	std::shared_ptr<Text> title(new Text(this->renderer,"Seleccionar medidas del mapa",800,50,(this->size_x/3)-400,0,0));
+	std::shared_ptr<Text> title_map_x(new Text(this->renderer,"X:",50,50,50,(this->size_y/3)+25,0));
+	std::shared_ptr<Text> title_map_y(new Text(this->renderer,"Y:",50,50,(this->size_x/2)+50,(this->size_y/3)+25,0));
+	std::vector<std::shared_ptr<Text>> static_text;
+	static_text.push_back(title);
+	static_text.push_back(title_map_x);
+	static_text.push_back(title_map_y);
+	this->process_map_size(static_buttons,touchable_buttons,static_text);
+}
+
+
+
+
+
+
+
+
+
 void Editor::init_buttons(){
-	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)-(BUTTON_SIZE*4),0,this->master->get_button_centrodeconstruccion_surface()));
-	std::shared_ptr<Button> b2(new Button(ROCA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)-(BUTTON_SIZE*3),0,this->master->get_button_roca_surface()));
-	std::shared_ptr<Button> b3(new Button(DUNA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)-(BUTTON_SIZE*2),0,this->master->get_button_duna_surface()));
-	std::shared_ptr<Button> b4(new Button(ESPECIAFUERTE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)-(BUTTON_SIZE),0,this->master->get_button_especiafuerte_surface()));
-	std::shared_ptr<Button> b5(new Button(ESPECIASUAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2),0,this->master->get_button_especiasuave_surface()));
-	std::shared_ptr<Button> b6(new Button(CIMA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE),0,this->master->get_button_cima_surface()));
-	std::shared_ptr<Button> b7(new Button(PRECIPICIO,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*2),0,this->master->get_button_precipicio_surface()));
-	std::shared_ptr<Button> b8(new Button(SAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*3),0,this->master->get_button_save_surface()));
-	std::shared_ptr<Button> b9(new Button(CANCEL,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/2)+(BUTTON_SIZE*4),0,this->master->get_button_cancel_surface()));
+	std::shared_ptr<Button> b1(new Button_CentroDeConstruccion(CENTRODECONSTRUCCION,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)-(BUTTON_SIZE*4),0,this->master->get_button_centrodeconstruccion_surface()));
+	std::shared_ptr<Button> b2(new Button(ROCA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)-(BUTTON_SIZE*3),0,this->master->get_button_roca_surface()));
+	std::shared_ptr<Button> b3(new Button(DUNA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)-(BUTTON_SIZE*2),0,this->master->get_button_duna_surface()));
+	std::shared_ptr<Button> b4(new Button(ESPECIAFUERTE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)-(BUTTON_SIZE),0,this->master->get_button_especiafuerte_surface()));
+	std::shared_ptr<Button> b5(new Button(ESPECIASUAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3),0,this->master->get_button_especiasuave_surface()));
+	std::shared_ptr<Button> b6(new Button(CIMA,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)+(BUTTON_SIZE),0,this->master->get_button_cima_surface()));
+	std::shared_ptr<Button> b7(new Button(PRECIPICIO,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)+(BUTTON_SIZE*2),0,this->master->get_button_precipicio_surface()));
+	std::shared_ptr<Button> b8(new Button(SAVE,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)+(BUTTON_SIZE*3),0,this->master->get_button_save_surface()));
+	std::shared_ptr<Button> b9(new Button(CANCEL,BUTTON_SIZE,BUTTON_SIZE,(this->size_x/3)+(BUTTON_SIZE*4),0,this->master->get_button_cancel_surface()));
 	std::shared_ptr<Button> b10(new Button(CHARGE_BUTTON,CHARGE_BUTTON_SIZE_X,BUTTON_SIZE,(this->size_x-CHARGE_BUTTON_SIZE_X),0,this->master->get_button_charge_surface()));
 	this->buttons.push_back(b1);
 	this->buttons.push_back(b2);
@@ -46,7 +218,6 @@ void Editor::init_buttons(){
 	this->buttons.push_back(b8);
 	this->buttons.push_back(b9);
 	this->charge_button=b10;
-
 }
 
 
@@ -168,12 +339,12 @@ bool Editor::is_able(int x, int y){
 
 
 bool Editor::can_put_static(int x, int y, int w, int h){
-	int x1=(x-(w/2));
+	int x1=(x-(w/3));
 	int x2=x;
-	int x3=(x+(w/2));
-	int y1=(y-(h/2));
+	int x3=(x+(w/3));
+	int y1=(y-(h/3));
 	int y2=y;
-	int y3=(y+(h/2));
+	int y3=(y+(h/3));
 	bool is_able1=this->is_able(x1,y1);
 	bool is_able2=this->is_able(x1,y2);
 	bool is_able3=this->is_able(x1,y3);
@@ -190,8 +361,8 @@ bool Editor::can_put_static(int x, int y, int w, int h){
 
 
 void Editor::add_centre(int x1, int y1){
-	int x=x1-(CENTER_SIZE/2);
-	int y=y1-(CENTER_SIZE/2);
+	int x=x1-(CENTER_SIZE/3);
+	int y=y1-(CENTER_SIZE/3);
 	int w=CENTER_SIZE;
 	int h=CENTER_SIZE;
 	bool can_put=this->can_put_static(x,y,w,h);
@@ -284,8 +455,8 @@ void Editor::insert_terrain(int x,int y,int w,int h){
 
 
 void Editor::add_terrain(int x1, int y1){
-	int x=x1-(TERRAIN_SIZE/2);
-	int y=y1-(TERRAIN_SIZE/2);
+	int x=x1-(TERRAIN_SIZE/3);
+	int y=y1-(TERRAIN_SIZE/3);
 	int w=TERRAIN_SIZE;
 	int h=TERRAIN_SIZE;
 	this->insert_terrain(x,y,w,h);

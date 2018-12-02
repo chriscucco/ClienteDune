@@ -30,6 +30,7 @@ public:
 	void modify_id(int i);
 	SDL_Surface* get_surface();
 	std::shared_ptr<Surface> get_surface(int i);
+	std::shared_ptr<Surface> get_value_surface();
 	int get_x();
 	int get_y();
 	int get_w();

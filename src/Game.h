@@ -101,7 +101,7 @@ public:
 	void go_left();
 	void go_down();
 	void go_up();
-	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y,int map_size_x, int map_size_y,std::shared_ptr<MasterSurface> master);
+	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int x, int y,std::shared_ptr<MasterSurface> master);
 	int get_current_corner_x();
 	int get_current_corner_y();
 	void add_centrodeconstruccion(int id,int size_x, int size_y, int x, int y, int team);
@@ -184,6 +184,7 @@ public:
 	void selected_nothing(int x, int y);
 	void clicked(int x, int y, bool is_right_click);
     void clicked_zone(SDL_Rect pos);
+    void change_sizes(int init_x, int init_y, int map_x, int map_y);
 	~Game();
 };
 

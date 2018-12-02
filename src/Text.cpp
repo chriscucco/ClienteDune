@@ -96,5 +96,12 @@ std::shared_ptr<Surface> Text::get_surface(int i){
 	return s;
 }
 
+std::shared_ptr<Surface> Text::get_value_surface(){
+	std::string text=std::to_string(this->value);
+	std::shared_ptr<Surface> s(new Surface('t',text));
+	return s;
+}
+
+
 
 Text::~Text(){}

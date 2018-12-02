@@ -110,7 +110,7 @@ int Game::give_id(){
 }
 
 
-Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int init_x, int init_y, int x, int y, int map_x, int map_y,std::shared_ptr<MasterSurface> master) : master(master){
+Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int x, int y, std::shared_ptr<MasterSurface> master) : master(master){
 	SDL_DisplayMode DM;
 	SDL_GetCurrentDisplayMode(0, &DM);
 	int Width = DM.w;
@@ -122,10 +122,6 @@ Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* 
 	this->s=skt;
 	this->button_size_x=BUTTON_SIZE;
 	this->button_size_y=BUTTON_SIZE;
-	this->corner_x=init_x;
-	this->corner_y=init_y;
-	this->map_size_x=map_x;
-	this->map_size_y=map_y;
 	this->size_x=x;
 	this->size_y=y;
 	this->init_buttons();
@@ -133,6 +129,13 @@ Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* 
 	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",150,50,((Width/5)*4),0,0));
 	this->energy=energy_pointer;
 	this->money=money_pointer;
+}
+
+void Game::change_sizes(int init_x, int init_y, int map_x, int map_y){
+	this->corner_x=init_x;
+	this->corner_y=init_y;
+	this->map_size_x=map_x;
+	this->map_size_y=map_y;
 }
 
 
@@ -437,31 +440,12 @@ void Game::go_up(){
 
 
 void Game::finish_game(bool win){
-	unsigned int i=0;
-	while(i<this->moveables.size()){
-		this->moveables.pop_back();
-	}
-	i=0;
-	while(i<this->statics.size()){
-		this->statics.pop_back();
-	}
-	i=0;
-	while(i<this->terrains.size()){
-		this->terrains.pop_back();
-	}
-	i=0;
-	while(i<this->buttons.size()){
-		this->buttons.pop_back();
-	}
-	i=0;
-	while(i<this->animated.size()){
-		this->animated.pop_back();
-	}
 	if(win){
 		modify_texture(this->win_background);
 	} else {
 		modify_texture(this->loose_background);
 	}
+	//Agregar Time Wait
 }
 
 

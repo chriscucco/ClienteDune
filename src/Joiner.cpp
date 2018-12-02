@@ -173,6 +173,8 @@ void Joiner::wait_screen(){
 		SDL_RenderPresent(this->r);
 		this->skt->recv_msj(&recv,1);
 		if(recv=='r'){
+			unsigned char ele='l';
+			this->skt->send_msj(&ele,1);
 			running=false;
 		}
 		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "Game.cpp"
+#include "Timer.cpp"
 #include <fstream>
 #include <memory>
 #include <string>
@@ -20,15 +21,17 @@ private:
 	std::shared_ptr<Button> current_button{nullptr};
 	std::shared_ptr<Button> charge_button;
 	Socket* s;
+	int my_id;
 	int size_x;
 	int size_y;
 	int game_size_x;
 	int game_size_y;
 public:
-	Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master);
+	Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master, int id);
 	void init_buttons();
 	void refreshscreen();
 	void copystatics();
+	void send_close();
 	void copyterrain();
 	void copybuttons();
 	void add_duna(int id,int size_x, int size_y, int x, int y);
@@ -50,6 +53,9 @@ public:
 	bool clicked(int x,int y);
 	void charge_map();
 	void save();
+	void select_map_size();
+	void process_map_size(std::vector<std::shared_ptr<Button>> static_buttons,std::vector<std::shared_ptr<Button>> touchable_buttons,std::vector<std::shared_ptr<Text>> static_text);
+	bool clicked_map_size(std::vector<std::shared_ptr<Button>> touchable_buttons,std::shared_ptr<Text> x_value,std::shared_ptr<Text> y_value,int x, int y);
 	~Editor();
 };
 

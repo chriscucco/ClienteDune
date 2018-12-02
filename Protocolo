@@ -51,6 +51,9 @@ S: ‘o’<char>
 //Server indica que inicio la partidas en la cual quiero jugar
 S: ‘r’<char>
 
+//Cliente le manda que lo recibió
+C: 'l'<char>
+
 Pasa a la parte de Juego iniciado
 
 
@@ -79,11 +82,11 @@ Parte de Juego iniciado:
 //Cliente empieza diciendo a que casa pertenece
 C: ‘t’<char>|| id_casa(int) :	101-Atreides		102-Harkonnen	103-Ordos
 
-//Ahora el server manda id, esquina_x, esquina_y, tamaño_mapa_x, tamaño_mapa_y
-(todos int)
-
 
 //En esta parte el Server pasa todo el mapa al cliente (también son usados durante el juego):
+
+//Server modifica tamaños
+S:h<char>||corner_x(int)||corner_y(int)||map_size_x(int)||map_size_y(int)
 
 //Crear edificio o Movible:
 S: c(char)||type(int)||id(int)||size_x(int)||size_y(int)||x(int)||y(int)||team(int)

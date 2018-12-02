@@ -32,7 +32,7 @@ void send_close(Socket* s, int id){
 
 
 bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, std::shared_ptr<MasterSurface> master, int id){
-	Editor editor(r,t->get_texture(),skt,Width,Height,master);
+	Editor editor(r,t->get_texture(),skt,Width,Height,master,id);
 	bool running = true;
 	SDL_Event event;
 	Timer timer(FPS);
@@ -210,6 +210,12 @@ void init_game(Socket* skt,Game* s){
     	}else if(c=='p'){
         	int new_money=skt->recv_int();
         	s->modify_money(new_money);
+      	} else if(c=='h'){
+      		int init_x=skt->recv_int();
+      		int init_y=skt->recv_int();
+      		int map_size_x=skt->recv_int();
+      		int map_size_y=skt->recv_int();
+      		s->change_sizes(init_x,init_y,map_size_x,map_size_y);
       	}
 	}
 }
@@ -288,11 +294,7 @@ try{
     r.clear(); 
     r.copy(texture.get_texture());
     r.present();
-	int init_x=skt.recv_int();
-	int init_y=skt.recv_int();
-	int map_size_x=skt.recv_int();
-	int map_size_y=skt.recv_int();
- 	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,init_x,init_y,Width,Height,map_size_x,map_size_y,master);
+ 	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,Width,Height,master);
 	init_game(&skt,&s);
 	s.modify_texture(texture2.get_texture());
 	std::mutex m;

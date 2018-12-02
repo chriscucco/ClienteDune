@@ -1,0 +1,4 @@
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/rebuild_cache.dir
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/edit_cache.dir
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/sdldemo.dir
+/home/christiancucco/CHRIS/TALLER_DE_PROGRAMACION_I/ClienteDune/build/CMakeFiles/main.dir

@@ -175,8 +175,6 @@ void select_team(Renderer *r,Texture *texture_team,Socket* skt, int Width, int H
 		r->present(); 
 		std::this_thread::sleep_for(std::chrono::milliseconds(time.remain_time()));
 	}
-	unsigned char team_code='t';
-	skt->send_msj(&team_code,1);
 	skt->send_int(team_number);
 	team_number++;
 }

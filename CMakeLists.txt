@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(sdl)
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Werror -Wall -pedantic -pthread -lSDL2_ttf -lSDL2_image -lSDL2 -O0 -ggdb")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Werror -Wall -pedantic -pthread -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2 -O0 -ggdb")
 
 add_library(sdldemo
  src/Animation.cpp
@@ -162,6 +162,8 @@ add_library(sdldemo
  src/Joiner.h
  src/EndOfGame.cpp
  src/EndOfGame.h
+ src/Music.cpp
+ src/Music.h
 )
 
 INCLUDE(FindPkgConfig)
@@ -182,5 +184,7 @@ add_executable (main
 file(COPY ${CMAKE_SOURCE_DIR}/imgs DESTINATION ./)
 file(COPY ${CMAKE_SOURCE_DIR}/terrain DESTINATION ./)
 file(COPY ${CMAKE_SOURCE_DIR}/AmaticBold.ttf DESTINATION ./)
-target_link_libraries(main SDL2 SDL2_image SDL2_ttf)
+file(COPY ${CMAKE_SOURCE_DIR}/music DESTINATION ./)
+file(COPY ${CMAKE_SOURCE_DIR}/supp2 DESTINATION ./)
+target_link_libraries(main SDL2 SDL2_image SDL2_ttf SDL2_mixer)
 

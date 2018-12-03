@@ -4,6 +4,7 @@
 #include "Thread.cpp"
 #include "Lock.cpp"
 #include "Game.cpp"
+#include "Music.cpp"
 #include <memory>
 #include <mutex>
 #include <SDL2/SDL.h>

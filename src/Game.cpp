@@ -438,6 +438,25 @@ void Game::go_up(){
 	}
 }
 
+void Game::final_screen(){
+    bool running = true;
+	SDL_Event event;
+	Timer timer(20);
+    while (running){
+		while(SDL_PollEvent(&event)){	   
+	   		switch(event.type) {
+				case SDL_QUIT:
+					throw EndOfGame();
+					break;
+			}
+		} 
+		SDL_RenderClear(this->renderer);
+		SDL_RenderCopy(this->renderer,this->background, NULL, NULL);
+		SDL_RenderPresent(this->renderer);
+		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
+	}
+}
+
 
 void Game::finish_game(bool win){
 	if(win){
@@ -445,7 +464,7 @@ void Game::finish_game(bool win){
 	} else {
 		modify_texture(this->loose_background);
 	}
-	//Agregar Time Wait
+	this->final_screen();
 }
 
 

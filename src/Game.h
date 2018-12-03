@@ -26,6 +26,7 @@
 #include "Precipicio.cpp"
 #include "Roca.cpp"
 #include "Gusano.cpp"
+#include "Timer.cpp"
 #include "ExplosionTanque.cpp"
 #include "ExplosionPersonaje.cpp"
 #include "ExplosionFuerte.cpp"
@@ -104,6 +105,7 @@ public:
 	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int x, int y,std::shared_ptr<MasterSurface> master);
 	int get_current_corner_x();
 	int get_current_corner_y();
+	void final_screen();
 	void add_centrodeconstruccion(int id,int size_x, int size_y, int x, int y, int team);
 	void add_tomadeaire(int id,int size_x, int size_y, int x, int y, int team);
 	void add_refineria(int id,int size_x, int size_y, int x, int y, int team);

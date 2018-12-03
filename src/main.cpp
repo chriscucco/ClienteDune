@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
@@ -59,12 +60,6 @@ bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, 
 	editor.save();
 	return false;
 }
-
-
-bool join_game(){
-	return true;
-}
-
 
 
 
@@ -222,6 +217,35 @@ void init_game(Socket* skt,Game* s){
 	}
 }
 
+void introduction(SDL_Renderer *r,SDL_Texture *t, int Width, int Height){
+	Music music("music/intro.wav");
+	Text text(r,"Hace clic en cualquier tecla para comenzar",800,100,(Width/2-400),Height-200,0);
+    Mix_PlayMusic(music.get_music(),-1);
+    bool running = true;
+	SDL_Event event;
+	Timer timer(FPS);
+    while (running){
+		while(SDL_PollEvent(&event)){	   
+	   		switch(event.type) {
+				case SDL_QUIT:
+					throw EndOfGame();
+					break;
+				case SDL_KEYDOWN:
+                	running=false;
+			}
+		} 
+		if( Mix_PlayingMusic()==0){
+			Mix_PlayMusic(music.get_music(),-1);
+		}
+		SDL_RenderClear(r);
+		SDL_RenderCopy(r,t, NULL, NULL);
+		Texture t2(r,text.get_surface(0)->get_surface());
+		SDL_RenderCopy(r, t2.get_texture(),NULL,text.getpos());
+		SDL_RenderPresent(r);
+		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
+	}
+}
+
 
 int main(int argc, char **argv){
 try{
@@ -238,6 +262,10 @@ try{
 		throw SDLerror();
 	}	
 	if(TTF_Init()==-1){
+		throw SDLerror();
+	}
+	if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 ){
+		std::cerr << "ERROR AL INICIALIZAR EL MODULO DE MUSICA" << std::endl;
 		throw SDLerror();
 	}
 	std::shared_ptr<MasterSurface> master(new MasterSurface());
@@ -276,6 +304,9 @@ try{
     Socket skt(argv[1],argv[2]);
     int id=skt.recv_int();
     bool finalize=false;
+    introduction(r.get_renderer(),texture.get_texture(),Width,Height);
+    Music music("music/ambiente.wav");
+    Mix_PlayMusic(music.get_music(),-1);
 //PANTALLA INICIAL
     while(!finalize){
     	int mode=first_window(&r,&texture,Width,Height,&skt,id);
@@ -370,6 +401,9 @@ try{
                 	}
 				}
 			} 
+			if( Mix_PlayingMusic()==0){
+				Mix_PlayMusic(music.get_music(),-1);
+			}
 			Lock l(m);
 			s.refreshscreen();
 			std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
@@ -382,22 +416,26 @@ try{
 		std::cout<<perror.what()<<std::endl;
 		TTF_Quit();
 		IMG_Quit();
+		Mix_Quit();
 		SDL_Quit();
 		return 1;
 	} catch (SDLerror& error){
         std::cout<<error.what()<<std::endl;
         TTF_Quit();
+        Mix_Quit();
 		IMG_Quit();
         SDL_Quit();
         return 2;
     } catch (EndOfGame& error){
         std::cout<<error.what()<<std::endl;
         TTF_Quit();
+        Mix_Quit();
 		IMG_Quit();
         SDL_Quit();
         return 2;
     }
     TTF_Quit();
+    Mix_Quit();
 	IMG_Quit();
 	SDL_Quit();
 	return 0;

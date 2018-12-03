@@ -65,6 +65,10 @@ void Texture::parser_color(int id){
 			g=200;
 			b=0;
 			break;
+		case 7:
+			r=255;
+			g=255;
+			b=255;
 	}
 	SDL_SetTextureColorMod(this->texture,r,g,b);
 }

@@ -438,7 +438,16 @@ void Game::go_up(){
 	}
 }
 
-void Game::final_screen(){
+void Game::final_screen(bool win){
+	std::shared_ptr<Music> m;
+	if(win){
+		std::shared_ptr<Music> m2(new Music("music/ganaste.wav"));
+		m=m2;
+	} else {
+		std::shared_ptr<Music> m2(new Music("music/perdiste.wav"));
+		m=m2;
+	}
+	Mix_PlayMusic(m->get_music(),-1);
     bool running = true;
 	SDL_Event event;
 	Timer timer(20);
@@ -464,7 +473,7 @@ void Game::finish_game(bool win){
 	} else {
 		modify_texture(this->loose_background);
 	}
-	this->final_screen();
+	this->final_screen(win);
 }
 
 

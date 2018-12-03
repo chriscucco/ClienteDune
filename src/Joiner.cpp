@@ -80,6 +80,8 @@ void Joiner::refresh_screen(){
 
 
 bool Joiner::run(){
+	Music music("music/ambiente4.wav");
+    Mix_PlayMusic(music.get_music(),-1);
 	bool running = true;
 	SDL_Event event;
 	Timer timer(this->fps);
@@ -99,6 +101,9 @@ bool Joiner::run(){
 					running=this->clicked(x,y);
 			}
 		}
+		if( Mix_PlayingMusic()==0){
+			Mix_PlayMusic(music.get_music(),-1);
+		}
 		this->refresh_screen();
 		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
 	}
@@ -107,6 +112,9 @@ bool Joiner::run(){
  	this->skt->send_int(this->current_match->get_value());
  	unsigned char rec;
  	while(1){
+ 		if( Mix_PlayingMusic()==0){
+			Mix_PlayMusic(music.get_music(),-1);
+		}
  		int recv=this->skt->recv_msj(&rec,1);
  		if(recv==0){
  			throw EndOfGame();
@@ -114,7 +122,7 @@ bool Joiner::run(){
  			break;
  		}
  	}
- 	this->wait_screen();
+ 	this->wait_screen(&music);
  	return true;
 }
 
@@ -149,7 +157,7 @@ bool Joiner::clicked(int x,int y){
 }
 
 
-void Joiner::wait_screen(){
+void Joiner::wait_screen(Music* music){
 	Text legend(this->r,"Esperando el inicio de la partida",1100,80,100,200,0);
 	bool running = true;
 	SDL_Event event;
@@ -165,6 +173,9 @@ void Joiner::wait_screen(){
 					timer.reset();
 					break;
 			}
+		}
+		if( Mix_PlayingMusic()==0){
+			Mix_PlayMusic(music->get_music(),-1);
 		}
 		SDL_RenderClear(this->r);
 		SDL_RenderCopy(this->r, this->t->get_texture(), NULL, NULL);

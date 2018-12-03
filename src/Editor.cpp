@@ -36,6 +36,8 @@
 #define YDOWN_100 400
 #define YDOWN_1000 4000
 
+
+
 bool Editor::clicked_map_size(std::vector<std::shared_ptr<Button>> touchable_buttons, std::shared_ptr<Text> x_value, std::shared_ptr<Text> y_value,int x, int y){
 	int id=0;
 	for (unsigned int i=0; i<touchable_buttons.size(); ++i){

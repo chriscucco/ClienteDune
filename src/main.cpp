@@ -312,7 +312,7 @@ try{
     Texture texture_team(r.get_renderer(), team_optimized.get_surface()); 
     Socket skt(argv[1],argv[2]);
     int id=skt.recv_int();
-  /*  bool finalize=false;
+    bool finalize=false;
     introduction(r.get_renderer(),texture.get_texture(),Width,Height,&skt,id);
 //PANTALLA INICIAL
     while(!finalize){
@@ -332,14 +332,10 @@ try{
     r.present();
     Music music("music/ambiente.wav");
     Mix_PlayMusic(music.get_music(),-1);
-    select_team(&r,&texture_team,&skt,Width,Height,id);*/
+    select_team(&r,&texture_team,&skt,Width,Height,id);
     r.clear(); 
     r.copy(texture.get_texture());
     r.present();
-
-
-    Music music("music/ambiente.wav");
-    Mix_PlayMusic(music.get_music(),-1);
  	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,Width,Height,master);
 	init_game(&skt,&s);
 	s.modify_texture(texture2.get_texture());

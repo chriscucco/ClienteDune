@@ -106,6 +106,8 @@ void Creator::refresh_screen(){
 
 
 bool Creator::run(){
+	Music music("music/ambiente4.wav");
+    Mix_PlayMusic(music.get_music(),-1);
 	bool running = true;
 	SDL_Event event;
 	Timer timer(this->fps);
@@ -125,6 +127,9 @@ bool Creator::run(){
 					running=this->clicked(x,y);
 			}
 		}
+		if( Mix_PlayingMusic()==0){
+			Mix_PlayMusic(music.get_music(),-1);
+		}
 		this->refresh_screen();
 		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
 	}
@@ -140,8 +145,11 @@ bool Creator::run(){
  		} else if(rec=='o'){
  			break;
  		}
+ 		if( Mix_PlayingMusic()==0){
+			Mix_PlayMusic(music.get_music(),-1);
+		}
  	}
- 	this->wait_screen();
+ 	this->wait_screen(&music);
  	unsigned char i='i';
  	this->skt->send_msj(&i,1);
  	return true;
@@ -194,7 +202,7 @@ bool Creator::clicked(int x,int y){
 }
 
 
-void Creator::wait_screen(){
+void Creator::wait_screen(Music *m){
 	Text legend(this->r,"Esperando nuevos jugadores, hace clic para iniciar",1100,80,100,200,0);
 	Button b(0,500,150,400,400,this->master->get_initmatch_surface());
 	bool running = true;
@@ -218,6 +226,9 @@ void Creator::wait_screen(){
 					}
 					break;
 			}
+		}
+		if( Mix_PlayingMusic()==0){
+			Mix_PlayMusic(m->get_music(),-1);
 		}
 		SDL_RenderClear(this->r);
 		SDL_RenderCopy(this->r, this->t->get_texture(), NULL, NULL);

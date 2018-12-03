@@ -64,6 +64,9 @@ bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, 
 
 
 int first_window(Renderer *r,Texture *texture,int Width, int Height, Socket* skt,int id){
+	Music music("music/ambiente3.wav");
+    Mix_PlayMusic(music.get_music(),-1);
+
 	bool selection=true;
     int result;
     Surface s1("terrain/CrearJuego.png");
@@ -88,8 +91,6 @@ int first_window(Renderer *r,Texture *texture,int Width, int Height, Socket* skt
     botton_pos_s3.h=Height/6;
     botton_pos_s3.x=Width/4;
     botton_pos_s3.y=(Height/12)*8;
-
-
 	SDL_Event ev;
 	Timer time(FPS);
 	while (selection){
@@ -118,6 +119,9 @@ int first_window(Renderer *r,Texture *texture,int Width, int Height, Socket* skt
 						}
 					}
 			}
+		}
+		if( Mix_PlayingMusic()==0){
+			Mix_PlayMusic(music.get_music(),-1);
 		}
 		r->clear(); 
     	r->copy(texture->get_texture());
@@ -217,7 +221,7 @@ void init_game(Socket* skt,Game* s){
 	}
 }
 
-void introduction(SDL_Renderer *r,SDL_Texture *t, int Width, int Height){
+void introduction(SDL_Renderer *r,SDL_Texture *t, int Width, int Height,Socket *s, int id){
 	Music music("music/intro.wav");
 	Text text(r,"Hace clic en cualquier tecla para comenzar",800,100,(Width/2-400),Height-200,0);
     Mix_PlayMusic(music.get_music(),-1);
@@ -228,7 +232,7 @@ void introduction(SDL_Renderer *r,SDL_Texture *t, int Width, int Height){
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
 				case SDL_QUIT:
-					throw EndOfGame();
+					send_close(s,id);
 					break;
 				case SDL_KEYDOWN:
                 	running=false;
@@ -304,9 +308,7 @@ try{
     Socket skt(argv[1],argv[2]);
     int id=skt.recv_int();
     bool finalize=false;
-    introduction(r.get_renderer(),texture.get_texture(),Width,Height);
-    Music music("music/ambiente.wav");
-    Mix_PlayMusic(music.get_music(),-1);
+    introduction(r.get_renderer(),texture.get_texture(),Width,Height,&skt,id);
 //PANTALLA INICIAL
     while(!finalize){
     	int mode=first_window(&r,&texture,Width,Height,&skt,id);
@@ -323,6 +325,8 @@ try{
     r.clear(); 
     r.copy(texture_team.get_texture());
     r.present();
+    Music music("music/ambiente.wav");
+    Mix_PlayMusic(music.get_music(),-1);
     select_team(&r,&texture_team,&skt,Width,Height,id);
     r.clear(); 
     r.copy(texture.get_texture());

@@ -1,5 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
+#include "Music.cpp"
 #include <stdio.h>
 #include <iostream>
 #include "Timer.cpp"
@@ -33,7 +35,7 @@ public:
 	bool clicked(int x,int y);
 	std::shared_ptr<Text> search_maps(int x,int y);
 	std::shared_ptr<Text> search_maxplayers(int x,int y);
-	void wait_screen();
+	void wait_screen(Music *m);
 	~Creator();
 	
 };

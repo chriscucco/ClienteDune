@@ -32,6 +32,6 @@ public:
 	bool run();
 	std::shared_ptr<Text> search_matchs(int x,int y);
 	bool clicked(int x,int y);
-	void wait_screen(Music* music);
+	bool wait_screen(Music* music);
 	~Joiner();
 };

@@ -37,7 +37,7 @@
 #define EXPLOSIONPERSONAJE 53
 #define BUTTON_SIZE 50
 #define STEP 10
-#define POINT_SCALE 5
+#define POINT_SCALE 3
 
 
 
@@ -676,7 +676,7 @@ void Game::copypointers(){
 			pos->w=(pos->w)/POINT_SCALE;
 			pos->h=(pos->h)/POINT_SCALE;
 			pos->y-=pos->h;
-			pos->x-=pos->w;
+			pos->x-=(pos->w)/2;
 			Texture t(this->renderer, this->master->get_pointer_surface()->get_surface(),this->my_id);
 			SDL_RenderCopy(this->renderer, t.get_texture(), NULL, pos);
 		}

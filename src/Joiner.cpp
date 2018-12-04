@@ -122,8 +122,8 @@ bool Joiner::run(){
  			break;
  		}
  	}
- 	this->wait_screen(&music);
- 	return true;
+ 	bool return_value=this->wait_screen(&music);
+ 	return return_value;
 }
 
 
@@ -157,12 +157,13 @@ bool Joiner::clicked(int x,int y){
 }
 
 
-void Joiner::wait_screen(Music* music){
+bool Joiner::wait_screen(Music* music){
 	Text legend(this->r,"Esperando el inicio de la partida",1100,80,100,200,0);
 	bool running = true;
 	SDL_Event event;
 	Timer timer(this->fps);
 	unsigned char recv;
+	bool return_value=true;
 	while (running){
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
@@ -187,9 +188,14 @@ void Joiner::wait_screen(Music* music){
 			unsigned char ele='l';
 			this->skt->send_msj(&ele,1);
 			running=false;
+			return_value=true;
+		} else if(recv=='d'){
+			return_value=false;
+			running=false;
 		}
 		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
 	}
+	return return_value;
 }
 
 

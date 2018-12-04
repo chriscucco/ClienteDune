@@ -64,6 +64,7 @@ void Cycle::attack(Mix_Chunk* music){
   Mix_PlayChannel( -1, music, 0 );
   int id=this->game->get_socket()->recv_int();
   int id_to_attack=this->game->get_socket()->recv_int();
+  std::cout<<id<<"||"<<id_to_attack<<std::endl;
   SDL_Rect* pos;
   Lock l(*(this->m));
   std::shared_ptr<Moveable> m=this->game->search_moveable_by_id(id_to_attack);

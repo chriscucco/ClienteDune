@@ -33,7 +33,7 @@ bool Animation::is_inside_screen(int x, int y, int size_x, int size_y){
 	int min_x=this->botton_pos.x;
 	int min_y=this->botton_pos.y;
 	int max_x=this->botton_pos.x+this->botton_pos.w;
-	int max_y=this->botton_pos.x+this->botton_pos.w;
+	int max_y=this->botton_pos.y+this->botton_pos.h;
 	return ((min_x<x+size_x)&&(min_y<y+size_y)&&(max_x>x)&&(max_y>y));
 }
 

@@ -113,7 +113,6 @@ int Game::give_id(){
 Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int x, int y, std::shared_ptr<MasterSurface> master, Mix_Chunk* m,Mix_Chunk* a) : master(master){
 	SDL_DisplayMode DM;
 	SDL_GetCurrentDisplayMode(0, &DM);
-	int Width = DM.w;
 	this->my_id=id;
 	this->renderer=r;
 	this->background=t;
@@ -125,8 +124,8 @@ Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* 
 	this->size_x=x;
 	this->size_y=y;
 	this->init_buttons();
-	std::shared_ptr<Text> energy_pointer(new Text(this->renderer,"Energia: ",150,50,(Width/5)-150,0,0));
-	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",150,50,((Width/5)*4),0,0));
+	std::shared_ptr<Text> energy_pointer(new Text(this->renderer,"Energia: ",150,50,(x/5)-150,0,0));
+	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",150,50,((x/5)*4),0,0));
 	this->energy=energy_pointer;
 	this->money=money_pointer;
 	this->acept=a;

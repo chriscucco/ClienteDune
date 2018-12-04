@@ -67,14 +67,40 @@ SDL_Surface* Warrior::getsurf(){
 void Warrior::attack(int x,int y){
 	this->is_attacking=true;
 	this->last_surface=this->current_path;
-	if(x>this->botton_pos.x){
-		this->current_path=4;
-	} else if(x<this->botton_pos.x){
-		this->current_path=12;
-	} else if(y<this->botton_pos.y){
-		this->current_path=0;
-	} else {
-		this->current_path=8;
+	int var_x;
+	int var_y;
+	if((x>=this->botton_pos.x)&&(y<=this->botton_pos.y)){
+		var_x=x-this->botton_pos.x;
+		var_y=this->botton_pos.y-y;
+		if(var_x>=var_y){
+			this->current_path=4;
+		} else {
+			this->current_path=0;
+		}
+	} else if((x>=this->botton_pos.x)&&(y>=this->botton_pos.y)){
+		var_x=x-this->botton_pos.x;
+		var_y=y-this->botton_pos.y;
+		if(var_x>=var_y){
+			this->current_path=4;
+		} else {
+			this->current_path=8;
+		}
+	} else if((x<=this->botton_pos.x)&&(y<=this->botton_pos.y)){
+		var_x=this->botton_pos.x-x;
+		var_y=this->botton_pos.y-y;	
+		if(var_x>=var_y){
+			this->current_path=12;
+		} else {
+			this->current_path=0;
+		}	
+	} else if((x<=this->botton_pos.x)&&(y>=this->botton_pos.y)){
+		var_x=this->botton_pos.x-x;
+		var_y=y-this->botton_pos.y;
+		if(var_x>=var_y){
+			this->current_path=12;
+		} else {
+			this->current_path=8;
+		}
 	}
 }
 

@@ -772,6 +772,9 @@ std::shared_ptr<Moveable> Game::search_moveable_by_id(int id){
 		}
 		i++;
 	}
+	if(!found){
+		return NULL;
+	}
 	return (this->moveables.at(i-1));	
 }
 

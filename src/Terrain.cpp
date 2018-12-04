@@ -39,7 +39,6 @@ bool Terrain::is_inside_screen(int x, int y, int size_x, int size_y){
 	int min_y=this->botton_pos.y;
 	int max_x=this->botton_pos.x+this->botton_pos.w;
 	int max_y=this->botton_pos.y+this->botton_pos.h;
-	std::cout<<min_x<<"||"<<min_y<<"||"<<max_x<<"||"<<max_y<<std::endl;
 	return ((min_x<x+size_x)&&(min_y<y+size_y)&&(max_x>x)&&(max_y>y));
 }
 

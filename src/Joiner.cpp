@@ -158,7 +158,9 @@ bool Joiner::clicked(int x,int y){
 
 
 bool Joiner::wait_screen(Music* music){
-	Text legend(this->r,"Esperando el inicio de la partida",1100,80,100,200,0);
+	Texture t2(this->r,this->master->get_charge_background_surface()->get_surface());
+	this->t=&t2;
+	Text legend(this->r,"Esperando el inicio de la partida",1100,80,100,600,0);
 	bool running = true;
 	SDL_Event event;
 	Timer timer(this->fps);
@@ -183,7 +185,10 @@ bool Joiner::wait_screen(Music* music){
 		Texture t2(this->r,legend.get_surface(0)->get_surface(),-1);
 		SDL_RenderCopy(this->r, t2.get_texture(), NULL, legend.getpos());
 		SDL_RenderPresent(this->r);
-		this->skt->recv_msj(&recv,1);
+		int rec=this->skt->recv_msj(&recv,1);
+		if(rec==0){
+			this->send_close();
+		}
 		if(recv=='r'){
 			unsigned char ele='l';
 			this->skt->send_msj(&ele,1);

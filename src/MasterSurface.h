@@ -80,6 +80,7 @@ private:
 	std::shared_ptr<Surface> hpointer;
 	std::shared_ptr<Surface> initmatch;
 	std::shared_ptr<Surface> button_charge;
+	std::shared_ptr<Surface> charge_background;
 public:
 	MasterSurface();
 	void init_trike();
@@ -216,6 +217,8 @@ public:
 	std::shared_ptr<Surface> get_button_cancel_surface();
 	void init_button_charge();
 	std::shared_ptr<Surface> get_button_charge_surface();
+	void init_charge_background();
+	std::shared_ptr<Surface> get_charge_background_surface();
 	~MasterSurface();
 };
 

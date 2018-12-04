@@ -69,6 +69,16 @@ MasterSurface::MasterSurface(){
 	this->init_hpointer();
 	this->init_initmatch();
 	this->init_button_charge();
+	this->init_charge_background();
+}
+
+void MasterSurface::init_charge_background(){
+	std::shared_ptr<Surface> s1(new Surface("terrain/FondoCarga.jpg"));
+	this->charge_background=s1;
+}
+
+std::shared_ptr<Surface> MasterSurface::get_charge_background_surface(){
+	return this->charge_background;
 }
 
 

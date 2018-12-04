@@ -203,8 +203,10 @@ bool Creator::clicked(int x,int y){
 
 
 void Creator::wait_screen(Music *m){
-	Text legend(this->r,"Esperando nuevos jugadores, hace clic para iniciar",1100,80,100,200,0);
-	Button b(0,500,150,400,400,this->master->get_initmatch_surface());
+	Texture t2(this->r,this->master->get_charge_background_surface()->get_surface());
+	this->t=&t2;
+	Text legend(this->r,"Esperando nuevos jugadores, hace clic para iniciar",1100,80,100,450,0);
+	Button b(0,500,150,400,550,this->master->get_initmatch_surface());
 	bool running = true;
 	SDL_Event event;
 	Timer timer(this->fps);

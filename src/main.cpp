@@ -17,6 +17,7 @@
 #include "Timer.cpp"
 #include "Joiner.cpp"
 #include "Editor.cpp"
+
 #define ATREIDES_TEAM 101
 #define HARKONNEN_TEAM 102
 #define ORDOS_TEAM 103
@@ -32,10 +33,10 @@ void send_close(Socket* s, int id){
 }
 
 
-bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, std::shared_ptr<MasterSurface> master, int id){
+bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, std::shared_ptr<MasterSurface> master, int id, int map_counts){
 	Music music("music/ambiente2.wav");
     Mix_PlayMusic(music.get_music(),-1);
-	Editor editor(r,t->get_texture(),skt,Width,Height,master,id);
+	Editor editor(r,t->get_texture(),skt,Width,Height,master,id,map_counts);
 	bool running = true;
 	SDL_Event event;
 	Timer timer(FPS);
@@ -54,6 +55,9 @@ bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, 
 					int y;
 					SDL_GetMouseState(&x, &y);
 					running=editor.clicked(x,y);
+					if (!running){
+						running = editor.save();
+					}
 				}
 		} 
 		if( Mix_PlayingMusic()==0){
@@ -62,7 +66,6 @@ bool create_map(SDL_Renderer* r, Texture* t,Socket* skt, int Width, int Height, 
 		editor.refreshscreen();
 		std::this_thread::sleep_for(std::chrono::milliseconds(timer.remain_time()));
 	}
-	editor.save();
 	return false;
 }
 
@@ -315,13 +318,14 @@ try{
     bool finalize=false;
     introduction(r.get_renderer(),texture.get_texture(),Width,Height,&skt,id);
 //PANTALLA INICIAL
+    int map_counts = 0;
     while(!finalize){
     	int mode=first_window(&r,&texture,Width,Height,&skt,id);
     	if(mode==1){
     		Creator c(r.get_renderer(),&texture2,&skt,Width,Height,master,FPS,id);
     		finalize=c.run();
     	} else if (mode==2){
-    		finalize=create_map(r.get_renderer(),&texture2,&skt,Width,Height,master,id);
+    		finalize=create_map(r.get_renderer(),&texture2,&skt,Width,Height,master,id,map_counts++);
     	} else if (mode==3){
     		Joiner j(r.get_renderer(),&texture2,&skt,Width,Height,master,FPS,id);
     		finalize=j.run();

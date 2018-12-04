@@ -32,9 +32,10 @@ private:
 	float ky_reductor;
 	float kx_amplify;
 	float ky_amplify;
+	int count_maps;
 
 public:
-	Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master, int id);
+	Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master, int id, int count_maps);
 	void init_buttons();
 	void refreshscreen();
 	void copystatics();
@@ -58,8 +59,12 @@ public:
 	void insert_terrain(int x,int y,int w,int h);
 	void add_terrain(int x1, int y1);
 	bool clicked(int x,int y);
+	std::pair<int,int> de_pixel_a_baldosa(std::pair<int,int> pixel);
+	std::pair<int,int> de_baldosa_a_pixel(std::pair<int,int> baldosa);
+	void charge_centre(int x, int y);
+	void charge_terrain(int id,int x,int y,int w,int h);
 	void charge_map();
-	void save();
+	bool save();
 	void select_map_size();
 	void process_map_size(std::vector<std::shared_ptr<Button>> static_buttons,std::vector<std::shared_ptr<Button>> touchable_buttons,std::vector<std::shared_ptr<Text>> static_text);
 	bool clicked_map_size(std::vector<std::shared_ptr<Button>> touchable_buttons,std::shared_ptr<Text> x_value,std::shared_ptr<Text> y_value,int x, int y);

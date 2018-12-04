@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 2.8)
 
 project(sdl)
 
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(JSONCPP jsoncpp)
+link_libraries(${JSONCPP_LIBRARIES})
+
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Werror -Wall -pedantic -pthread -lSDL2_ttf -lSDL2_mixer -lSDL2_image -lSDL2 -O0 -ggdb")
 
 add_library(sdldemo
@@ -166,7 +170,8 @@ add_library(sdldemo
  src/Music.h
  src/Chunk.cpp
  src/Chunk.h
-
+ src/config.h
+ src/config.cpp
 )
 
 INCLUDE(FindPkgConfig)

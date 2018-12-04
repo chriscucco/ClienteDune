@@ -340,11 +340,11 @@ try{
 	init_game(&skt,&s);
 	s.modify_texture(texture2.get_texture());
 	std::mutex m;
-	Cycle t(&s,&m);
+	bool running = true;
+	Cycle t(&s,&m,&running);
 	s.refreshscreen();
 	t.start();
 	s.refreshscreen();	
-	bool running = true;
 	int x_before, y_before;
 	bool is_right_click=false;
 	SDL_Event event;
@@ -442,8 +442,6 @@ try{
 		IMG_Quit();
         SDL_Quit();
         return 2;
-    } catch(...){
-    	std::cout<<"Error Desconocido"<<std::endl;
     }
     TTF_Quit();
     Mix_Quit();

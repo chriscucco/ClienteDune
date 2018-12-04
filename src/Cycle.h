@@ -21,9 +21,10 @@ class Cycle : public Thread {
 private:
 	Game *game;
 	std::mutex *m;
+	bool* b;
 	
 public:
-    Cycle(Game* game, std::mutex *mut);
+    Cycle(Game* game, std::mutex *mut, bool* running);
     void move();
 	void create();
 	void terrain();

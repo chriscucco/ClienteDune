@@ -1,9 +1,10 @@
 #include "Cycle.h"
 
 
-Cycle::Cycle(Game *s, std::mutex *mut){
+Cycle::Cycle(Game *s, std::mutex *mut, bool* running){
 	this->game=s;
   this->m=mut;
+  this->b=running;
 }
 
 
@@ -125,6 +126,7 @@ void Cycle::stop_attacking(){
 
 
 void Cycle::run(){
+try{
 	unsigned char c;
   int recv;
 	while(1){
@@ -171,5 +173,9 @@ void Cycle::run(){
           break;
   		}
 	}
+} catch (EndOfGame& error){
+  std::cerr<<error.what()<<std::endl;
+  (*(this->b))=false;
+}
 }
 

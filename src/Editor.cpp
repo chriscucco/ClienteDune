@@ -1,4 +1,7 @@
 #include "Editor.h"
+#include <algorithm>
+#include "config.cpp"
+
 #define CENTRODECONSTRUCCION 0
 #define ROCA 30
 #define DUNA 31
@@ -12,7 +15,7 @@
 #define BUTTON_SIZE 50
 #define CHARGE_BUTTON_SIZE_X 150
 #define CENTER_SIZE 50
-#define TERRAIN_SIZE 70
+#define TERRAIN_SIZE 50
 
 #define MAX_X_MAP 9000
 #define MAX_Y_MAP 7000
@@ -155,7 +158,7 @@ void Editor::send_close(){
 }
 
 
-Editor::Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master, int id) : master(master){
+Editor::Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::shared_ptr<MasterSurface> master, int id, int count_maps) : master(master){
 	this->background=t;
 	this->renderer=r;
 	this->s=skt;
@@ -164,6 +167,7 @@ Editor::Editor(SDL_Renderer *r,SDL_Texture *t,Socket* skt, int x, int y,std::sha
 	this->my_id=id;
 	this->init_buttons();
 	this->select_map_size();
+	this->count_maps = count_maps;
 }
 
 
@@ -584,16 +588,135 @@ bool Editor::clicked(int x,int y){
 	}
 }
 
+std::pair<int,int> Editor::de_baldosa_a_pixel(std::pair<int,int> baldosa){
+	std::pair<int,int> pixel;
+	pixel.first = round((TERRAIN_SIZE * baldosa.first)
+	 + TERRAIN_SIZE/2);
+	pixel.second = round((baldosa.second * TERRAIN_SIZE)
+	 + TERRAIN_SIZE/2);
+	return pixel;
+}
+std::pair<int,int> Editor::de_pixel_a_baldosa(std::pair<int,int> pixel){
+	std::pair<int,int> baldosa;
+	baldosa.first = round(pixel.first / TERRAIN_SIZE);
+	baldosa.second = round(pixel.second / TERRAIN_SIZE);
+	return baldosa;
+}
+
+void Editor::charge_terrain(int id,int x,int y,int w,int h){
+	switch(id){
+		case ROCA:
+			this->add_roca(id,w,h,x,y);
+			break;
+		case DUNA:
+			this->add_duna(id,w,h,x,y);
+			break;
+		case ESPECIAFUERTE:
+			this->add_especiafuerte(id,w,h,x,y);
+			break;
+		case ESPECIASUAVE:
+			this->add_especiasuave(id,w,h,x,y);
+			break;
+		case CIMA:
+			this->add_cima(id,w,h,x,y);
+			break;
+		case PRECIPICIO:
+			this->add_precipicio(id,w,h,x,y);
+			break;
+	}
+}
+
+void Editor::charge_centre(int x1, int y1){
+	int x=x1-(CENTER_SIZE/2);
+	int y=y1-(CENTER_SIZE/2);
+	int w=CENTER_SIZE;
+	int h=CENTER_SIZE;
+	std::shared_ptr<Static> d(new CentroDeConstruccion(CENTRODECONSTRUCCION,w,h,x,y,0,this->master->get_centrodeconstruccion_surface()));
+	this->statics.push_back(d);
+}
 
 void Editor::charge_map(){
-	//CARGAR MAPA EN MEMORIA, TE LO DEJO A VOS NACHO
+	if (count_maps == 0) {
+		return;
+	}
+	std::string nombre_mapa = "mapa_" + std::to_string(count_maps-1) +".json";
+	Config config(nombre_mapa);
+	for (unsigned int i=0; i < config["terreno"].size(); i++){
+    	for (unsigned int j=0; j < config["terreno"][0].size(); j++){
+    		std::pair<int,int> pixel = de_baldosa_a_pixel(std::pair<int,int> (i,j));
+    		charge_terrain(config["terreno"][i][j].asInt(),pixel.first-(TERRAIN_SIZE/2),pixel.second-(TERRAIN_SIZE/2),TERRAIN_SIZE,TERRAIN_SIZE);
+    	}
+    }
+    for (unsigned int i=0; i < config["centros"].size(); i++){
+    	std::pair<int,int> pixel = de_baldosa_a_pixel(std::pair<int,int> (config["centros"][i]["pos_x"].asInt(),config["centros"][i]["pos_y"].asInt()));
+    	charge_centre(pixel.first,pixel.second);
+    }
 }
 
 
-void Editor::save(){
-	//Aca esta la parte tuya nacho, quedan grabados en los vectores terrains y statics.
-	//Fijate en las clases Static y Terrain, ahi estan los comandos para tener el ID, x, y, size_x, size_y
-	//Lo dejo comentado
+bool Editor::save(){
+	
+	if (this->statics.size() < 6){
+		std::cout << "Debe ingresar al menos 6 centros de construccion" << std::endl;
+		return true;
+	} 
+
+	Json::Value root;
+
+	std::vector<std::vector<int>> baldosas(this->game_size_x/TERRAIN_SIZE, vector<int>(this->game_size_y/TERRAIN_SIZE));
+
+    for (std::vector<std::shared_ptr<Terrain>>::iterator 
+    	it_terrenos=terrains.begin();
+    	it_terrenos!=terrains.end(); ++it_terrenos){
+   		std::pair<int,int> baldosa = de_pixel_a_baldosa(std::pair<int,int> ((*it_terrenos)->x_pos(),(*it_terrenos)->y_pos()));
+   		baldosas[baldosa.first][baldosa.second] = (*it_terrenos)->get_id();
+    }
+
+    Json::Value centros(Json::arrayValue);
+    for (std::vector<std::shared_ptr<Static>>::iterator 
+    	it_statics=statics.begin();
+    	it_statics!=statics.end(); ++it_statics){
+   		std::pair<int,int> baldosa = de_pixel_a_baldosa(std::pair<int,int> ((*it_statics)->x_pos(),(*it_statics)->y_pos()));
+   		Json::Value posicion;
+   		posicion["pos_x"] = baldosa.first;
+   		posicion["pos_y"] = baldosa.second;
+    	centros.append(posicion);
+    }
+
+    root["centros"] = centros;
+
+    for (unsigned int i=0; i < baldosas.size(); i++){
+    	for (unsigned int j=0; j < baldosas[0].size(); j++){
+    		root["terreno"][i][j]=baldosas[i][j];
+    	}
+    }
+
+   	std::ofstream archivo_a_escribir;
+    archivo_a_escribir.open("mapa_" + std::to_string(count_maps) +".json");
+
+    Json::StyledWriter styledWriter;
+    archivo_a_escribir << styledWriter.write(root);
+
+    archivo_a_escribir.close();
+
+	//obtengo cant lineas del archivo a enviar
+  	std::ifstream archivo_a_enviar("mapa_" + std::to_string(count_maps) +".json"); 
+  	int cant_lineas = std::count(std::istreambuf_iterator<char>(archivo_a_enviar),
+  	std::istreambuf_iterator<char>(), '\n');
+
+    unsigned char accion = 'g';
+	this->s->send_msj(&accion, 1);
+	this->s->send_int(cant_lineas);
+
+    archivo_a_enviar.close();
+  	archivo_a_enviar.open("mapa_" + std::to_string(count_maps) +".json"); 
+
+  	std::string linea;
+	while (std::getline(archivo_a_enviar, linea)) {
+		this->s->send_int(linea.size());		
+		this->s->send_string(linea,linea.size());		
+	}
+	return false;
 }
 
 

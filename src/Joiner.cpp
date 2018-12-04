@@ -187,7 +187,7 @@ bool Joiner::wait_screen(Music* music){
 		SDL_RenderPresent(this->r);
 		int rec=this->skt->recv_msj(&recv,1);
 		if(rec==0){
-			this->send_close();
+			throw EndOfGame();
 		}
 		if(recv=='r'){
 			unsigned char ele='l';

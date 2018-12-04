@@ -46,7 +46,8 @@ void Cycle::terrain(){
 }
 
 
-void Cycle::gusano(){
+void Cycle::gusano(Mix_Chunk* music){
+  Mix_PlayChannel( -1, music, 0 );
   int recv_type=this->game->get_socket()->recv_int();
   int size_x=this->game->get_socket()->recv_int();
   int size_y=this->game->get_socket()->recv_int();
@@ -59,7 +60,8 @@ void Cycle::gusano(){
 }
 
 
-void Cycle::attack(){
+void Cycle::attack(Mix_Chunk* music){
+  Mix_PlayChannel( -1, music, 0 );
   int id=this->game->get_socket()->recv_int();
   int id_to_attack=this->game->get_socket()->recv_int();
   SDL_Rect* pos;
@@ -83,7 +85,8 @@ void Cycle::end(){
 }
 
 
-void Cycle::destroy_unit(){
+void Cycle::destroy_unit(Mix_Chunk* m){
+  Mix_PlayChannel( -1, m, 0 );
   int id=this->game->get_socket()->recv_int();
   Lock l(*(this->m));
   this->game->destroy_unit(id);
@@ -97,14 +100,16 @@ void Cycle::energy(){
 }
 
 
-void Cycle::money(){
+void Cycle::money(Mix_Chunk* m){
+  Mix_PlayChannel( -1, m, 0 );
   int new_money=this->game->get_socket()->recv_int();
   Lock l(*(this->m));
   this->game->modify_money(new_money);
 }
 
 
-void Cycle::notice(){
+void Cycle::notice(Mix_Chunk* m){
+  Mix_PlayChannel( -1, m, 0 );
   int type=this->game->get_socket()->recv_int();
   Lock l(*(this->m));
   this->game->add_notice(type);
@@ -127,6 +132,11 @@ void Cycle::stop_attacking(){
 
 void Cycle::run(){
 try{
+  Chunk atack("music/atack.wav");
+  Chunk explote("music/explote.wav");
+  Chunk money("music/money.wav");
+  Chunk reject("music/reject.wav");
+  Chunk gusano("music/gusano.wav");
 	unsigned char c;
   int recv;
 	while(1){
@@ -145,25 +155,25 @@ try{
 	        this->terrain();
         	break;
       	case 'g': 
-	        this->gusano();
+	        this->gusano(gusano.get_music());
         	break;
       	case 'a': 
-	        this->attack();
+	        this->attack(atack.get_music());
         	break;
       	case 'e': 
 	        this->end();
         	break;
       	case 'd': 
-	        this->destroy_unit();
+	        this->destroy_unit(explote.get_music());
         	break;
       	case 'w': 
 	        this->energy();
         	break;
       	case 'p': 
-	        this->money();
+	        this->money(money.get_music());
         	break;
 	    case 'r': 
-        	this->notice();
+        	this->notice(reject.get_music());
         	break;
       case 'k':
         	this->change_moveable();

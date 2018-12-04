@@ -164,6 +164,9 @@ add_library(sdldemo
  src/EndOfGame.h
  src/Music.cpp
  src/Music.h
+ src/Chunk.cpp
+ src/Chunk.h
+
 )
 
 INCLUDE(FindPkgConfig)

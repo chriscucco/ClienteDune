@@ -110,7 +110,7 @@ int Game::give_id(){
 }
 
 
-Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int x, int y, std::shared_ptr<MasterSurface> master) : master(master){
+Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int x, int y, std::shared_ptr<MasterSurface> master, Mix_Chunk* m,Mix_Chunk* a) : master(master){
 	SDL_DisplayMode DM;
 	SDL_GetCurrentDisplayMode(0, &DM);
 	int Width = DM.w;
@@ -129,6 +129,8 @@ Game::Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* 
 	std::shared_ptr<Text> money_pointer(new Text(this->renderer,"Dinero: $",150,50,((Width/5)*4),0,0));
 	this->energy=energy_pointer;
 	this->money=money_pointer;
+	this->acept=a;
+	this->move=m;
 }
 
 void Game::change_sizes(int init_x, int init_y, int map_x, int map_y){
@@ -455,6 +457,9 @@ void Game::final_screen(bool win){
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
 				case SDL_QUIT:
+					unsigned char ese='s';
+					this->s->send_msj(&ese,1);
+					this->s->send_int(this->my_id);
 					throw EndOfGame();
 					break;
 			}
@@ -964,6 +969,7 @@ void Game::destroy_unit(int id){
 
 void Game::send_move(int x, int y){
 	unsigned char mode='m';
+	Mix_PlayChannel( -1, this->move, 0 );
 	for (unsigned int i=0; i<this->selected.size(); ++i){
 		if(this->selected.at(i)->is_cosechadora()){
 			std::shared_ptr<Terrain> t=this->search_especia_by_coordinate(x,y);
@@ -1092,6 +1098,7 @@ void Game::selected_static(std::shared_ptr<Static> s){
 	} else {
 		std::shared_ptr<Button> b=this->is_selected_unit_button();
 		if(b!=NULL){
+			Mix_PlayChannel( -1, this->acept, 0 );
 			unsigned char c='u';
 			this->s->send_msj(&c,1);
 			this->s->send_int(b->get_id());
@@ -1106,6 +1113,7 @@ void Game::selected_static(std::shared_ptr<Static> s){
 void Game::selected_nothing(int x, int y){
 	std::shared_ptr<Button> b=this->is_selected_building_button();
 	if(b!=NULL){
+		Mix_PlayChannel( -1, this->acept, 0 );
 		unsigned char c='e';
 		this->s->send_msj(&c,1);
 		this->s->send_int(this->my_id);

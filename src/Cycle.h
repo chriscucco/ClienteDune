@@ -4,6 +4,7 @@
 #include "Thread.cpp"
 #include "Lock.cpp"
 #include "Game.cpp"
+#include "Chunk.cpp"
 #include "Music.cpp"
 #include <memory>
 #include <mutex>
@@ -28,13 +29,13 @@ public:
     void move();
 	void create();
 	void terrain();
-	void gusano();
-	void attack();
+	void gusano(Mix_Chunk* music);
+	void attack(Mix_Chunk* m);
 	void end();
-	void destroy_unit();
+	void destroy_unit(Mix_Chunk* m);
 	void energy();
-	void money();
-	void notice();
+	void money(Mix_Chunk* m);
+	void notice(Mix_Chunk* m);
 	void change_moveable();
 	void stop_attacking();
     virtual void run() override;

@@ -2,6 +2,7 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 #include "Music.cpp"
+#include "Chunk.cpp"
 #include <stdio.h>
 #include <iostream>
 #include "CentroDeConstruccion.cpp"
@@ -97,6 +98,8 @@ private:
 	std::shared_ptr<Text> energy;
 	std::shared_ptr<Text> money;
 	std::shared_ptr<Text> notice{nullptr};
+	Mix_Chunk* move;
+	Mix_Chunk* acept;
 public:
 	void init_buttons();
 	int give_id();
@@ -104,7 +107,7 @@ public:
 	void go_left();
 	void go_down();
 	void go_up();
-	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int x, int y,std::shared_ptr<MasterSurface> master);
+	Game(SDL_Renderer *r,SDL_Texture *t,SDL_Texture *w,SDL_Texture *l,Socket* skt, int id, int x, int y,std::shared_ptr<MasterSurface> master, Mix_Chunk* m,Mix_Chunk* a);
 	int get_current_corner_x();
 	int get_current_corner_y();
 	void final_screen(bool win);

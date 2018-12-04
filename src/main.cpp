@@ -336,7 +336,9 @@ try{
     r.clear(); 
     r.copy(texture.get_texture());
     r.present();
- 	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,Width,Height,master);
+    Chunk move("music/move.wav");
+    Chunk acept("music/acept.wav");
+ 	Game s(r.get_renderer(), texture.get_texture(), texture3.get_texture(), texture4.get_texture(),&skt,id,Width,Height,master,move.get_music(),acept.get_music());
 	init_game(&skt,&s);
 	s.modify_texture(texture2.get_texture());
 	std::mutex m;

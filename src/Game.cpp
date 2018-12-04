@@ -457,9 +457,6 @@ void Game::final_screen(bool win){
 		while(SDL_PollEvent(&event)){	   
 	   		switch(event.type) {
 				case SDL_QUIT:
-					unsigned char ese='s';
-					this->s->send_msj(&ese,1);
-					this->s->send_int(this->my_id);
 					throw EndOfGame();
 					break;
 			}

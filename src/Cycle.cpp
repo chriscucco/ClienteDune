@@ -80,6 +80,9 @@ void Cycle::attack(Mix_Chunk* music){
 void Cycle::end(){
   int winner=this->game->get_socket()->recv_int();
   bool win=(winner==this->game->give_id());
+  unsigned char ese='s';
+  this->game->get_socket()->send_msj(&ese,1);
+  this->game->get_socket()->send_int(this->game->give_id());
   Lock l(*(this->m));
   this->game->finish_game(win);
 }
